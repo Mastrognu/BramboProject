@@ -22,15 +22,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" eType="#//Coordinates"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Picture"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hashtag" upperBound="-1"
+        eType="#//Hashtag" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Picture">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" eType="#//Tag" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="place" eType="#//Place"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentCity" eType="#//Place"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Category"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Time"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Category">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Categories"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Friend" eSuperTypes="#//Person"/>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -41,4 +51,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordy" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hashtag"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Categories"/>
 </ecore:EPackage>
