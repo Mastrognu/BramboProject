@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_qQTYMK98EeSDIY9Htlg-NQ" type="Ecore" name="SocialResource.ecore_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_1zKXYK98EeSDIY9Htlg-NQ" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1zOBwK98EeSDIY9Htlg-NQ" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_1zOo0K98EeSDIY9Htlg-NQ" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_PpifgK99EeSDIY9Htlg-NQ" type="3001">
+        <element xmi:type="ecore:EAttribute" href="default.ecore#//SocialMediaResource/id"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Ppifga99EeSDIY9Htlg-NQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_iSKngK99EeSDIY9Htlg-NQ" type="3001">
+        <element xmi:type="ecore:EAttribute" href="default.ecore#//SocialMediaResource/sourcesn"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_iSKnga99EeSDIY9Htlg-NQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1zOo0a98EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1zOo0q98EeSDIY9Htlg-NQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_1zOo0698EeSDIY9Htlg-NQ" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1zOo1K98EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1zOo1a98EeSDIY9Htlg-NQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_1zOo1q98EeSDIY9Htlg-NQ" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1zOo1698EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1zOo2K98EeSDIY9Htlg-NQ"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="default.ecore#//SocialMediaResource"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1zKXYa98EeSDIY9Htlg-NQ" x="472" y="186" width="134" height="90"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qZtWYK99EeSDIY9Htlg-NQ" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qZt9cK99EeSDIY9Htlg-NQ" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qZt9ca99EeSDIY9Htlg-NQ" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qZt9cq99EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qZt9c699EeSDIY9Htlg-NQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qZt9dK99EeSDIY9Htlg-NQ" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qZt9da99EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qZt9dq99EeSDIY9Htlg-NQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qZt9d699EeSDIY9Htlg-NQ" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qZt9eK99EeSDIY9Htlg-NQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qZt9ea99EeSDIY9Htlg-NQ"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="default.ecore#//Place"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qZtWYa99EeSDIY9Htlg-NQ" x="765" y="150" width="101" height="76"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_qQTYMa98EeSDIY9Htlg-NQ"/>
+  <element xmi:type="ecore:EPackage" href="default.ecore#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_1hzsMK99EeSDIY9Htlg-NQ" type="4002" source="_1zKXYK98EeSDIY9Htlg-NQ" target="_qZtWYK99EeSDIY9Htlg-NQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1h0TQK99EeSDIY9Htlg-NQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1h0TQa99EeSDIY9Htlg-NQ" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_1h0TQq99EeSDIY9Htlg-NQ" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1h0TQ699EeSDIY9Htlg-NQ" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1hzsMa99EeSDIY9Htlg-NQ" fontName="Segoe UI"/>
+    <element xmi:type="ecore:EReference" href="default.ecore#//SocialMediaResource/%"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1hzsMq99EeSDIY9Htlg-NQ" points="[0, 0, -166, 57]$[159, -55, -7, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1iQ_MK99EeSDIY9Htlg-NQ" id="(1.0,0.8111111111111111)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1iQ_Ma99EeSDIY9Htlg-NQ" id="(0.06930693069306931,0.6842105263157895)"/>
+  </edges>
+</notation:Diagram>
