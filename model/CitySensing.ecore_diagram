@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_oidXgK-WEeSp2rsA_CMc5w" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_olSpEK-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olSpEq-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaEK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaEa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaEq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaE6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaFK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaFa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaFq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaF6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaGK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Monitored%20City"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olSpEa-WEeSp2rsA_CMc5w" x="11"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaGa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaG6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaHK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaHa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaHq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaH6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaIK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaIa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaIq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaI6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaJK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Place"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaGq-WEeSp2rsA_CMc5w" x="6" y="254"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaJa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaJ6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaKK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaKa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaKq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaK6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaLK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaLa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaLq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaL6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaMK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Category"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaJq-WEeSp2rsA_CMc5w" y="373"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaMa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaM6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaNK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaNa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaNq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaN6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaOK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaOa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaOq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaO6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaPK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Statistical%20Data"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaMq-WEeSp2rsA_CMc5w" x="392" y="119"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaPa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaP6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaQK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaQa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaQq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaQ6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaRK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaRa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaRq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaR6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaSK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//District"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaPq-WEeSp2rsA_CMc5w" x="9" y="119"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaSa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaS6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaTK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaTa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaTq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaT6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaUK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaUa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaUq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaU6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaVK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Num%20Post%20Lang"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaSq-WEeSp2rsA_CMc5w" x="170"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaVa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaV6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaWK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaWa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaWq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaW6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaXK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaXa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaXq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaX6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaYK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Num%20Post%20Distr"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaVq-WEeSp2rsA_CMc5w" x="371"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaYa-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcaY6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaZK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaZa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaZq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaZ6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaaK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaaa-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaaq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaa6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcabK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Num%20Photo%20Lang"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaYq-WEeSp2rsA_CMc5w" x="570"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaba-WEeSp2rsA_CMc5w" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcab6-WEeSp2rsA_CMc5w" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcacK-WEeSp2rsA_CMc5w" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcaca-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcacq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcac6-WEeSp2rsA_CMc5w" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcadK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcada-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcadq-WEeSp2rsA_CMc5w" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcad6-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaeK-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="CitySensing.ecore#//Num%20Post%20Time%20Slot"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcabq-WEeSp2rsA_CMc5w" x="780"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_olcaea-WEeSp2rsA_CMc5w" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olcae6-WEeSp2rsA_CMc5w" type="5005"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcafK-WEeSp2rsA_CMc5w" type="7011">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcafa-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcafq-WEeSp2rsA_CMc5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_olcaf6-WEeSp2rsA_CMc5w" type="7012">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_olcagK-WEeSp2rsA_CMc5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_olcaga-WEeSp2rsA_CMc5w"/>
+    </children>
+    <element xmi:type="ecore:EEnum" href="CitySensing.ecore#//Categories"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olcaeq-WEeSp2rsA_CMc5w" x="225" y="345"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_oidXga-WEeSp2rsA_CMc5w"/>
+  <element xmi:type="ecore:EPackage" href="CitySensing.ecore#/"/>
+</notation:Diagram>
