@@ -1,59 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs" nsURI="http://cs/1.0" nsPrefix="cs">
+  <eAnnotations source="gmf"/>
   <eClassifiers xsi:type="ecore:EClass" name="MonitoredCity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Districts" upperBound="-1"
-        eType="#//District" containment="true"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="districts" upperBound="-1"
+        eType="#//District" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Categories" upperBound="-1"
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
         eType="#//Category" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Categories"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="type"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Categories"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatisticalData" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="District">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Places" upperBound="-1"
-        eType="#//Place" containment="true"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="places" upperBound="-1"
+        eType="#//Place" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cordx" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cordy" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Data" eType="#//StatisticalData"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//StatisticalData"
+        containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostLang" eSuperTypes="#//StatisticalData">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostperLang" lowerBound="1">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperLang" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostDistr" eSuperTypes="#//StatisticalData">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Post per Distr" lowerBound="1">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperDistr" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPhotoLang" eSuperTypes="#//StatisticalData">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PhotoperLang" lowerBound="1">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photoperLang" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostTimeSlot" eSuperTypes="#//StatisticalData">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostperTimeSlot" lowerBound="1">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperTimeSlot" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Categories"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CitySensing">
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cities" upperBound="-1"
+        eType="#//MonitoredCity" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

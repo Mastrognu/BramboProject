@@ -13,4 +13,11 @@
             class="smr.SmrPackage"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CitySensing -->
+      <package
+            uri="http://cs/1.0"
+            class="cs.CsPackage"/>
+   </extension>
+
 </plugin>

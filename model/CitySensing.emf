@@ -1,0 +1,72 @@
+@gmf
+@namespace(uri="http://cs/1.0", prefix="cs")
+package cs;
+
+@gmf.node(label="name")
+class MonitoredCity {
+  attr String[1] name;
+
+  @gmf.compartment
+  val District[*] districts;
+}
+
+@gmf.node(label="name")
+class Place {
+  attr String[1] name;
+  val Category[*] categories;
+}
+
+@gmf.node(label="type")
+class Category {
+  attr Categories type;
+}
+
+abstract class StatisticalData {
+}
+
+@gmf.node(label="name")
+class District {
+
+  @gmf.compartment
+  val Place[*] places;
+  attr String name;
+  attr long[1] cordx;
+  attr long[1] cordy;
+
+  @gmf.compartment
+  val StatisticalData data;
+}
+
+@gmf.node(label="name")
+class NumPostLang extends StatisticalData {
+  attr String name;
+  attr long[1] postperLang;
+}
+
+@gmf.node(label="name")
+class NumPostDistr extends StatisticalData {
+  attr String name;
+  attr long[1] postperDistr;
+}
+
+@gmf.node(label="name")
+class NumPhotoLang extends StatisticalData {
+  attr String name;
+  attr long[1] photoperLang;
+}
+
+@gmf.node(label="name")
+class NumPostTimeSlot extends StatisticalData {
+  attr String name;
+  attr long[1] postperTimeSlot;
+}
+
+enum Categories {
+}
+
+@gmf.diagram
+class CitySensing {
+
+  val MonitoredCity[*] cities;
+}
+
