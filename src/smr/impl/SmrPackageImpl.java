@@ -342,8 +342,17 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getText_Text() {
+		return (EAttribute)textEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getText_Hashtag() {
-		return (EReference)textEClass.getEStructuralFeatures().get(1);
+		return (EReference)textEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -352,7 +361,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EReference getText_Tag() {
-		return (EReference)textEClass.getEStructuralFeatures().get(2);
+		return (EReference)textEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -653,6 +662,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__NAME);
+		createEAttribute(textEClass, TEXT__TEXT);
 		createEReference(textEClass, TEXT__HASHTAG);
 		createEReference(textEClass, TEXT__TAG);
 
@@ -747,6 +757,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Name(), ecorePackage.getEString(), "name", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getText_Text(), ecorePackage.getEString(), "text", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getText_Hashtag(), this.getHashtag(), null, "hashtag", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getText_Tag(), this.getTag(), null, "tag", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

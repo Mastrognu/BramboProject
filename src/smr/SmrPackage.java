@@ -222,13 +222,22 @@ public interface SmrPackage extends EPackage {
 	int TEXT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__TEXT = 1;
+
+	/**
 	 * The feature id for the '<em><b>Hashtag</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__HASHTAG = 1;
+	int TEXT__HASHTAG = 2;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
@@ -237,7 +246,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__TAG = 2;
+	int TEXT__TAG = 3;
 
 	/**
 	 * The number of structural features of the '<em>Text</em>' class.
@@ -246,7 +255,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FEATURE_COUNT = 3;
+	int TEXT_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.PictureImpl <em>Picture</em>}' class.
@@ -776,6 +785,17 @@ public interface SmrPackage extends EPackage {
 	EAttribute getText_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link smr.Text#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see smr.Text#getText()
+	 * @see #getText()
+	 * @generated
+	 */
+	EAttribute getText_Text();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link smr.Text#getHashtag <em>Hashtag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1249,6 +1269,14 @@ public interface SmrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEXT__NAME = eINSTANCE.getText_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEXT__TEXT = eINSTANCE.getText_Text();
 
 		/**
 		 * The meta object literal for the '<em><b>Hashtag</b></em>' containment reference list feature.

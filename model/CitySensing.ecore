@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cs" nsURI="http://cs/1.0" nsPrefix="cs">
-  <eClassifiers xsi:type="ecore:EClass" name="Monitored City">
+  <eClassifiers xsi:type="ecore:EClass" name="MonitoredCity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Districts" upperBound="-1"
         eType="#//District" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Data" eType="#//Statistical%20Data"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -16,22 +14,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="Category">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Categories"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Statistical Data" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StatisticalData" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="District">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Places" upperBound="-1"
         eType="#//Place" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cordx" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cordy" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Data" eType="#//StatisticalData"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Num Post Lang" eSuperTypes="#//Statistical%20Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Post per Lang" lowerBound="1">
+  <eClassifiers xsi:type="ecore:EClass" name="NumPostLang" eSuperTypes="#//StatisticalData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostperLang" lowerBound="1">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments/>
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Num Post Distr" eSuperTypes="#//Statistical%20Data">
+  <eClassifiers xsi:type="ecore:EClass" name="NumPostDistr" eSuperTypes="#//StatisticalData">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Post per Distr" lowerBound="1">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments/>
@@ -39,16 +39,16 @@
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Num Photo Lang" eSuperTypes="#//Statistical%20Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Photo per Lang" lowerBound="1">
+  <eClassifiers xsi:type="ecore:EClass" name="NumPhotoLang" eSuperTypes="#//StatisticalData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PhotoperLang" lowerBound="1">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments/>
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Num Post Time Slot" eSuperTypes="#//Statistical%20Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Post per Time Slot" lowerBound="1">
+  <eClassifiers xsi:type="ecore:EClass" name="NumPostTimeSlot" eSuperTypes="#//StatisticalData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostperTimeSlot" lowerBound="1">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments/>
         <eTypeArguments/>

@@ -31,6 +31,7 @@ import smr.Text;
  * The following features are implemented:
  * <ul>
  *   <li>{@link smr.impl.TextImpl#getName <em>Name</em>}</li>
+ *   <li>{@link smr.impl.TextImpl#getText <em>Text</em>}</li>
  *   <li>{@link smr.impl.TextImpl#getHashtag <em>Hashtag</em>}</li>
  *   <li>{@link smr.impl.TextImpl#getTag <em>Tag</em>}</li>
  * </ul>
@@ -58,6 +59,26 @@ public class TextImpl extends EObjectImpl implements Text {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getHashtag() <em>Hashtag</em>}' containment reference list.
@@ -124,6 +145,27 @@ public class TextImpl extends EObjectImpl implements Text {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.TEXT__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Hashtag> getHashtag() {
 		if (hashtag == null) {
 			hashtag = new EObjectContainmentEList<Hashtag>(Hashtag.class, this, SmrPackage.TEXT__HASHTAG);
@@ -169,6 +211,8 @@ public class TextImpl extends EObjectImpl implements Text {
 		switch (featureID) {
 			case SmrPackage.TEXT__NAME:
 				return getName();
+			case SmrPackage.TEXT__TEXT:
+				return getText();
 			case SmrPackage.TEXT__HASHTAG:
 				return getHashtag();
 			case SmrPackage.TEXT__TAG:
@@ -188,6 +232,9 @@ public class TextImpl extends EObjectImpl implements Text {
 		switch (featureID) {
 			case SmrPackage.TEXT__NAME:
 				setName((String)newValue);
+				return;
+			case SmrPackage.TEXT__TEXT:
+				setText((String)newValue);
 				return;
 			case SmrPackage.TEXT__HASHTAG:
 				getHashtag().clear();
@@ -212,6 +259,9 @@ public class TextImpl extends EObjectImpl implements Text {
 			case SmrPackage.TEXT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case SmrPackage.TEXT__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
 			case SmrPackage.TEXT__HASHTAG:
 				getHashtag().clear();
 				return;
@@ -232,6 +282,8 @@ public class TextImpl extends EObjectImpl implements Text {
 		switch (featureID) {
 			case SmrPackage.TEXT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SmrPackage.TEXT__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case SmrPackage.TEXT__HASHTAG:
 				return hashtag != null && !hashtag.isEmpty();
 			case SmrPackage.TEXT__TAG:
@@ -252,6 +304,8 @@ public class TextImpl extends EObjectImpl implements Text {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", text: ");
+		result.append(text);
 		result.append(')');
 		return result.toString();
 	}
