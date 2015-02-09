@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smr" nsURI="http://smr/1.0" nsPrefix="smr">
-  <eClassifiers xsi:type="ecore:EClass" name="SocialMediaResource">
+  <eAnnotations source="gmf"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Post">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcesn" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -9,49 +11,75 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pictures" upperBound="-1"
-        eType="#//Picture" containment="true"/>
+        eType="#//Picture" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categories" lowerBound="1"
-        upperBound="-1" eType="#//Category" containment="true"/>
+        upperBound="-1" eType="#//Category" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="persons" lowerBound="1"
-        upperBound="-1" eType="#//Person" containment="true"/>
+        upperBound="-1" eType="#//Person" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" eType="#//Coordinates"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hashtag" upperBound="-1"
         eType="#//Hashtag" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Picture">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tags" eType="#//Tag" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="place" eType="#//Place"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//Person">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentCity" eType="#//Place"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Categories"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Friend" eSuperTypes="#//Person"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Friend" eSuperTypes="#//Person">
+    <eAnnotations source="gmf.node"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Coordinates">
+    <eAnnotations source="gmf.node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordx" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordy" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hashtag"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Tag"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="Categories"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hashtag">
+    <eAnnotations source="gmf.node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eAnnotations source="gmf.node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Categories">
+    <eAnnotations source="gmf.node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SocialMediaResource">
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="posts" upperBound="-1"
+        eType="#//Post" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

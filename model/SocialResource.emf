@@ -1,0 +1,83 @@
+@gmf
+@namespace(uri="http://smr/1.0", prefix="smr")
+package smr;
+
+@gmf.node(label="name")
+class Post {
+  attr long[1] ~id;
+  attr String[1] sourcesn;
+  val Place place;
+  val Text text;
+  
+  @gmf.compartment
+  val Picture[*] pictures;
+  @gmf.compartment
+  val Category[+] categories;
+  @gmf.compartment
+  val Person[+] persons;
+  attr EDate time;
+}
+
+@gmf.node(label="name")
+class Place {
+  val Location location;
+  val Coordinates coordinates;
+}
+
+@gmf.node(label="name")
+class Text {
+  val Hashtag[*] hashtag;
+  val Tag[*] tag;
+}
+
+@gmf.node(label="name")
+class Picture {
+  val Tag tags;
+  ref Place place;
+}
+
+abstract class Person {
+}
+
+@gmf.node(label="name")
+class Author extends Person {
+  attr String[1] language;
+  ref Place currentCity;
+}
+
+@gmf.node(label="name")
+class Category {
+  attr Categories[1] type;
+}
+
+@gmf.node(label="name")
+class Friend extends Person {
+}
+
+@gmf.node(label="name")
+class Location {
+  attr String[1] name;
+}
+
+@gmf.node(label="name")
+class Coordinates {
+  attr long[1] coordx;
+  attr long[1] coordy;
+}
+
+@gmf.node(label="name")
+class Hashtag {
+}
+
+@gmf.node(label="name")
+class Tag {
+}
+
+enum Categories {
+}
+
+@gmf.diagram
+class SocialMediaResource {
+  val Post[*] posts;
+}
+
