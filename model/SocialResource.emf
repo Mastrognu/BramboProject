@@ -4,6 +4,7 @@ package smr;
 
 @gmf.node(label="name")
 class Post {
+  attr String name;
   attr long[1] ~id;
   attr String[1] sourcesn;
   val Place place;
@@ -20,18 +21,21 @@ class Post {
 
 @gmf.node(label="name")
 class Place {
+  attr String name;
   val Location location;
   val Coordinates coordinates;
 }
 
 @gmf.node(label="name")
 class Text {
+  attr String name;
   val Hashtag[*] hashtag;
   val Tag[*] tag;
 }
 
 @gmf.node(label="name")
 class Picture {
+  attr String name;
   val Tag tags;
   ref Place place;
 }
@@ -41,17 +45,23 @@ abstract class Person {
 
 @gmf.node(label="name")
 class Author extends Person {
+  attr String name;
   attr String[1] language;
   ref Place currentCity;
 }
 
 @gmf.node(label="name")
 class Category {
+  attr String name;
   attr Categories[1] type;
+}
+
+enum Categories {
 }
 
 @gmf.node(label="name")
 class Friend extends Person {
+  attr String name;
 }
 
 @gmf.node(label="name")
@@ -61,23 +71,23 @@ class Location {
 
 @gmf.node(label="name")
 class Coordinates {
+  attr String name;
   attr long[1] coordx;
   attr long[1] coordy;
 }
 
 @gmf.node(label="name")
 class Hashtag {
+  attr String name;
 }
 
 @gmf.node(label="name")
 class Tag {
-}
-
-enum Categories {
+  attr String name;
 }
 
 @gmf.diagram
 class SocialMediaResource {
+  attr String name;
   val Post[*] posts;
 }
-

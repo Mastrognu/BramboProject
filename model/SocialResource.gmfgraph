@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="smr">
+  <figures name="Default">
+    <descriptors name="PostFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PostFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PostLabelFigure" text="Post">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="PostPicturesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="PostCategoriesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="PostPersonsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigurePostLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getPostPicturesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getPostCategoriesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getPostPersonsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors name="PlaceFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PlaceFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PlaceLabelFigure" text="Place"/>
+      </actualFigure>
+      <accessors accessor="getFigurePlaceLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="TextFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TextFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="TextLabelFigure" text="Text"/>
+      </actualFigure>
+      <accessors accessor="getFigureTextLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PictureFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PictureFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PictureLabelFigure" text="Picture"/>
+      </actualFigure>
+      <accessors accessor="getFigurePictureLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="AuthorFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AuthorFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AuthorLabelFigure" text="Author"/>
+      </actualFigure>
+      <accessors accessor="getFigureAuthorLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CategoryFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CategoryFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CategoryLabelFigure" text="Category"/>
+      </actualFigure>
+      <accessors accessor="getFigureCategoryLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="FriendFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="FriendFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="FriendLabelFigure" text="Friend"/>
+      </actualFigure>
+      <accessors accessor="getFigureFriendLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="LocationFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LocationFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="LocationLabelFigure" text="Location"/>
+      </actualFigure>
+      <accessors accessor="getFigureLocationLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CoordinatesFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CoordinatesFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CoordinatesLabelFigure" text="Coordinates"/>
+      </actualFigure>
+      <accessors accessor="getFigureCoordinatesLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="HashtagFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="HashtagFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="HashtagLabelFigure" text="Hashtag"/>
+      </actualFigure>
+      <accessors accessor="getFigureHashtagLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="TagFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="TagFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="TagLabelFigure" text="Tag"/>
+      </actualFigure>
+      <accessors accessor="getFigureTagLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Post" figure="PostFigure"/>
+  <nodes name="Place" figure="PlaceFigure"/>
+  <nodes name="Text" figure="TextFigure"/>
+  <nodes name="Picture" figure="PictureFigure"/>
+  <nodes name="Author" figure="AuthorFigure"/>
+  <nodes name="Category" figure="CategoryFigure"/>
+  <nodes name="Friend" figure="FriendFigure"/>
+  <nodes name="Location" figure="LocationFigure"/>
+  <nodes name="Coordinates" figure="CoordinatesFigure"/>
+  <nodes name="Hashtag" figure="HashtagFigure"/>
+  <nodes name="Tag" figure="TagFigure"/>
+  <compartments name="PostPicturesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="PostCategoriesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments name="PostPersonsCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <labels name="PostLabel" figure="PostFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="PlaceLabel" figure="PlaceFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="TextLabel" figure="TextFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="PictureLabel" figure="PictureFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="AuthorLabel" figure="AuthorFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="CategoryLabel" figure="CategoryFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="FriendLabel" figure="FriendFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="LocationLabel" figure="LocationFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="CoordinatesLabel" figure="CoordinatesFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="HashtagLabel" figure="HashtagFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="TagLabel" figure="TagFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+</gmfgraph:Canvas>
