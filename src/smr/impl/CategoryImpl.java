@@ -56,7 +56,7 @@ public class CategoryImpl extends EObjectImpl implements Category {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Categories TYPE_EDEFAULT = null;
+	protected static final Categories TYPE_EDEFAULT = Categories.FUN;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.

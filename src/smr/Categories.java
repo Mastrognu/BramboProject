@@ -18,7 +18,54 @@ import org.eclipse.emf.common.util.Enumerator;
  * @generated
  */
 public enum Categories implements Enumerator {
+	/**
+	 * The '<em><b>Fun</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FUN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FUN(0, "Fun", "Fun"), /**
+	 * The '<em><b>Food</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FOOD_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FOOD(1, "Food", "Food")
 	;
+
+	/**
+	 * The '<em><b>Fun</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Fun</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #FUN
+	 * @model name="Fun"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FUN_VALUE = 0;
+
+/**
+	 * The '<em><b>Food</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Food</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #FOOD
+	 * @model name="Food"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FOOD_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Categories</b></em>' enumerators.
@@ -28,6 +75,8 @@ public enum Categories implements Enumerator {
 	 */
 	private static final Categories[] VALUES_ARRAY =
 		new Categories[] {
+			FUN,
+			FOOD,
 		};
 
 	/**
@@ -78,6 +127,8 @@ public enum Categories implements Enumerator {
 	 */
 	public static Categories get(int value) {
 		switch (value) {
+			case FUN_VALUE: return FUN;
+			case FOOD_VALUE: return FOOD;
 		}
 		return null;
 	}

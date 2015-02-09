@@ -5,7 +5,10 @@
     copyrightFields="false">
   <foreignModel>SocialResource.ecore</foreignModel>
   <genPackages prefix="Smr" disposableProviderFactory="true" ecorePackage="SocialResource.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SocialResource.ecore#//Categories"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SocialResource.ecore#//Categories">
+      <genEnumLiterals ecoreEnumLiteral="SocialResource.ecore#//Categories/Fun"/>
+      <genEnumLiterals ecoreEnumLiteral="SocialResource.ecore#//Categories/Food"/>
+    </genEnums>
     <genClasses ecoreClass="SocialResource.ecore#//Post">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/id"/>

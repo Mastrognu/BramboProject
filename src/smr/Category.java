@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see smr.SmrPackage#getCategory()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='type'"
  * @generated
  */
 public interface Category extends EObject {

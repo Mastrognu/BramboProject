@@ -25,7 +25,7 @@
       <diagramNode
           href="SocialResource.gmfgraph#Post"/>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.2">
+          compartment="//@nodes.0/@ownedChild/@compartments.3">
         <containmentFeature
             href="SocialResource.ecore#//Post/persons"/>
         <ownedChild>
@@ -46,7 +46,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.2">
+          compartment="//@nodes.0/@ownedChild/@compartments.3">
         <containmentFeature
             href="SocialResource.ecore#//Post/persons"/>
         <ownedChild>
@@ -69,8 +69,83 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
+            href="SocialResource.ecore#//Post/text"/>
+        <ownedChild
+            relatedDiagrams="//@diagram">
+          <domainMetaElement
+              href="SocialResource.ecore#//Text"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="SocialResource.gmfgraph#TextLabel"/>
+            <features
+                href="SocialResource.ecore#//Text/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="SocialResource.gmftool#//@palette/@tools.0/@tools.10"/>
+          <diagramNode
+              href="SocialResource.gmfgraph#Text"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="SocialResource.ecore#//Text/hashtag"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="SocialResource.ecore#//Hashtag"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="SocialResource.gmfgraph#HashtagLabel"/>
+                <features
+                    href="SocialResource.ecore#//Hashtag/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="SocialResource.gmftool#//@palette/@tools.0/@tools.4"/>
+              <diagramNode
+                  href="SocialResource.gmfgraph#Hashtag"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.2/@ownedChild/@compartments.1">
+            <containmentFeature
+                href="SocialResource.ecore#//Text/tag"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="SocialResource.ecore#//Tag"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="SocialResource.gmfgraph#TagLabel"/>
+                <features
+                    href="SocialResource.ecore#//Tag/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="SocialResource.gmftool#//@palette/@tools.0/@tools.9"/>
+              <diagramNode
+                  href="SocialResource.gmfgraph#Tag"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.0">
+            <compartment
+                href="SocialResource.gmfgraph#TextHashtagCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.1">
+            <compartment
+                href="SocialResource.gmfgraph#TextTagCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
             href="SocialResource.ecore#//Post/pictures"/>
-        <ownedChild>
+        <ownedChild
+            relatedDiagrams="//@diagram">
           <domainMetaElement
               href="SocialResource.ecore#//Picture"/>
           <labelMappings
@@ -85,10 +160,21 @@
               href="SocialResource.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="SocialResource.gmfgraph#Picture"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.3/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild/@children.1/@ownedChild">
+            <containmentFeature
+                href="SocialResource.ecore#//Picture/tags"/>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.3/@ownedChild/@children.0">
+            <compartment
+                href="SocialResource.gmfgraph#PictureTagsCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1">
+          compartment="//@nodes.0/@ownedChild/@compartments.2">
         <containmentFeature
             href="SocialResource.ecore#//Post/categories"/>
         <ownedChild>
@@ -99,7 +185,7 @@
             <diagramLabel
                 href="SocialResource.gmfgraph#CategoryLabel"/>
             <features
-                href="SocialResource.ecore#//Category/name"/>
+                href="SocialResource.ecore#//Category/type"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -111,10 +197,15 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.2">
         <compartment
-            href="SocialResource.gmfgraph#PostPicturesCompartment"/>
+            href="SocialResource.gmfgraph#PostTextCompartment"/>
       </compartments>
       <compartments
           children="//@nodes.0/@ownedChild/@children.3">
+        <compartment
+            href="SocialResource.gmfgraph#PostPicturesCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.4">
         <compartment
             href="SocialResource.gmfgraph#PostCategoriesCompartment"/>
       </compartments>

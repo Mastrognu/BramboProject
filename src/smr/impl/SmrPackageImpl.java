@@ -789,6 +789,8 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
+		addEEnumLiteral(categoriesEEnum, Categories.FUN);
+		addEEnumLiteral(categoriesEEnum, Categories.FOOD);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -861,7 +863,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		  (categoryEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name"
+			 "label", "type"
 		   });	
 		addAnnotation
 		  (friendEClass, 
@@ -904,6 +906,11 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	protected void createGmf_2Annotations() {
 		String source = "gmf.compartment";	
 		addAnnotation
+		  (getPost_Text(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getPost_Pictures(), 
 		   source, 
 		   new String[] {
@@ -915,6 +922,21 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		   });	
 		addAnnotation
 		  (getPost_Persons(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getText_Hashtag(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getText_Tag(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getPicture_Tags(), 
 		   source, 
 		   new String[] {
 		   });

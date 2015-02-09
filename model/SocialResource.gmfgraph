@@ -9,14 +9,16 @@
         <children xsi:type="gmfgraph:Label" name="PostLabelFigure" text="Post">
           <maximumSize dx="10000" dy="50"/>
         </children>
+        <children xsi:type="gmfgraph:Rectangle" name="PostTextCompartmentFigure" outline="false"/>
         <children xsi:type="gmfgraph:Rectangle" name="PostPicturesCompartmentFigure" outline="false"/>
         <children xsi:type="gmfgraph:Rectangle" name="PostCategoriesCompartmentFigure" outline="false"/>
         <children xsi:type="gmfgraph:Rectangle" name="PostPersonsCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigurePostLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors accessor="getPostPicturesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors accessor="getPostCategoriesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
-      <accessors accessor="getPostPersonsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+      <accessors accessor="getPostTextCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getPostPicturesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getPostCategoriesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+      <accessors accessor="getPostPersonsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.4"/>
     </descriptors>
     <descriptors name="PlaceFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PlaceFigure">
@@ -32,18 +34,28 @@
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="TextLabelFigure" text="Text"/>
+        <children xsi:type="gmfgraph:Label" name="TextLabelFigure" text="Text">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="TextHashtagCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="TextTagCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigureTextLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getTextHashtagCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors accessor="getTextTagCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors name="PictureFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PictureFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="PictureLabelFigure" text="Picture"/>
+        <children xsi:type="gmfgraph:Label" name="PictureLabelFigure" text="Picture">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="PictureTagsCompartmentFigure" outline="false"/>
       </actualFigure>
       <accessors accessor="getFigurePictureLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getPictureTagsCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="AuthorFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AuthorFigure">
@@ -120,9 +132,13 @@
   <nodes name="Coordinates" figure="CoordinatesFigure"/>
   <nodes name="Hashtag" figure="HashtagFigure"/>
   <nodes name="Tag" figure="TagFigure"/>
-  <compartments name="PostPicturesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <compartments name="PostCategoriesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
-  <compartments name="PostPersonsCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <compartments name="PostTextCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="PostPicturesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments name="PostCategoriesCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <compartments name="PostPersonsCompartment" figure="PostFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.4"/>
+  <compartments name="TextHashtagCompartment" figure="TextFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <compartments name="TextTagCompartment" figure="TextFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <compartments name="PictureTagsCompartment" figure="PictureFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <labels name="PostLabel" figure="PostFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels name="PlaceLabel" figure="PlaceFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="TextLabel" figure="TextFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>

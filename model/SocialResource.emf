@@ -8,12 +8,16 @@ class Post {
   attr long[1] ~id;
   attr String[1] sourcesn;
   val Place place;
-  val Text text;
   
   @gmf.compartment
+  val Text text;
+
+  @gmf.compartment
   val Picture[*] pictures;
+
   @gmf.compartment
   val Category[+] categories;
+
   @gmf.compartment
   val Person[+] persons;
   attr EDate time;
@@ -29,13 +33,17 @@ class Place {
 @gmf.node(label="name")
 class Text {
   attr String name;
+  attr String text;
+  @gmf.compartment
   val Hashtag[*] hashtag;
+  @gmf.compartment
   val Tag[*] tag;
 }
 
 @gmf.node(label="name")
 class Picture {
   attr String name;
+  @gmf.compartment  
   val Tag tags;
   ref Place place;
 }
@@ -50,13 +58,15 @@ class Author extends Person {
   ref Place currentCity;
 }
 
-@gmf.node(label="name")
+@gmf.node(label="type")
 class Category {
   attr String name;
   attr Categories[1] type;
 }
 
 enum Categories {
+  Fun = 0;
+  Food = 1;
 }
 
 @gmf.node(label="name")
@@ -91,3 +101,4 @@ class SocialMediaResource {
   attr String name;
   val Post[*] posts;
 }
+
