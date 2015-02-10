@@ -1,0 +1,53 @@
+module SocialResource2CitySensing;
+create OUT: CitySensing from IN: SocialResource;
+
+helper context SocialMediaResource!Post def: city: String =
+	if not self.place.city.oclIsUndefined() then
+		self.place.city
+	else
+		if not self.persons.oclIsTypeOf(Author).place.city.oclIsUndefined() then
+			self.persons.oclIsTypeOf(Author).place.city
+		endif
+	endif;
+  	
+helper context SocialMediaResource!Post def: postCoordx: long =
+	if not self.place.coordinates.coordx.oclIsUndefined() then
+		self.place.coordinates.coordx
+	endif;
+	
+helper context SocialMediaResource!Post def: postCoordy: long =
+	if not self.place.coordinates.coordy.oclIsUndefined() then
+		self.place.coordinates.coordy
+	endif;
+
+helper context CitySensing!MonitoredCity def: distBCoordx: long =
+	if not self.districts.coordBx.oclIsUndefined() then
+		self.districts.coordBx
+	endif;
+	
+helper context CitySensing!MonitoredCity def: distBCoordy: long =
+	if not self.districts.coordBy.oclIsUndefined() then
+		self.districts.coordBy
+	endif;
+	
+helper context CitySensing!MonitoredCity def: distECoordx: long =
+	if not self.districts.coordEx.oclIsUndefined() then
+		self.districts.coordEx
+	endif;
+	
+helper context CitySensing!MonitoredCity def: distECoordy: long =
+	if not self.districts.coordEy.oclIsUndefined() then
+		self.districts.coordEy
+	endif;
+	
+rule Post2District {
+	
+	from
+		s: SocialMediaResource!Post ()
+	to
+		t: CitySensing!MonitoredCity (
+			if
+				postperDist <- postperDist + 1
+		)
+	
+}

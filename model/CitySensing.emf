@@ -30,8 +30,10 @@ class District {
   @gmf.compartment
   val Place[*] places;
   attr String name;
-  attr long[1] cordx;
-  attr long[1] cordy;
+  attr long[1] coordBx;
+  attr long[1] coordBy;
+  attr long[1] coordEx;
+  attr long[1] coordEy;
 
   @gmf.compartment
   val StatisticalData data;
