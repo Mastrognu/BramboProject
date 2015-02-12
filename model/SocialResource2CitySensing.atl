@@ -46,7 +46,7 @@ rule Post2District {
 		s: SocialMediaResource!Post ()
 	to
 		t: CitySensing!MonitoredCity (
-			if
+			if //solo helper
 				postperDist <- postperDist + 1
 		)
 	

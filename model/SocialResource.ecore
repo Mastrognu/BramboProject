@@ -23,12 +23,11 @@
         upperBound="-1" eType="#//Category" containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="persons" lowerBound="1"
-        upperBound="-1" eType="#//Person" containment="true">
-      <eAnnotations source="gmf.compartment"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
+        eType="#//Author" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Author"/>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
     <eAnnotations source="gmf.node">
       <details key="label" value="city"/>
@@ -46,11 +45,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hashtag" upperBound="-1"
-        eType="#//Hashtag" containment="true">
-      <eAnnotations source="gmf.compartment"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
         containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
@@ -65,8 +60,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="place" eType="#//Place"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//Person">
+  <eClassifiers xsi:type="ecore:EClass" name="Author">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
     </eAnnotations>
@@ -86,12 +80,6 @@
     <eLiterals name="Fun"/>
     <eLiterals name="Food" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Friend" eSuperTypes="#//Person">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
@@ -108,7 +96,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordy" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hashtag">
+  <eClassifiers xsi:type="ecore:EClass" name="Hashtag" eSuperTypes="#//Tag">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
     </eAnnotations>
@@ -125,5 +113,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="posts" upperBound="-1"
         eType="#//Post" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mention" eSuperTypes="#//Tag">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
