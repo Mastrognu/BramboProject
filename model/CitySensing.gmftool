@@ -5,20 +5,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <palette
-      title="smrPalette">
+      title="csPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Objects"
         collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Author"
-          description="Create new Author">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Category"
@@ -30,8 +21,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Coordinates"
-          description="Create new Coordinates">
+          title="District"
+          description="Create new District">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -39,8 +30,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Friend"
-          description="Create new Friend">
+          title="MonitoredCity"
+          description="Create new MonitoredCity">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -48,8 +39,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Hashtag"
-          description="Create new Hashtag">
+          title="NumPhotoLang"
+          description="Create new NumPhotoLang">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -57,8 +48,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Location"
-          description="Create new Location">
+          title="NumPostDistr"
+          description="Create new NumPostDistr">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -66,8 +57,17 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Picture"
-          description="Create new Picture">
+          title="NumPostLang"
+          description="Create new NumPostLang">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NumPostTimeSlot"
+          description="Create new NumPostTimeSlot">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -77,33 +77,6 @@
           xsi:type="gmftool:CreationTool"
           title="Place"
           description="Create new Place">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Post"
-          description="Create new Post">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Tag"
-          description="Create new Tag">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Text"
-          description="Create new Text">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

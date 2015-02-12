@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/BramboProject2k15/src" modelPluginID="BramboProject2k15"
+    modelName="Cs" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>CitySensing.emf</foreignModel>
+  <genPackages prefix="Cs" disposableProviderFactory="true" ecorePackage="CitySensing.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CitySensing.ecore#//Categories"/>
+    <genClasses ecoreClass="CitySensing.ecore#//MonitoredCity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//MonitoredCity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//MonitoredCity/districts"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//Place">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//Place/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//Place/categories"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//Category/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CitySensing.ecore#//StatisticalData"/>
+    <genClasses ecoreClass="CitySensing.ecore#//District">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//District/places"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//District/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//District/coordBx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//District/coordBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//District/coordEx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//District/coordEy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//District/data"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//NumPostLang">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostLang/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostLang/postperLang"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//NumPostDistr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostDistr/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostDistr/postperDistr"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//NumPhotoLang">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPhotoLang/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPhotoLang/photoperLang"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//NumPostTimeSlot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostTimeSlot/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostTimeSlot/postperTimeSlot"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//CitySensing">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//CitySensing/cities"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
