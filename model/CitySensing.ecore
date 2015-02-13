@@ -44,7 +44,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coordEy" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//StatisticalData"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//StatisticalData"
         containment="true">
       <eAnnotations source="gmf.compartment"/>
     </eStructuralFeatures>
@@ -54,7 +54,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperLang" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postPerLang" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostDistr" eSuperTypes="#//StatisticalData">
@@ -62,7 +62,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperDistr" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postPerDistr" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPhotoLang" eSuperTypes="#//StatisticalData">
@@ -70,7 +70,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photoperLang" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photoPerLang" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostTimeSlot" eSuperTypes="#//StatisticalData">
@@ -78,7 +78,7 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postperTimeSlot" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postPerTimeSlot" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Categories"/>

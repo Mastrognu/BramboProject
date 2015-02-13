@@ -42,25 +42,25 @@ class District {
 @gmf.node(label="name")
 class NumPostLang extends StatisticalData {
   attr String name;
-  attr long[1] postperLang;
+  attr long[1] postPerLang;
 }
 
 @gmf.node(label="name")
 class NumPostDistr extends StatisticalData {
   attr String name;
-  attr long[1] postperDistr;
+  attr long[1] postPerDistr;
 }
 
 @gmf.node(label="name")
 class NumPhotoLang extends StatisticalData {
   attr String name;
-  attr long[1] photoperLang;
+  attr long[1] photoPerLang;
 }
 
 @gmf.node(label="name")
 class NumPostTimeSlot extends StatisticalData {
   attr String name;
-  attr long[1] postperTimeSlot;
+  attr long[1] postPerTimeSlot;
 }
 
 enum Categories {

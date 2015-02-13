@@ -40,14 +40,18 @@ helper context CitySensing!MonitoredCity def: distECoordy: long =
 		self.districts.coordEy
 	endif;
 	
+helper context 
+	
 rule Post2District {
 	
 	from
-		s: SocialMediaResource!Post ()
+		s: SocialMediaResource!Post (
+			s.belongsToCity()
+			s.belongsToDistrict()
+		)
 	to
-		t: CitySensing!MonitoredCity (
-			if //solo helper
-				postperDist <- postperDist + 1
+		t: CitySensing!NumPostDistr (
+			t.postperDist <- postperDist + 1
 		)
 	
 }
