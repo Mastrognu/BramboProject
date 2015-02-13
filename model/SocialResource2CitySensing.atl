@@ -1,7 +1,7 @@
 module SocialResource2CitySensing;
 create OUT: CitySensing from IN: SocialResource;
 
-helper context SocialResource!Post def: city: String =
+helper context SocialResource!Post def: resCity: String =
 	if not self.place.city.oclIsUndefined() then
 		self.place.city
 	else
@@ -50,13 +50,19 @@ helper context CitySensing!District def: countPostPerDistrict: int =
 rule Post2District {
 	
 	from
-		s: SocialMediaResource!Post (
-			s.belongsToCity()
-			s.belongsToDistrict()
-		)
+		s: SocialResource!SocialMediaResource ()
 	to
 		t: CitySensing!NumPostDistr (
-			t.postperDist <- postPerDistr + 1
+			postPerDistr <- t.data.countPostPerDistrict 
 		)
-	
 }
+
+
+
+
+
+
+
+
+
+
