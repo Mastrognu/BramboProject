@@ -1,7 +1,7 @@
 module SocialResource2CitySensing;
 create OUT: CitySensing from IN: SocialResource;
 
-helper context SocialMediaResource!Post def: city: String =
+helper context SocialResource!Post def: city: String =
 	if not self.place.city.oclIsUndefined() then
 		self.place.city
 	else
@@ -10,37 +10,42 @@ helper context SocialMediaResource!Post def: city: String =
 		endif
 	endif;
   	
-helper context SocialMediaResource!Post def: postCoordx: long =
+helper context SocialResource!Post def: postCoordx: long =
 	if not self.place.coordinates.coordx.oclIsUndefined() then
 		self.place.coordinates.coordx
 	endif;
 	
-helper context SocialMediaResource!Post def: postCoordy: long =
+helper context SocialResource!Post def: postCoordy: long =
 	if not self.place.coordinates.coordy.oclIsUndefined() then
 		self.place.coordinates.coordy
 	endif;
 
-helper context CitySensing!MonitoredCity def: distBCoordx: long =
-	if not self.districts.coordBx.oclIsUndefined() then
-		self.districts.coordBx
+helper context CitySensing!District def: distBCoordx: long =
+	if not self.coordBx.oclIsUndefined() then
+		self.coordBx
 	endif;
 	
-helper context CitySensing!MonitoredCity def: distBCoordy: long =
-	if not self.districts.coordBy.oclIsUndefined() then
-		self.districts.coordBy
+helper context CitySensing!District def: distBCoordy: long =
+	if not self.coordBy.oclIsUndefined() then
+		self.coordBy
 	endif;
 	
-helper context CitySensing!MonitoredCity def: distECoordx: long =
-	if not self.districts.coordEx.oclIsUndefined() then
-		self.districts.coordEx
+helper context CitySensing!District def: distECoordx: long =
+	if not self.coordEx.oclIsUndefined() then
+		self.coordEx
 	endif;
 	
-helper context CitySensing!MonitoredCity def: distECoordy: long =
-	if not self.districts.coordEy.oclIsUndefined() then
-		self.districts.coordEy
+helper context CitySensing!District def: distECoordy: long =
+	if not self.coordEy.oclIsUndefined() then
+		self.coordEy
 	endif;
 	
-helper context 
+helper context CitySensing!District def: countPostPerDistrict: int = 
+	let allPosts: OrderedSet(SocialResource!SocialMediaResource) = 
+		self.posts
+	in
+		count(allPosts.select(p | self.distBCoordx < p.postCoordx < self.distECoordx and self.distBCoordy < p.postCoordy < self.distECoordy)) 
+	
 	
 rule Post2District {
 	
@@ -51,7 +56,7 @@ rule Post2District {
 		)
 	to
 		t: CitySensing!NumPostDistr (
-			t.postperDist <- postperDist + 1
+			t.postperDist <- postPerDistr + 1
 		)
 	
 }
