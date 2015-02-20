@@ -9,66 +9,26 @@ helper context SocialResource!Post def: resCity(): String =
 			self.persons.oclIsTypeOf(Author).place.city
 		endif
 	endif;
-  	
-helper context SocialResource!Post def: postCoordx(): long =
-	if not self.place.coordinates.coordx.oclIsUndefined() then
-		self.place.coordinates.coordx
-	endif;
-	
-helper context SocialResource!Post def: postCoordy(): long =
-	if not self.place.coordinates.coordy.oclIsUndefined() then
-		self.place.coordinates.coordy
-	endif;
 
-helper context CitySensing!District def: distBCoordx(): long =
-	if not self.coordBx.oclIsUndefined() then
-		self.coordBx
-	endif;
-	
-helper context CitySensing!District def: distBCoordy(): long =
-	if not self.coordBy.oclIsUndefined() then
-		self.coordBy
-	endif;
-	
-helper context CitySensing!District def: distECoordx(): long =
-	if not self.coordEx.oclIsUndefined() then
-		self.coordEx
-	endif;
-	
-helper context CitySensing!District def: distECoordy(): long =
-	if not self.coordEy.oclIsUndefined() then
-		self.coordEy
-	endif;
-	
+helper context SocialResource!Post def: hasCoordinates: Boolean =
+	self.currentCity.coordinates -> size() > 0
+		  	
 helper context CitySensing!District def: countPostPerDistrict(): int = 
-	let allPosts: OrderedSet(SocialResource!SocialMediaResource) = 
-		self.posts
-	in --se le coordinate sono definite nel post
-		count(allPosts.select(p | self.distBCoordx < p.postCoordx < self.distECoordx and self.distBCoordy < p.postCoordy < self.distECoordy)) 
+	count(self.groupPostsPerDistrict) 
 	
-helper context CitySensing!District def: groupPostsPerDistrict(): OrderedSet(SocialResource!Post) = 
-	let allPosts: OrderedSet(SocialResource!SocialMediaResource) = 
-		self.posts
+helper context CitySensing!District def: groupPostsPerDistrict():
+		OrderedSet(SocialResource!Post) = 
+	let allPosts: OrderedSet(SocialMediaResource!SocialMediaResource) = 
+		SocialMediaResource!SocialMediaResource.posts.select(p|p.hasCoordinates())
 	in
-		allPosts.select(p | self.distBCoordx < p.postCoordx < self.distECoordx and self.distBCoordy < p.postCoordy < self.distECoordy)
+		allPosts.select(p | self.coordBx < p.postCoordx < self.coordEx and self.coordBy <
+				p.postCoordy < self.coordEy)
 	
 rule Posts2NumPerDistrict {
-	
 	from
 		s: SocialResource!SocialMediaResource ()
-		
 	to
 		t: CitySensing!NumPostDistr (
-			postPerDistr <- t.data.countPostPerDistrict ()
+			postPerDistr <- t.data.countPostPerDistrict()
 		)
 }
-
-
-
-
-
-
-
-
-
-
