@@ -27,7 +27,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="author" lowerBound="1"
         eType="#//Author" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Author"/>
   <eClassifiers xsi:type="ecore:EClass" name="Place">
     <eAnnotations source="gmf.node">
       <details key="label" value="city"/>

@@ -68,23 +68,6 @@
     <element xmi:type="ecore:EClass" href="SocialResource.ecore#//Picture"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-ZDe0bKgEeSIlPwZ5YRkDg" x="350" y="300"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_-ZEF5rKgEeSIlPwZ5YRkDg" type="2001" fontName="Ubuntu">
-    <children xmi:type="notation:DecorationNode" xmi:id="_-ZEs8LKgEeSIlPwZ5YRkDg" type="5001"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_-ZEs8bKgEeSIlPwZ5YRkDg" type="7001">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_-ZEs8rKgEeSIlPwZ5YRkDg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_-ZEs87KgEeSIlPwZ5YRkDg"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_-ZEs9LKgEeSIlPwZ5YRkDg" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_-ZEs9bKgEeSIlPwZ5YRkDg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_-ZEs9rKgEeSIlPwZ5YRkDg"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_-ZEs97KgEeSIlPwZ5YRkDg" type="7003">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_-ZEs-LKgEeSIlPwZ5YRkDg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_-ZEs-bKgEeSIlPwZ5YRkDg"/>
-    </children>
-    <element xmi:type="ecore:EClass" href="SocialResource.ecore#//Person"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-ZEF57KgEeSIlPwZ5YRkDg" x="580" y="300"/>
-  </children>
   <children xmi:type="notation:Shape" xmi:id="_-ZFUALKgEeSIlPwZ5YRkDg" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_-ZFUArKgEeSIlPwZ5YRkDg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_-ZFUA7KgEeSIlPwZ5YRkDg" type="7001">

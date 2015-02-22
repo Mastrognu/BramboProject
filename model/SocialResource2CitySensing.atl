@@ -14,7 +14,7 @@ helper context SocialResource!Post def: hasCoordinates: Boolean =
 	self.currentCity.coordinates -> size() > 0
 		  	
 helper context CitySensing!District def: countPostPerDistrict(): int = 
-	count(self.groupPostsPerDistrict) 
+	count(self.groupPostsPerDistrict()) 
 	
 helper context CitySensing!District def: groupPostsPerDistrict():
 		OrderedSet(SocialResource!Post) = 
