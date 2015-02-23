@@ -29,6 +29,18 @@ rule Posts2NumPerDistrict {
 		s: SocialResource!SocialMediaResource ()
 	to
 		t: CitySensing!NumPostDistr (
-			postPerDistr <- t.data.countPostPerDistrict()
+			name <- "Post per district"
+			metric <- t.data.countPostPerDistrict()
 		)
 }
+
+
+
+
+
+
+
+
+
+
+
