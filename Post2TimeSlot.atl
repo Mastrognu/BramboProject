@@ -1,8 +1,12 @@
 module SocialResource2CitySensing;
+
+-- @path CitySensing=/BramboProject2k15/model/CitySensing.ecore
+-- @path SocialResource=/BramboProject2k15/model/SocialResource.ecore
+
 create OUT: CitySensing from IN: SocialResource;
 
 helper context SocialResource!SocialMediaResource def: countPostPerTimeSlot(String ts): int = 
-	count(self.groupPostsPerTimeSlot(ts)) 
+	count(self.groupPostsPerTimeSlot(ts))
 	
 helper context SocialResource!SocialMediaResource def: groupPostsPerTimeSlot(String ts):
 		OrderedSet(SocialResource!Post) = 
