@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/BramboProject2k15/src" modelPluginID="BramboProject2k15"
+    modelName="Smr" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>SocialResource.ecore</foreignModel>
+  <genPackages prefix="Smr" disposableProviderFactory="true" ecorePackage="SocialResource.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SocialResource.ecore#//Categories">
+      <genEnumLiterals ecoreEnumLiteral="SocialResource.ecore#//Categories/Fun"/>
+      <genEnumLiterals ecoreEnumLiteral="SocialResource.ecore#//Categories/Food"/>
+    </genEnums>
+    <genClasses ecoreClass="SocialResource.ecore#//Post">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/sourcesn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Post/place"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Post/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Post/pictures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Post/categories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Post/persons"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Post/time"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Place">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Place/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Place/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Place/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Place/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Text/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Text/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Text/hashtag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Text/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Picture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Picture/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Picture/tags"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Picture/place"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SocialResource.ecore#//Person"/>
+    <genClasses ecoreClass="SocialResource.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Author/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Author/language"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SocialResource.ecore#//Author/currentCity"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Category/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Category/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Friend">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Friend/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Location/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Coordinates">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Coordinates/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Coordinates/coordx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Coordinates/coordy"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Hashtag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Hashtag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//Tag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SocialResource.ecore#//SocialMediaResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SocialResource.ecore#//SocialMediaResource/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SocialResource.ecore#//SocialMediaResource/posts"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
