@@ -23,8 +23,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categories" lowerBound="1"
         upperBound="-1" eType="#//Category" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPosts" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stats" upperBound="-1"
         eType="#//Statistic" containment="true">
       <eAnnotations source="gmf.compartment"/>

@@ -1,0 +1,112 @@
+-- @path CitySensing=/BramboProject2k15/model/CitySensing.ecore
+-- @path SocialResource=/BramboProject2k15/model/SocialResource.ecore
+-- @path City=/BramboProject2k15/model/City.ecore
+
+module GenerateCitySensing;
+
+create OUT: CitySensing from IN: SocialResource, City;
+
+helper context SocialResource!Post def: resCity(): String =
+	if not self.place.city.oclIsUndefined() then
+		self.place.city
+	else
+		if not self.persons.oclIsTypeOf(Author).place.city.oclIsUndefined() then
+			self.persons.oclIsTypeOf(Author).place.city
+		endif
+	endif;
+
+helper context SocialResource!Post def: hasCoordinates: Boolean =
+	self.currentCity.coordinates -> size() > 0
+		  	
+helper context CitySensing!District def: countPostPerDistrict(): int = 
+	count(self.groupPostsPerDistrict()) 
+	
+helper context CitySensing!District def: groupPostsPerDistrict():
+		OrderedSet(SocialResource!Post) = 
+	let allPosts: OrderedSet(SocialMediaResource!SocialMediaResource) = 
+		SocialMediaResource!SocialMediaResource.posts.select(p|p.hasCoordinates())
+	in
+		allPosts.select(p | self.coordBx < p.postCoordx < self.coordEx and self.coordBy <
+				p.postCoordy < self.coordEy)
+	
+	
+rule City2MonitoredCity {
+	
+	from 
+		s: City!City()
+		
+	to 
+		t: CitySensing!MonitoredCity (
+			name <- s.name,
+			districts <- s.districts;
+			--- stats <-
+		)
+	
+}
+
+rule District2MonitoredDistrict {
+	
+	from
+		s: City!District()
+		
+	to
+		t: CitySensing!District (
+			name <- s.name,
+			coordBx <- s.coordBx,
+			coordBy <- s.coordBy,
+			coordEx <- s.coordEx,
+			coordEy <- s.coordEy,
+			places <- s.places,
+			--- stats <- 
+		)
+	
+}
+
+rule Place2MonitoredPlace {
+	
+	from
+		s: City!Place ()
+		
+	to
+		t: CitySensing!Place (
+			name <- s.name,
+			categories <- s.categories,
+			--- stats <- 
+		)
+	
+}
+
+rule Category2MonitoredCategory {
+	
+	from
+		s: City!Category ()
+		
+	to
+		t: CitySensing!Category (
+			type <- s.type;	
+		)
+		
+}
+
+rule Post2City
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
