@@ -32,9 +32,9 @@ rule Posts2NumPerDistrict {
 	from
 		s: SocialResource!SocialMediaResource ()
 	to
-		t: CitySensing!NumPostDistr (
+		t: CitySensing!NumPost (
 			name <- "Posts per district"
-			metric <- t.data.countPostPerDistrict()
+			metric <- t.stats.countPostPerDistrict()
 		)
 }
 
