@@ -7,21 +7,35 @@ module GenerateCitySensing;
 create OUT: CitySensing from IN: SocialResource, City;
 
 helper context SocialResource!Post def: hasCoordinates(): Boolean =
-	if self.currentCity.coordinates -> size() > 0
+	if self.place.coordinates -> size() > 0
 		return true
 	else
 		return false
 	endif;
 				
 helper context City!District def: countPosts(mr : SocialResource!SocialMediaResource) : Integer =
-	let lp : Collection(SocialResource!Post) = 
-		mr.posts.select(p | p.hasCoordinates())
+	let lp : OrderedSet(SocialResource!Post) = 
+		mr.posts -> select(p | p.hasCoordinates())
 	in
-		lp -> collect(e | self.coordBx < e.place.coordinates.coordx and self.coordEx > e.place.coordinates.coordx
+		lp -> select(e | self.coordBx < e.place.coordinates.coordx and self.coordEx > e.place.coordinates.coordx
 		and self.coordBy < e.place.coordinates.coordy and self.coordEy > e.place.coordinates.coordy	
 		).size();
 		
-	
+helper context SocialResource!Post def: hasPicture(): Boolean =
+	if self.pictures -> size() > 0
+		return true
+	else
+		return false
+	endif;
+--- Actually, it's posts with at least 1 picture, not total of pictures
+helper context City!District def: countPictures(mr : SocialResource!SocialMediaResource) : Integer =
+	let pp : OrderedSet(SocialResource!Post) = 
+		mr.posts -> select(p | p.hasPicture() and p.hasCoordinates())
+	in
+		pp -> select(e | self.coordBx < e.place.coordinates.coordx and self.coordEx > e.place.coordinates.coordx
+		and self.coordBy < e.place.coordinates.coordy and self.coordEy > e.place.coordinates.coordy	
+		).size();
+
 rule City2MonitoredCity {
 	
 	from 
@@ -50,7 +64,7 @@ rule District2MonitoredDistrict {
 			coordEx <- s.coordEx,
 			coordEy <- s.coordEy,
 			places <- s.places,
-			stats <- thisModule.Post2NumPostsDist(s, p)
+			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p)}
 		)
 	
 }
@@ -94,6 +108,18 @@ lazy rule Post2NumPostsDist {
 	
 }
 
+lazy rule Post2NumPhotoDist {
+	
+	from
+		s: City!District,
+		p: SocialResource!SocialMediaResource()
+	to
+		t: CitySensing!NumPhoto (
+			name <- '#Pictures',
+			metric <- s.countPictures(p)
+		)
+	
+}
 
 
 
