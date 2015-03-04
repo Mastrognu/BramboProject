@@ -3,11 +3,21 @@
 -- @path City=/BramboProject2k15/model/City.ecore
 
 module GenerateCitySensing;
-
 create OUT: CitySensing from IN: SocialResource, City;
+
+
+helper context SocialResource!Post def: isInDistrict(d : City!District) : Boolean =
+	if d.coordBx < self.place.coordinates.coordx and d.coordEx > self.place.coordinates.coordx
+		and d.coordBy < self.place.coordinates.coordy and d.coordEy > self.place.coordinates.coordy
+	then
+		return true
+	else
+		return false
+	endif;
 
 helper context SocialResource!Post def: hasCoordinates(): Boolean =
 	if self.place.coordinates -> size() > 0
+	then
 		return true
 	else
 		return false
@@ -17,24 +27,30 @@ helper context City!District def: countPosts(mr : SocialResource!SocialMediaReso
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasCoordinates())
 	in
-		lp -> select(e | self.coordBx < e.place.coordinates.coordx and self.coordEx > e.place.coordinates.coordx
-		and self.coordBy < e.place.coordinates.coordy and self.coordEy > e.place.coordinates.coordy	
-		).size();
+		lp -> select(e | e.isInDistrict(self)).size();
 		
 helper context SocialResource!Post def: hasPicture(): Boolean =
 	if self.pictures -> size() > 0
+	then
 		return true
 	else
 		return false
 	endif;
+
 --- Actually, it's posts with at least 1 picture, not total of pictures
 helper context City!District def: countPictures(mr : SocialResource!SocialMediaResource) : Integer =
 	let pp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasPicture() and p.hasCoordinates())
 	in
-		pp -> select(e | self.coordBx < e.place.coordinates.coordx and self.coordEx > e.place.coordinates.coordx
-		and self.coordBy < e.place.coordinates.coordy and self.coordEy > e.place.coordinates.coordy	
-		).size();
+		pp -> select(e | e.isInDistrict(self)).size();
+
+helper context City!District def: countPostsMorning(mr : SocialResource!SocialMediaResource) : Integer =
+	let lp : OrderedSet(SocialResource!Post) = 
+		mr.posts -> select(p | p.hasCoordinates())
+	in
+		lp -> select(e | e.isInDistrict(self) and e.time < ).size();
+
+
 
 rule City2MonitoredCity {
 	
@@ -118,6 +134,21 @@ lazy rule Post2NumPhotoDist {
 			name <- '#Pictures',
 			metric <- s.countPictures(p)
 		)
+	
+}
+
+lazy rule Post2MorningPostDist {
+	
+	from
+		s: City!District,
+		p: SocialResource!SocialMediaResource()
+	to
+		t: CitySensing!NumPostTimeSlot (
+			name <- '#Posts per time slot',
+			timeSlot <- 'Morning',
+			metric <- s.countPostsMorning(p)
+		)
+		
 	
 }
 
