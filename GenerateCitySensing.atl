@@ -48,13 +48,19 @@ helper context City!District def: countPostsMorning(mr : SocialResource!SocialMe
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasCoordinates())
 	in
-		lp -> select(e | e.isInDistrict(self) and e.time. < ).size();
+		lp -> select(e | e.isInDistrict(self) --- and e.time. < formato dell'orario 
+			).size();
 
-
+helper context City!District def: countPostsPerLangDist(mr : SocialResource!SocialMediaResource) : Map(SocialResource!Languages, Integer) =
+	let lp : OrderedSet(SocialResource!Post) = 
+		mr.posts -> select(p | p.hasCoordinates())
+	in
+		lp -> select(e | e.isInDistrict(self) 
+			).size();
 
 rule City2MonitoredCity {
 	
-	from 
+	from
 		s: City!City()
 		
 	to 
@@ -80,7 +86,7 @@ rule District2MonitoredDistrict {
 			coordEx <- s.coordEx,
 			coordEy <- s.coordEy,
 			places <- s.places,
-			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p)}
+			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p), thisModule.Post2NumPostLangDist(s, p)}
 		)
 	
 }
@@ -148,12 +154,22 @@ lazy rule Post2MorningPostDist {
 			timeSlot <- 'Morning',
 			metric <- s.countPostsMorning(p)
 		)
-		
-	
+			
 }
 
-
-
+lazy rule Post2NumPostLangDist {
+	
+	from
+		s: City!District,
+		p: SocialResource!SocialMediaResource()
+	to
+		t: CitySensing!NumPostLang (
+			name <- '#Posts per language',
+			langNumber <- s.countPostsPerLangDist(p)
+			metric <- s.countPostsMorning(p)
+		)
+			
+}
 
 
 

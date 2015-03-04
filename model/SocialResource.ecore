@@ -118,4 +118,8 @@
       <details key="label" value="name"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Languages">
+    <eLiterals name="English" literal=""/>
+    <eLiterals name="Spanish" value="1" literal="Spanish"/>
+  </eClassifiers>
 </ecore:EPackage>
