@@ -51,12 +51,25 @@ helper context City!District def: countPostsMorning(mr : SocialResource!SocialMe
 		lp -> select(e | e.isInDistrict(self) --- and e.time. < formato dell'orario 
 			).size();
 
+---...
+helper context SocialResource!Languages def countPosts(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
+	--- sempre che post abbia language
+	Map{(self, p -> select(p | p.language == self).size)};
+
+--- Questo è campato per aria per via della sintassi sulle enum..
 helper context City!District def: countPostsPerLangDist(mr : SocialResource!SocialMediaResource) : Map(SocialResource!Languages, Integer) =
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasCoordinates())
+	in let dp : OrderedSet(SocialResource!Post) = 
+		lp -> select(e | e.isInDistrict(self))
+	in let lang : OrderedSet(SocialResource!Languages) =
+		lang.union(SocialResource!Languages.literals) 
 	in
-		lp -> select(e | e.isInDistrict(self) 
-			).size();
+		lang -> iterate(e; map: Map(SocialResource!Languages, Integer) = Map{} |
+			map.union(e.countPosts(dp))
+		)
+		
+		
 
 rule City2MonitoredCity {
 	
