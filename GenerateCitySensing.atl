@@ -3,40 +3,40 @@
 -- @path City=/BramboProject2k15/model/City.ecore
 
 module GenerateCitySensing;
-create OUT: CitySensing from IN: SocialResource, City;
+create OUT: CitySensing from IN: SocialResource, IN2: City;
 
 
 helper context SocialResource!Post def: isInDistrict(d : City!District) : Boolean =
 	if d.coordBx < self.place.coordinates.coordx and d.coordEx > self.place.coordinates.coordx
 		and d.coordBy < self.place.coordinates.coordy and d.coordEy > self.place.coordinates.coordy
 	then
-		return true
+		true
 	else
-		return false
+		false
 	endif;
 
 helper context SocialResource!Post def: isInPlace(d : City!Place) : Boolean =
 	if self.place.location.name = d.name
 	then
-		return true
+		true
 	else
-		return false
+		false
 	endif;
 
 helper context SocialResource!Post def: hasCoordinates(): Boolean =
 	if self.place.coordinates -> size() > 0
 	then
-		return true
+		true
 	else
-		return false
+		false
 	endif;
 
 helper context SocialResource!Post def: hasLocation(): Boolean =
 	if self.place.location -> size() > 0
 	then
-		return true
+		true
 	else
-		return false
+		false
 	endif;
 				
 helper context City!District def: countPosts(mr : SocialResource!SocialMediaResource) : Integer =
@@ -54,9 +54,9 @@ helper context City!Place def: countPosts(mr : SocialResource!SocialMediaResourc
 helper context SocialResource!Post def: hasPicture(): Boolean =
 	if self.pictures -> size() > 0
 	then
-		return true
+		true
 	else
-		return false
+		false
 	endif;
 
 --- Actually, it's posts with at least 1 picture, not total of pictures
@@ -80,9 +80,9 @@ helper context City!District def: countPostsMorning(mr : SocialResource!SocialMe
 			).size();
 
 ---...
-helper context SocialResource!Languages def countPosts(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
+helper context SocialResource!Languages def: countPosts(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
 	--- sempre che post abbia language
-	Map{(self, p -> select(p | p.language == self).size)};
+	Map{(self, p -> select(p | p.language = self).size)};
 
 --- Questo è campato per aria per via della sintassi sulle enum..
 helper context City!District def: countPostsPerLangDist(mr : SocialResource!SocialMediaResource) : Map(SocialResource!Languages, Integer) =
@@ -95,19 +95,19 @@ helper context City!District def: countPostsPerLangDist(mr : SocialResource!Soci
 	in
 		lang -> iterate(e; map: Map(SocialResource!Languages, Integer) = Map{} |
 			map.union(e.countPosts(dp))
-		)
+		);
 		
 		
 
 rule City2MonitoredCity {
 	
 	from
-		s: City!City()
+		s: City!City
 		
 	to 
 		t: CitySensing!MonitoredCity (
 			name <- s.name,
-			districts <- s.districts;
+			districts <- s.districts
 			--- stats <-
 		)
 	
@@ -117,7 +117,7 @@ rule District2MonitoredDistrict {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource ()
+		p: SocialResource!SocialMediaResource
 		
 	to
 		t: CitySensing!District (
@@ -127,7 +127,7 @@ rule District2MonitoredDistrict {
 			coordEx <- s.coordEx,
 			coordEy <- s.coordEy,
 			places <- s.places,
-			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p), thisModule.Post2NumPostLangDist(s, p),
+			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p), thisModule.Post2NumPostLangDist(s, p)
 				--- thisModule.Post2MorningPostDist()
 				}
 		)
@@ -138,13 +138,13 @@ rule Place2MonitoredPlace {
 	
 	from
 		s: City!Place,
-		p: SocialResource!SocialMediaResource ()
+		p: SocialResource!SocialMediaResource
 		
 	to
 		t: CitySensing!Place (
 			name <- s.name,
 			categories <- s.categories,
-			stats <- Sequence{thisModule.Post2NumPostsPlace(s, p), thisModule.Post2NumPhotoPlace(s, p), thisModule.Post2NumPostLangPlace(s, p),
+			stats <- Sequence{thisModule.Post2NumPostsPlace(s, p), thisModule.Post2NumPhotoPlace(s, p), thisModule.Post2NumPostLangPlace(s, p)
 				--- thisModule.Post2MorningPostDist()
 				}
 		)
@@ -154,11 +154,11 @@ rule Place2MonitoredPlace {
 rule Category2MonitoredCategory {
 	
 	from
-		s: City!Category ()
+		s: City!Category
 		
 	to
 		t: CitySensing!Category (
-			type <- s.type;	
+			type <- s.type
 		)
 		
 }
@@ -167,7 +167,7 @@ lazy rule Post2NumPostsDist {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPost (
 			name <- '#Posts',
@@ -180,7 +180,7 @@ lazy rule Post2NumPostsPlace {
 	
 	from
 		s: City!Place,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPost (
 			name <- '#Posts',
@@ -193,7 +193,7 @@ lazy rule Post2NumPhotoDist {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPhoto (
 			name <- '#Pictures',
@@ -206,7 +206,7 @@ lazy rule Post2NumPhotoPlace {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPhoto (
 			name <- '#Pictures',
@@ -220,7 +220,7 @@ lazy rule Post2MorningPostDist {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPostTimeSlot (
 			name <- '#Posts per time slot',
@@ -234,11 +234,11 @@ lazy rule Post2NumPostLangDist {
 	
 	from
 		s: City!District,
-		p: SocialResource!SocialMediaResource()
+		p: SocialResource!SocialMediaResource
 	to
 		t: CitySensing!NumPostLang (
 			name <- '#Posts per language',
-			langNumber <- s.countPostsPerLangDist(p)
+			langNumber <- s.countPostsPerLangDist(p),
 			metric <- s.countPostsMorning(p)
 		)
 			
