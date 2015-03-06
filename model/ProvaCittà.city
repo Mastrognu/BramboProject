@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cs:CityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cs="http://cs/1.0">
+  <cities name="Milano">
+    <districts name="SudOvest" coordEx="1" coordEy="1">
+      <places name="Gelateria Finocchi"/>
+    </districts>
+    <districts name="SudCentro" coordBx="1" coordEx="2"/>
+    <districts name="SudEst" coordBx="2" coordEx="3" coordEy="1"/>
+    <districts name="CentroOvest" coordBy="1" coordEx="1" coordEy="2"/>
+    <districts name="CentroCentro" coordBx="1" coordBy="1" coordEx="2" coordEy="2"/>
+    <districts name="CentroEst" coordBx="2" coordBy="1" coordEx="3" coordEy="2"/>
+    <districts name="NordOvest" coordBy="2" coordEx="1" coordEy="3"/>
+    <districts name="NordCentro" coordBx="1" coordBy="2" coordEx="2" coordEy="3"/>
+    <districts name="NordEst" coordBx="2" coordBy="2" coordEx="3" coordEy="3"/>
+  </cities>
+</cs:CityModel>

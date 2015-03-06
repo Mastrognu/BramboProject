@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smr:SocialMediaResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:smr="http://smr/1.0">
+  <posts>
+    <place>
+      <coordinates name="Gelateria Dei Finocchi" coordx="0.5" coordy="0.5"/>
+    </place>
+    <text name="ciao" text="C'era una volta un pene di gomma."/>
+  </posts>
+</smr:SocialMediaResource>
