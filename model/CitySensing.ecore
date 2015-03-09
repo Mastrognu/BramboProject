@@ -72,10 +72,11 @@
       <details key="label" value="name"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="#//Languages"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="langNumber" lowerBound="1">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="langNumber" lowerBound="1"
+        transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments eClassifier="#//Languages"/>
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
@@ -96,5 +97,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeSlot" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Languages"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Languages">
+    <eLiterals name="English" literal="English"/>
+    <eLiterals name="Spanish" value="1" literal="Spanish"/>
+  </eClassifiers>
 </ecore:EPackage>

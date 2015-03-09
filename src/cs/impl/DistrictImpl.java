@@ -5,21 +5,15 @@ package cs.impl;
 import cs.CsPackage;
 import cs.District;
 import cs.Place;
-import cs.StatisticalData;
-
+import cs.Statistic;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,13 +30,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cs.impl.DistrictImpl#getCoordBy <em>Coord By</em>}</li>
  *   <li>{@link cs.impl.DistrictImpl#getCoordEx <em>Coord Ex</em>}</li>
  *   <li>{@link cs.impl.DistrictImpl#getCoordEy <em>Coord Ey</em>}</li>
- *   <li>{@link cs.impl.DistrictImpl#getData <em>Data</em>}</li>
+ *   <li>{@link cs.impl.DistrictImpl#getStats <em>Stats</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DistrictImpl extends EObjectImpl implements District {
+public class DistrictImpl extends MinimalEObjectImpl.Container implements District {
 	/**
 	 * The cached value of the '{@link #getPlaces() <em>Places</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -81,7 +75,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORD_BX_EDEFAULT = 0L;
+	protected static final float COORD_BX_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordBx() <em>Coord Bx</em>}' attribute.
@@ -91,7 +85,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordBx = COORD_BX_EDEFAULT;
+	protected float coordBx = COORD_BX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoordBy() <em>Coord By</em>}' attribute.
@@ -101,7 +95,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORD_BY_EDEFAULT = 0L;
+	protected static final float COORD_BY_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordBy() <em>Coord By</em>}' attribute.
@@ -111,7 +105,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordBy = COORD_BY_EDEFAULT;
+	protected float coordBy = COORD_BY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoordEx() <em>Coord Ex</em>}' attribute.
@@ -121,7 +115,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORD_EX_EDEFAULT = 0L;
+	protected static final float COORD_EX_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordEx() <em>Coord Ex</em>}' attribute.
@@ -131,7 +125,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordEx = COORD_EX_EDEFAULT;
+	protected float coordEx = COORD_EX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoordEy() <em>Coord Ey</em>}' attribute.
@@ -141,7 +135,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORD_EY_EDEFAULT = 0L;
+	protected static final float COORD_EY_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordEy() <em>Coord Ey</em>}' attribute.
@@ -151,17 +145,17 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordEy = COORD_EY_EDEFAULT;
+	protected float coordEy = COORD_EY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference.
+	 * The cached value of the '{@link #getStats() <em>Stats</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getData()
+	 * @see #getStats()
 	 * @generated
 	 * @ordered
 	 */
-	protected StatisticalData data;
+	protected EList<Statistic> stats;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +214,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordBx() {
+	public float getCoordBx() {
 		return coordBx;
 	}
 
@@ -229,8 +223,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordBx(long newCoordBx) {
-		long oldCoordBx = coordBx;
+	public void setCoordBx(float newCoordBx) {
+		float oldCoordBx = coordBx;
 		coordBx = newCoordBx;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__COORD_BX, oldCoordBx, coordBx));
@@ -241,7 +235,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordBy() {
+	public float getCoordBy() {
 		return coordBy;
 	}
 
@@ -250,8 +244,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordBy(long newCoordBy) {
-		long oldCoordBy = coordBy;
+	public void setCoordBy(float newCoordBy) {
+		float oldCoordBy = coordBy;
 		coordBy = newCoordBy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__COORD_BY, oldCoordBy, coordBy));
@@ -262,7 +256,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordEx() {
+	public float getCoordEx() {
 		return coordEx;
 	}
 
@@ -271,8 +265,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordEx(long newCoordEx) {
-		long oldCoordEx = coordEx;
+	public void setCoordEx(float newCoordEx) {
+		float oldCoordEx = coordEx;
 		coordEx = newCoordEx;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__COORD_EX, oldCoordEx, coordEx));
@@ -283,7 +277,7 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordEy() {
+	public float getCoordEy() {
 		return coordEy;
 	}
 
@@ -292,8 +286,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordEy(long newCoordEy) {
-		long oldCoordEy = coordEy;
+	public void setCoordEy(float newCoordEy) {
+		float oldCoordEy = coordEy;
 		coordEy = newCoordEy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__COORD_EY, oldCoordEy, coordEy));
@@ -304,42 +298,11 @@ public class DistrictImpl extends EObjectImpl implements District {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StatisticalData getData() {
-		return data;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetData(StatisticalData newData, NotificationChain msgs) {
-		StatisticalData oldData = data;
-		data = newData;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__DATA, oldData, newData);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Statistic> getStats() {
+		if (stats == null) {
+			stats = new EObjectContainmentEList<Statistic>(Statistic.class, this, CsPackage.DISTRICT__STATS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setData(StatisticalData newData) {
-		if (newData != data) {
-			NotificationChain msgs = null;
-			if (data != null)
-				msgs = ((InternalEObject)data).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CsPackage.DISTRICT__DATA, null, msgs);
-			if (newData != null)
-				msgs = ((InternalEObject)newData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CsPackage.DISTRICT__DATA, null, msgs);
-			msgs = basicSetData(newData, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.DISTRICT__DATA, newData, newData));
+		return stats;
 	}
 
 	/**
@@ -352,8 +315,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 		switch (featureID) {
 			case CsPackage.DISTRICT__PLACES:
 				return ((InternalEList<?>)getPlaces()).basicRemove(otherEnd, msgs);
-			case CsPackage.DISTRICT__DATA:
-				return basicSetData(null, msgs);
+			case CsPackage.DISTRICT__STATS:
+				return ((InternalEList<?>)getStats()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -378,8 +341,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 				return getCoordEx();
 			case CsPackage.DISTRICT__COORD_EY:
 				return getCoordEy();
-			case CsPackage.DISTRICT__DATA:
-				return getData();
+			case CsPackage.DISTRICT__STATS:
+				return getStats();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -401,19 +364,20 @@ public class DistrictImpl extends EObjectImpl implements District {
 				setName((String)newValue);
 				return;
 			case CsPackage.DISTRICT__COORD_BX:
-				setCoordBx((Long)newValue);
+				setCoordBx((Float)newValue);
 				return;
 			case CsPackage.DISTRICT__COORD_BY:
-				setCoordBy((Long)newValue);
+				setCoordBy((Float)newValue);
 				return;
 			case CsPackage.DISTRICT__COORD_EX:
-				setCoordEx((Long)newValue);
+				setCoordEx((Float)newValue);
 				return;
 			case CsPackage.DISTRICT__COORD_EY:
-				setCoordEy((Long)newValue);
+				setCoordEy((Float)newValue);
 				return;
-			case CsPackage.DISTRICT__DATA:
-				setData((StatisticalData)newValue);
+			case CsPackage.DISTRICT__STATS:
+				getStats().clear();
+				getStats().addAll((Collection<? extends Statistic>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,8 +409,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 			case CsPackage.DISTRICT__COORD_EY:
 				setCoordEy(COORD_EY_EDEFAULT);
 				return;
-			case CsPackage.DISTRICT__DATA:
-				setData((StatisticalData)null);
+			case CsPackage.DISTRICT__STATS:
+				getStats().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -472,8 +436,8 @@ public class DistrictImpl extends EObjectImpl implements District {
 				return coordEx != COORD_EX_EDEFAULT;
 			case CsPackage.DISTRICT__COORD_EY:
 				return coordEy != COORD_EY_EDEFAULT;
-			case CsPackage.DISTRICT__DATA:
-				return data != null;
+			case CsPackage.DISTRICT__STATS:
+				return stats != null && !stats.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

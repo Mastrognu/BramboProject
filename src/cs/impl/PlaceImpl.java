@@ -5,20 +5,15 @@ package cs.impl;
 import cs.Category;
 import cs.CsPackage;
 import cs.Place;
-
+import cs.Statistic;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,12 +26,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link cs.impl.PlaceImpl#getName <em>Name</em>}</li>
  *   <li>{@link cs.impl.PlaceImpl#getCategories <em>Categories</em>}</li>
+ *   <li>{@link cs.impl.PlaceImpl#getStats <em>Stats</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PlaceImpl extends EObjectImpl implements Place {
+public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +62,16 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	 * @ordered
 	 */
 	protected EList<Category> categories;
+
+	/**
+	 * The cached value of the '{@link #getStats() <em>Stats</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStats()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Statistic> stats;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +130,25 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Statistic> getStats() {
+		if (stats == null) {
+			stats = new EObjectContainmentEList<Statistic>(Statistic.class, this, CsPackage.PLACE__STATS);
+		}
+		return stats;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CsPackage.PLACE__CATEGORIES:
 				return ((InternalEList<?>)getCategories()).basicRemove(otherEnd, msgs);
+			case CsPackage.PLACE__STATS:
+				return ((InternalEList<?>)getStats()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +165,8 @@ public class PlaceImpl extends EObjectImpl implements Place {
 				return getName();
 			case CsPackage.PLACE__CATEGORIES:
 				return getCategories();
+			case CsPackage.PLACE__STATS:
+				return getStats();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +187,10 @@ public class PlaceImpl extends EObjectImpl implements Place {
 				getCategories().clear();
 				getCategories().addAll((Collection<? extends Category>)newValue);
 				return;
+			case CsPackage.PLACE__STATS:
+				getStats().clear();
+				getStats().addAll((Collection<? extends Statistic>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +209,9 @@ public class PlaceImpl extends EObjectImpl implements Place {
 			case CsPackage.PLACE__CATEGORIES:
 				getCategories().clear();
 				return;
+			case CsPackage.PLACE__STATS:
+				getStats().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +228,8 @@ public class PlaceImpl extends EObjectImpl implements Place {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case CsPackage.PLACE__CATEGORIES:
 				return categories != null && !categories.isEmpty();
+			case CsPackage.PLACE__STATS:
+				return stats != null && !stats.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

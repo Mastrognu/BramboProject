@@ -8,20 +8,20 @@ import cs.CitySensing;
 import cs.CsFactory;
 import cs.CsPackage;
 import cs.District;
+import cs.Languages;
 import cs.MonitoredCity;
-import cs.NumPhotoLang;
-import cs.NumPostDistr;
+import cs.NumPhoto;
+import cs.NumPost;
 import cs.NumPostLang;
 import cs.NumPostTimeSlot;
 import cs.Place;
-import cs.StatisticalData;
-
+import cs.Statistic;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -57,7 +57,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass statisticalDataEClass = null;
+	private EClass statisticEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,14 +78,14 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass numPostDistrEClass = null;
+	private EClass numPostEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass numPhotoLangEClass = null;
+	private EClass numPhotoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,6 +107,13 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * @generated
 	 */
 	private EEnum categoriesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum languagesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -201,6 +208,15 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMonitoredCity_Stats() {
+		return (EReference)monitoredCityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPlace() {
 		return placeEClass;
 	}
@@ -228,6 +244,15 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPlace_Stats() {
+		return (EReference)placeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCategory() {
 		return categoryEClass;
 	}
@@ -246,8 +271,26 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStatisticalData() {
-		return statisticalDataEClass;
+	public EClass getStatistic() {
+		return statisticEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStatistic_Name() {
+		return (EAttribute)statisticEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStatistic_Metric() {
+		return (EAttribute)statisticEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -318,7 +361,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDistrict_Data() {
+	public EReference getDistrict_Stats() {
 		return (EReference)districtEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -336,7 +379,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNumPostLang_Name() {
+	public EAttribute getNumPostLang_Language() {
 		return (EAttribute)numPostLangEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -345,7 +388,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNumPostLang_PostperLang() {
+	public EAttribute getNumPostLang_LangNumber() {
 		return (EAttribute)numPostLangEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -354,8 +397,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNumPostDistr() {
-		return numPostDistrEClass;
+	public EClass getNumPost() {
+		return numPostEClass;
 	}
 
 	/**
@@ -363,44 +406,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNumPostDistr_Name() {
-		return (EAttribute)numPostDistrEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumPostDistr_PostperDistr() {
-		return (EAttribute)numPostDistrEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNumPhotoLang() {
-		return numPhotoLangEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumPhotoLang_Name() {
-		return (EAttribute)numPhotoLangEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumPhotoLang_PhotoperLang() {
-		return (EAttribute)numPhotoLangEClass.getEStructuralFeatures().get(1);
+	public EClass getNumPhoto() {
+		return numPhotoEClass;
 	}
 
 	/**
@@ -417,17 +424,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNumPostTimeSlot_Name() {
+	public EAttribute getNumPostTimeSlot_TimeSlot() {
 		return (EAttribute)numPostTimeSlotEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumPostTimeSlot_PostperTimeSlot() {
-		return (EAttribute)numPostTimeSlotEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -462,6 +460,15 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getLanguages() {
+		return languagesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CsFactory getCsFactory() {
 		return (CsFactory)getEFactoryInstance();
 	}
@@ -488,15 +495,19 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		monitoredCityEClass = createEClass(MONITORED_CITY);
 		createEAttribute(monitoredCityEClass, MONITORED_CITY__NAME);
 		createEReference(monitoredCityEClass, MONITORED_CITY__DISTRICTS);
+		createEReference(monitoredCityEClass, MONITORED_CITY__STATS);
 
 		placeEClass = createEClass(PLACE);
 		createEAttribute(placeEClass, PLACE__NAME);
 		createEReference(placeEClass, PLACE__CATEGORIES);
+		createEReference(placeEClass, PLACE__STATS);
 
 		categoryEClass = createEClass(CATEGORY);
 		createEAttribute(categoryEClass, CATEGORY__TYPE);
 
-		statisticalDataEClass = createEClass(STATISTICAL_DATA);
+		statisticEClass = createEClass(STATISTIC);
+		createEAttribute(statisticEClass, STATISTIC__NAME);
+		createEAttribute(statisticEClass, STATISTIC__METRIC);
 
 		districtEClass = createEClass(DISTRICT);
 		createEReference(districtEClass, DISTRICT__PLACES);
@@ -505,29 +516,25 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		createEAttribute(districtEClass, DISTRICT__COORD_BY);
 		createEAttribute(districtEClass, DISTRICT__COORD_EX);
 		createEAttribute(districtEClass, DISTRICT__COORD_EY);
-		createEReference(districtEClass, DISTRICT__DATA);
-
-		numPostLangEClass = createEClass(NUM_POST_LANG);
-		createEAttribute(numPostLangEClass, NUM_POST_LANG__NAME);
-		createEAttribute(numPostLangEClass, NUM_POST_LANG__POSTPER_LANG);
-
-		numPostDistrEClass = createEClass(NUM_POST_DISTR);
-		createEAttribute(numPostDistrEClass, NUM_POST_DISTR__NAME);
-		createEAttribute(numPostDistrEClass, NUM_POST_DISTR__POSTPER_DISTR);
-
-		numPhotoLangEClass = createEClass(NUM_PHOTO_LANG);
-		createEAttribute(numPhotoLangEClass, NUM_PHOTO_LANG__NAME);
-		createEAttribute(numPhotoLangEClass, NUM_PHOTO_LANG__PHOTOPER_LANG);
-
-		numPostTimeSlotEClass = createEClass(NUM_POST_TIME_SLOT);
-		createEAttribute(numPostTimeSlotEClass, NUM_POST_TIME_SLOT__NAME);
-		createEAttribute(numPostTimeSlotEClass, NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT);
+		createEReference(districtEClass, DISTRICT__STATS);
 
 		citySensingEClass = createEClass(CITY_SENSING);
 		createEReference(citySensingEClass, CITY_SENSING__CITIES);
 
+		numPostLangEClass = createEClass(NUM_POST_LANG);
+		createEAttribute(numPostLangEClass, NUM_POST_LANG__LANGUAGE);
+		createEAttribute(numPostLangEClass, NUM_POST_LANG__LANG_NUMBER);
+
+		numPostEClass = createEClass(NUM_POST);
+
+		numPhotoEClass = createEClass(NUM_PHOTO);
+
+		numPostTimeSlotEClass = createEClass(NUM_POST_TIME_SLOT);
+		createEAttribute(numPostTimeSlotEClass, NUM_POST_TIME_SLOT__TIME_SLOT);
+
 		// Create enums
 		categoriesEEnum = createEEnum(CATEGORIES);
+		languagesEEnum = createEEnum(LANGUAGES);
 	}
 
 	/**
@@ -558,55 +565,63 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		numPostLangEClass.getESuperTypes().add(this.getStatisticalData());
-		numPostDistrEClass.getESuperTypes().add(this.getStatisticalData());
-		numPhotoLangEClass.getESuperTypes().add(this.getStatisticalData());
-		numPostTimeSlotEClass.getESuperTypes().add(this.getStatisticalData());
+		numPostLangEClass.getESuperTypes().add(this.getStatistic());
+		numPostEClass.getESuperTypes().add(this.getStatistic());
+		numPhotoEClass.getESuperTypes().add(this.getStatistic());
+		numPostTimeSlotEClass.getESuperTypes().add(this.getStatistic());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(monitoredCityEClass, MonitoredCity.class, "MonitoredCity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMonitoredCity_Name(), ecorePackage.getEString(), "name", null, 1, 1, MonitoredCity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMonitoredCity_Districts(), this.getDistrict(), null, "districts", null, 0, -1, MonitoredCity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitoredCity_Districts(), this.getDistrict(), null, "districts", null, 1, -1, MonitoredCity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMonitoredCity_Stats(), this.getStatistic(), null, "stats", null, 0, -1, MonitoredCity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(placeEClass, Place.class, "Place", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlace_Name(), ecorePackage.getEString(), "name", null, 1, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlace_Categories(), this.getCategory(), null, "categories", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPlace_Categories(), this.getCategory(), null, "categories", null, 1, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPlace_Stats(), this.getStatistic(), null, "stats", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCategory_Type(), this.getCategories(), "type", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(statisticalDataEClass, StatisticalData.class, "StatisticalData", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(statisticEClass, Statistic.class, "Statistic", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStatistic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Statistic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatistic_Metric(), ecorePackage.getELong(), "metric", null, 1, 1, Statistic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(districtEClass, District.class, "District", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDistrict_Places(), this.getPlace(), null, "places", null, 0, -1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDistrict_Name(), ecorePackage.getEString(), "name", null, 0, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDistrict_CoordBx(), ecorePackage.getELong(), "coordBx", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDistrict_CoordBy(), ecorePackage.getELong(), "coordBy", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDistrict_CoordEx(), ecorePackage.getELong(), "coordEx", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDistrict_CoordEy(), ecorePackage.getELong(), "coordEy", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDistrict_Data(), this.getStatisticalData(), null, "data", null, 0, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(numPostLangEClass, NumPostLang.class, "NumPostLang", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumPostLang_Name(), ecorePackage.getEString(), "name", null, 0, 1, NumPostLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumPostLang_PostperLang(), ecorePackage.getELong(), "postperLang", null, 1, 1, NumPostLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(numPostDistrEClass, NumPostDistr.class, "NumPostDistr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumPostDistr_Name(), ecorePackage.getEString(), "name", null, 0, 1, NumPostDistr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumPostDistr_PostperDistr(), ecorePackage.getELong(), "postperDistr", null, 1, 1, NumPostDistr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(numPhotoLangEClass, NumPhotoLang.class, "NumPhotoLang", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumPhotoLang_Name(), ecorePackage.getEString(), "name", null, 0, 1, NumPhotoLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumPhotoLang_PhotoperLang(), ecorePackage.getELong(), "photoperLang", null, 1, 1, NumPhotoLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(numPostTimeSlotEClass, NumPostTimeSlot.class, "NumPostTimeSlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumPostTimeSlot_Name(), ecorePackage.getEString(), "name", null, 0, 1, NumPostTimeSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNumPostTimeSlot_PostperTimeSlot(), ecorePackage.getELong(), "postperTimeSlot", null, 1, 1, NumPostTimeSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDistrict_CoordBx(), ecorePackage.getEFloat(), "coordBx", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDistrict_CoordBy(), ecorePackage.getEFloat(), "coordBy", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDistrict_CoordEx(), ecorePackage.getEFloat(), "coordEx", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDistrict_CoordEy(), ecorePackage.getEFloat(), "coordEy", null, 1, 1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDistrict_Stats(), this.getStatistic(), null, "stats", null, 0, -1, District.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(citySensingEClass, CitySensing.class, "CitySensing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCitySensing_Cities(), this.getMonitoredCity(), null, "cities", null, 0, -1, CitySensing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCitySensing_Cities(), this.getMonitoredCity(), null, "cities", null, 1, -1, CitySensing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numPostLangEClass, NumPostLang.class, "NumPostLang", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumPostLang_Language(), this.getLanguages(), "language", null, 0, 1, NumPostLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(this.getLanguages());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEIntegerObject());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getNumPostLang_LangNumber(), g1, "langNumber", null, 1, 1, NumPostLang.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numPostEClass, NumPost.class, "NumPost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(numPhotoEClass, NumPhoto.class, "NumPhoto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(numPostTimeSlotEClass, NumPostTimeSlot.class, "NumPostTimeSlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumPostTimeSlot_TimeSlot(), ecorePackage.getEString(), "timeSlot", null, 1, 1, NumPostTimeSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
+
+		initEEnum(languagesEEnum, Languages.class, "Languages");
+		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
+		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -676,13 +691,13 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 			 "label", "name"
 		   });	
 		addAnnotation
-		  (numPostDistrEClass, 
+		  (numPostEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name"
 		   });	
 		addAnnotation
-		  (numPhotoLangEClass, 
+		  (numPhotoEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name"
@@ -709,12 +724,22 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getMonitoredCity_Stats(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getPlace_Stats(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getDistrict_Places(), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getDistrict_Data(), 
+		  (getDistrict_Stats(), 
 		   source, 
 		   new String[] {
 		   });

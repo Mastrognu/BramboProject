@@ -9,7 +9,13 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: smr,
  smr.impl,
- smr.util
+ smr.util,
+ city,
+ city.impl,
+ city.util,
+ cs,
+ cs.impl,
+ cs.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

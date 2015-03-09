@@ -2,6 +2,8 @@
  */
 package cs;
 
+import java.util.Map;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -11,8 +13,8 @@ package cs;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link cs.NumPostLang#getName <em>Name</em>}</li>
- *   <li>{@link cs.NumPostLang#getPostperLang <em>Postper Lang</em>}</li>
+ *   <li>{@link cs.NumPostLang#getLanguage <em>Language</em>}</li>
+ *   <li>{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,57 +22,60 @@ package cs;
  * @model annotation="gmf.node label='name'"
  * @generated
  */
-public interface NumPostLang extends StatisticalData {
+public interface NumPostLang extends Statistic {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * The literals are from the enumeration {@link cs.Languages}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see cs.CsPackage#getNumPostLang_Name()
+	 * @return the value of the '<em>Language</em>' attribute.
+	 * @see cs.Languages
+	 * @see #setLanguage(Languages)
+	 * @see cs.CsPackage#getNumPostLang_Language()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	Languages getLanguage();
 
 	/**
-	 * Sets the value of the '{@link cs.NumPostLang#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link cs.NumPostLang#getLanguage <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Language</em>' attribute.
+	 * @see cs.Languages
+	 * @see #getLanguage()
 	 * @generated
 	 */
-	void setName(String value);
+	void setLanguage(Languages value);
 
 	/**
-	 * Returns the value of the '<em><b>Postper Lang</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lang Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Postper Lang</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Lang Number</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Postper Lang</em>' attribute.
-	 * @see #setPostperLang(long)
-	 * @see cs.CsPackage#getNumPostLang_PostperLang()
-	 * @model required="true"
+	 * @return the value of the '<em>Lang Number</em>' attribute.
+	 * @see #setLangNumber(Map)
+	 * @see cs.CsPackage#getNumPostLang_LangNumber()
+	 * @model required="true" transient="true"
 	 * @generated
 	 */
-	long getPostperLang();
+	Map<Languages, Integer> getLangNumber();
 
 	/**
-	 * Sets the value of the '{@link cs.NumPostLang#getPostperLang <em>Postper Lang</em>}' attribute.
+	 * Sets the value of the '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Postper Lang</em>' attribute.
-	 * @see #getPostperLang()
+	 * @param value the new value of the '<em>Lang Number</em>' attribute.
+	 * @see #getLangNumber()
 	 * @generated
 	 */
-	void setPostperLang(long value);
+	void setLangNumber(Map<Languages, Integer> value);
 
 } // NumPostLang

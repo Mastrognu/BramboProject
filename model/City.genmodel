@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/BramboProject2k15/src" modelPluginID="BramboProject2k15"
+    modelName="City" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>City.ecore</foreignModel>
+  <genPackages prefix="City" disposableProviderFactory="true" ecorePackage="City.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="City.ecore#//Categories"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="City.ecore#//Languages"/>
+    <genClasses ecoreClass="City.ecore#//City">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//City/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference City.ecore#//City/districts"/>
+    </genClasses>
+    <genClasses ecoreClass="City.ecore#//Place">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//Place/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference City.ecore#//Place/categories"/>
+    </genClasses>
+    <genClasses ecoreClass="City.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//Category/type"/>
+    </genClasses>
+    <genClasses ecoreClass="City.ecore#//District">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference City.ecore#//District/places"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//District/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//District/coordBx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//District/coordBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//District/coordEx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute City.ecore#//District/coordEy"/>
+    </genClasses>
+    <genClasses ecoreClass="City.ecore#//CityModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference City.ecore#//CityModel/cities"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

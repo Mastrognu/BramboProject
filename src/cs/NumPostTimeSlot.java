@@ -11,8 +11,7 @@ package cs;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link cs.NumPostTimeSlot#getName <em>Name</em>}</li>
- *   <li>{@link cs.NumPostTimeSlot#getPostperTimeSlot <em>Postper Time Slot</em>}</li>
+ *   <li>{@link cs.NumPostTimeSlot#getTimeSlot <em>Time Slot</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,57 +19,31 @@ package cs;
  * @model annotation="gmf.node label='name'"
  * @generated
  */
-public interface NumPostTimeSlot extends StatisticalData {
+public interface NumPostTimeSlot extends Statistic {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Time Slot</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Time Slot</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see cs.CsPackage#getNumPostTimeSlot_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link cs.NumPostTimeSlot#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Postper Time Slot</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Postper Time Slot</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Postper Time Slot</em>' attribute.
-	 * @see #setPostperTimeSlot(long)
-	 * @see cs.CsPackage#getNumPostTimeSlot_PostperTimeSlot()
+	 * @return the value of the '<em>Time Slot</em>' attribute.
+	 * @see #setTimeSlot(String)
+	 * @see cs.CsPackage#getNumPostTimeSlot_TimeSlot()
 	 * @model required="true"
 	 * @generated
 	 */
-	long getPostperTimeSlot();
+	String getTimeSlot();
 
 	/**
-	 * Sets the value of the '{@link cs.NumPostTimeSlot#getPostperTimeSlot <em>Postper Time Slot</em>}' attribute.
+	 * Sets the value of the '{@link cs.NumPostTimeSlot#getTimeSlot <em>Time Slot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Postper Time Slot</em>' attribute.
-	 * @see #getPostperTimeSlot()
+	 * @param value the new value of the '<em>Time Slot</em>' attribute.
+	 * @see #getTimeSlot()
 	 * @generated
 	 */
-	void setPostperTimeSlot(long value);
+	void setTimeSlot(String value);
 
 } // NumPostTimeSlot

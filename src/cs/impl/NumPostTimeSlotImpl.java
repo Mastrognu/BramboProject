@@ -18,53 +18,32 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link cs.impl.NumPostTimeSlotImpl#getName <em>Name</em>}</li>
- *   <li>{@link cs.impl.NumPostTimeSlotImpl#getPostperTimeSlot <em>Postper Time Slot</em>}</li>
+ *   <li>{@link cs.impl.NumPostTimeSlotImpl#getTimeSlot <em>Time Slot</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostTimeSlot {
+public class NumPostTimeSlotImpl extends StatisticImpl implements NumPostTimeSlot {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getTimeSlot() <em>Time Slot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getTimeSlot()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String TIME_SLOT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getTimeSlot() <em>Time Slot</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getTimeSlot()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPostperTimeSlot() <em>Postper Time Slot</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostperTimeSlot()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final long POSTPER_TIME_SLOT_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getPostperTimeSlot() <em>Postper Time Slot</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostperTimeSlot()
-	 * @generated
-	 * @ordered
-	 */
-	protected long postperTimeSlot = POSTPER_TIME_SLOT_EDEFAULT;
+	protected String timeSlot = TIME_SLOT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,8 +69,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getTimeSlot() {
+		return timeSlot;
 	}
 
 	/**
@@ -99,32 +78,11 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setTimeSlot(String newTimeSlot) {
+		String oldTimeSlot = timeSlot;
+		timeSlot = newTimeSlot;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_TIME_SLOT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public long getPostperTimeSlot() {
-		return postperTimeSlot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPostperTimeSlot(long newPostperTimeSlot) {
-		long oldPostperTimeSlot = postperTimeSlot;
-		postperTimeSlot = newPostperTimeSlot;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT, oldPostperTimeSlot, postperTimeSlot));
+			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_TIME_SLOT__TIME_SLOT, oldTimeSlot, timeSlot));
 	}
 
 	/**
@@ -135,10 +93,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_TIME_SLOT__NAME:
-				return getName();
-			case CsPackage.NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT:
-				return getPostperTimeSlot();
+			case CsPackage.NUM_POST_TIME_SLOT__TIME_SLOT:
+				return getTimeSlot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,11 +107,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_TIME_SLOT__NAME:
-				setName((String)newValue);
-				return;
-			case CsPackage.NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT:
-				setPostperTimeSlot((Long)newValue);
+			case CsPackage.NUM_POST_TIME_SLOT__TIME_SLOT:
+				setTimeSlot((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +122,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_TIME_SLOT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case CsPackage.NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT:
-				setPostperTimeSlot(POSTPER_TIME_SLOT_EDEFAULT);
+			case CsPackage.NUM_POST_TIME_SLOT__TIME_SLOT:
+				setTimeSlot(TIME_SLOT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +137,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_TIME_SLOT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CsPackage.NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT:
-				return postperTimeSlot != POSTPER_TIME_SLOT_EDEFAULT;
+			case CsPackage.NUM_POST_TIME_SLOT__TIME_SLOT:
+				return TIME_SLOT_EDEFAULT == null ? timeSlot != null : !TIME_SLOT_EDEFAULT.equals(timeSlot);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,10 +153,8 @@ public class NumPostTimeSlotImpl extends StatisticalDataImpl implements NumPostT
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", postperTimeSlot: ");
-		result.append(postperTimeSlot);
+		result.append(" (timeSlot: ");
+		result.append(timeSlot);
 		result.append(')');
 		return result.toString();
 	}

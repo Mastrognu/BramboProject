@@ -85,13 +85,31 @@ public interface CsPackage extends EPackage {
 	int MONITORED_CITY__DISTRICTS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Stats</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITORED_CITY__STATS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Monitored City</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MONITORED_CITY_FEATURE_COUNT = 2;
+	int MONITORED_CITY_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Monitored City</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MONITORED_CITY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.PlaceImpl <em>Place</em>}' class.
@@ -122,13 +140,31 @@ public interface CsPackage extends EPackage {
 	int PLACE__CATEGORIES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Stats</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__STATS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Place</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = 2;
+	int PLACE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Place</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.CategoryImpl <em>Category</em>}' class.
@@ -159,23 +195,59 @@ public interface CsPackage extends EPackage {
 	int CATEGORY_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link cs.impl.StatisticalDataImpl <em>Statistical Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.StatisticalDataImpl
-	 * @see cs.impl.CsPackageImpl#getStatisticalData()
-	 * @generated
-	 */
-	int STATISTICAL_DATA = 3;
-
-	/**
-	 * The number of structural features of the '<em>Statistical Data</em>' class.
+	 * The number of operations of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATISTICAL_DATA_FEATURE_COUNT = 0;
+	int CATEGORY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link cs.impl.StatisticImpl <em>Statistic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.impl.StatisticImpl
+	 * @see cs.impl.CsPackageImpl#getStatistic()
+	 * @generated
+	 */
+	int STATISTIC = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATISTIC__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATISTIC__METRIC = 1;
+
+	/**
+	 * The number of structural features of the '<em>Statistic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATISTIC_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Statistic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATISTIC_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.DistrictImpl <em>District</em>}' class.
@@ -242,13 +314,13 @@ public interface CsPackage extends EPackage {
 	int DISTRICT__COORD_EY = 5;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' containment reference.
+	 * The feature id for the '<em><b>Stats</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRICT__DATA = 6;
+	int DISTRICT__STATS = 6;
 
 	/**
 	 * The number of structural features of the '<em>District</em>' class.
@@ -260,6 +332,15 @@ public interface CsPackage extends EPackage {
 	int DISTRICT_FEATURE_COUNT = 7;
 
 	/**
+	 * The number of operations of the '<em>District</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISTRICT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,108 +348,27 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getNumPostLang()
 	 * @generated
 	 */
-	int NUM_POST_LANG = 5;
+	int NUM_POST_LANG = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see cs.impl.NumPostImpl
+	 * @see cs.impl.CsPackageImpl#getNumPost()
 	 * @generated
-	 * @ordered
 	 */
-	int NUM_POST_LANG__NAME = STATISTICAL_DATA_FEATURE_COUNT + 0;
+	int NUM_POST = 7;
 
 	/**
-	 * The feature id for the '<em><b>Postper Lang</b></em>' attribute.
+	 * The meta object id for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_LANG__POSTPER_LANG = STATISTICAL_DATA_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Num Post Lang</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_LANG_FEATURE_COUNT = STATISTICAL_DATA_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link cs.impl.NumPostDistrImpl <em>Num Post Distr</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPostDistrImpl
-	 * @see cs.impl.CsPackageImpl#getNumPostDistr()
+	 * @see cs.impl.NumPhotoImpl
+	 * @see cs.impl.CsPackageImpl#getNumPhoto()
 	 * @generated
 	 */
-	int NUM_POST_DISTR = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_DISTR__NAME = STATISTICAL_DATA_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Postper Distr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_DISTR__POSTPER_DISTR = STATISTICAL_DATA_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Num Post Distr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_DISTR_FEATURE_COUNT = STATISTICAL_DATA_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link cs.impl.NumPhotoLangImpl <em>Num Photo Lang</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPhotoLangImpl
-	 * @see cs.impl.CsPackageImpl#getNumPhotoLang()
-	 * @generated
-	 */
-	int NUM_PHOTO_LANG = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_PHOTO_LANG__NAME = STATISTICAL_DATA_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Photoper Lang</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_PHOTO_LANG__PHOTOPER_LANG = STATISTICAL_DATA_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Num Photo Lang</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_PHOTO_LANG_FEATURE_COUNT = STATISTICAL_DATA_FEATURE_COUNT + 2;
+	int NUM_PHOTO = 8;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
@@ -378,34 +378,7 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getNumPostTimeSlot()
 	 * @generated
 	 */
-	int NUM_POST_TIME_SLOT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_TIME_SLOT__NAME = STATISTICAL_DATA_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Postper Time Slot</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT = STATISTICAL_DATA_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Num Post Time Slot</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_TIME_SLOT_FEATURE_COUNT = STATISTICAL_DATA_FEATURE_COUNT + 2;
+	int NUM_POST_TIME_SLOT = 9;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.CitySensingImpl <em>City Sensing</em>}' class.
@@ -415,7 +388,7 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getCitySensing()
 	 * @generated
 	 */
-	int CITY_SENSING = 9;
+	int CITY_SENSING = 5;
 
 	/**
 	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
@@ -436,6 +409,186 @@ public interface CsPackage extends EPackage {
 	int CITY_SENSING_FEATURE_COUNT = 1;
 
 	/**
+	 * The number of operations of the '<em>City Sensing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY_SENSING_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__NAME = STATISTIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__METRIC = STATISTIC__METRIC;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__LANGUAGE = STATISTIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lang Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__LANG_NUMBER = STATISTIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Num Post Lang</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Num Post Lang</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST__NAME = STATISTIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST__METRIC = STATISTIC__METRIC;
+
+	/**
+	 * The number of structural features of the '<em>Num Post</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Num Post</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_PHOTO__NAME = STATISTIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_PHOTO__METRIC = STATISTIC__METRIC;
+
+	/**
+	 * The number of structural features of the '<em>Num Photo</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_PHOTO_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Num Photo</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_PHOTO_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_TIME_SLOT__NAME = STATISTIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_TIME_SLOT__METRIC = STATISTIC__METRIC;
+
+	/**
+	 * The feature id for the '<em><b>Time Slot</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_TIME_SLOT__TIME_SLOT = STATISTIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Num Post Time Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_TIME_SLOT_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Num Post Time Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_TIME_SLOT_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link cs.Categories <em>Categories</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +597,17 @@ public interface CsPackage extends EPackage {
 	 * @generated
 	 */
 	int CATEGORIES = 10;
+
+
+	/**
+	 * The meta object id for the '{@link cs.Languages <em>Languages</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.Languages
+	 * @see cs.impl.CsPackageImpl#getLanguages()
+	 * @generated
+	 */
+	int LANGUAGES = 11;
 
 
 	/**
@@ -479,6 +643,17 @@ public interface CsPackage extends EPackage {
 	EReference getMonitoredCity_Districts();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link cs.MonitoredCity#getStats <em>Stats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Stats</em>'.
+	 * @see cs.MonitoredCity#getStats()
+	 * @see #getMonitoredCity()
+	 * @generated
+	 */
+	EReference getMonitoredCity_Stats();
+
+	/**
 	 * Returns the meta object for class '{@link cs.Place <em>Place</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,6 +686,17 @@ public interface CsPackage extends EPackage {
 	EReference getPlace_Categories();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link cs.Place#getStats <em>Stats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Stats</em>'.
+	 * @see cs.Place#getStats()
+	 * @see #getPlace()
+	 * @generated
+	 */
+	EReference getPlace_Stats();
+
+	/**
 	 * Returns the meta object for class '{@link cs.Category <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -532,14 +718,36 @@ public interface CsPackage extends EPackage {
 	EAttribute getCategory_Type();
 
 	/**
-	 * Returns the meta object for class '{@link cs.StatisticalData <em>Statistical Data</em>}'.
+	 * Returns the meta object for class '{@link cs.Statistic <em>Statistic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Statistical Data</em>'.
-	 * @see cs.StatisticalData
+	 * @return the meta object for class '<em>Statistic</em>'.
+	 * @see cs.Statistic
 	 * @generated
 	 */
-	EClass getStatisticalData();
+	EClass getStatistic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cs.Statistic#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see cs.Statistic#getName()
+	 * @see #getStatistic()
+	 * @generated
+	 */
+	EAttribute getStatistic_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cs.Statistic#getMetric <em>Metric</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Metric</em>'.
+	 * @see cs.Statistic#getMetric()
+	 * @see #getStatistic()
+	 * @generated
+	 */
+	EAttribute getStatistic_Metric();
 
 	/**
 	 * Returns the meta object for class '{@link cs.District <em>District</em>}'.
@@ -618,15 +826,15 @@ public interface CsPackage extends EPackage {
 	EAttribute getDistrict_CoordEy();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link cs.District#getData <em>Data</em>}'.
+	 * Returns the meta object for the containment reference list '{@link cs.District#getStats <em>Stats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data</em>'.
-	 * @see cs.District#getData()
+	 * @return the meta object for the containment reference list '<em>Stats</em>'.
+	 * @see cs.District#getStats()
 	 * @see #getDistrict()
 	 * @generated
 	 */
-	EReference getDistrict_Data();
+	EReference getDistrict_Stats();
 
 	/**
 	 * Returns the meta object for class '{@link cs.NumPostLang <em>Num Post Lang</em>}'.
@@ -639,90 +847,46 @@ public interface CsPackage extends EPackage {
 	EClass getNumPostLang();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getLanguage <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cs.NumPostLang#getName()
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see cs.NumPostLang#getLanguage()
 	 * @see #getNumPostLang()
 	 * @generated
 	 */
-	EAttribute getNumPostLang_Name();
+	EAttribute getNumPostLang_Language();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getPostperLang <em>Postper Lang</em>}'.
+	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Postper Lang</em>'.
-	 * @see cs.NumPostLang#getPostperLang()
+	 * @return the meta object for the attribute '<em>Lang Number</em>'.
+	 * @see cs.NumPostLang#getLangNumber()
 	 * @see #getNumPostLang()
 	 * @generated
 	 */
-	EAttribute getNumPostLang_PostperLang();
+	EAttribute getNumPostLang_LangNumber();
 
 	/**
-	 * Returns the meta object for class '{@link cs.NumPostDistr <em>Num Post Distr</em>}'.
+	 * Returns the meta object for class '{@link cs.NumPost <em>Num Post</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Post Distr</em>'.
-	 * @see cs.NumPostDistr
+	 * @return the meta object for class '<em>Num Post</em>'.
+	 * @see cs.NumPost
 	 * @generated
 	 */
-	EClass getNumPostDistr();
+	EClass getNumPost();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostDistr#getName <em>Name</em>}'.
+	 * Returns the meta object for class '{@link cs.NumPhoto <em>Num Photo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cs.NumPostDistr#getName()
-	 * @see #getNumPostDistr()
+	 * @return the meta object for class '<em>Num Photo</em>'.
+	 * @see cs.NumPhoto
 	 * @generated
 	 */
-	EAttribute getNumPostDistr_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostDistr#getPostperDistr <em>Postper Distr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Postper Distr</em>'.
-	 * @see cs.NumPostDistr#getPostperDistr()
-	 * @see #getNumPostDistr()
-	 * @generated
-	 */
-	EAttribute getNumPostDistr_PostperDistr();
-
-	/**
-	 * Returns the meta object for class '{@link cs.NumPhotoLang <em>Num Photo Lang</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Photo Lang</em>'.
-	 * @see cs.NumPhotoLang
-	 * @generated
-	 */
-	EClass getNumPhotoLang();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPhotoLang#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cs.NumPhotoLang#getName()
-	 * @see #getNumPhotoLang()
-	 * @generated
-	 */
-	EAttribute getNumPhotoLang_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPhotoLang#getPhotoperLang <em>Photoper Lang</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Photoper Lang</em>'.
-	 * @see cs.NumPhotoLang#getPhotoperLang()
-	 * @see #getNumPhotoLang()
-	 * @generated
-	 */
-	EAttribute getNumPhotoLang_PhotoperLang();
+	EClass getNumPhoto();
 
 	/**
 	 * Returns the meta object for class '{@link cs.NumPostTimeSlot <em>Num Post Time Slot</em>}'.
@@ -735,26 +899,15 @@ public interface CsPackage extends EPackage {
 	EClass getNumPostTimeSlot();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostTimeSlot#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link cs.NumPostTimeSlot#getTimeSlot <em>Time Slot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see cs.NumPostTimeSlot#getName()
+	 * @return the meta object for the attribute '<em>Time Slot</em>'.
+	 * @see cs.NumPostTimeSlot#getTimeSlot()
 	 * @see #getNumPostTimeSlot()
 	 * @generated
 	 */
-	EAttribute getNumPostTimeSlot_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostTimeSlot#getPostperTimeSlot <em>Postper Time Slot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Postper Time Slot</em>'.
-	 * @see cs.NumPostTimeSlot#getPostperTimeSlot()
-	 * @see #getNumPostTimeSlot()
-	 * @generated
-	 */
-	EAttribute getNumPostTimeSlot_PostperTimeSlot();
+	EAttribute getNumPostTimeSlot_TimeSlot();
 
 	/**
 	 * Returns the meta object for class '{@link cs.CitySensing <em>City Sensing</em>}'.
@@ -786,6 +939,16 @@ public interface CsPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getCategories();
+
+	/**
+	 * Returns the meta object for enum '{@link cs.Languages <em>Languages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Languages</em>'.
+	 * @see cs.Languages
+	 * @generated
+	 */
+	EEnum getLanguages();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -836,6 +999,14 @@ public interface CsPackage extends EPackage {
 		EReference MONITORED_CITY__DISTRICTS = eINSTANCE.getMonitoredCity_Districts();
 
 		/**
+		 * The meta object literal for the '<em><b>Stats</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MONITORED_CITY__STATS = eINSTANCE.getMonitoredCity_Stats();
+
+		/**
 		 * The meta object literal for the '{@link cs.impl.PlaceImpl <em>Place</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -862,6 +1033,14 @@ public interface CsPackage extends EPackage {
 		EReference PLACE__CATEGORIES = eINSTANCE.getPlace_Categories();
 
 		/**
+		 * The meta object literal for the '<em><b>Stats</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLACE__STATS = eINSTANCE.getPlace_Stats();
+
+		/**
 		 * The meta object literal for the '{@link cs.impl.CategoryImpl <em>Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -880,14 +1059,30 @@ public interface CsPackage extends EPackage {
 		EAttribute CATEGORY__TYPE = eINSTANCE.getCategory_Type();
 
 		/**
-		 * The meta object literal for the '{@link cs.impl.StatisticalDataImpl <em>Statistical Data</em>}' class.
+		 * The meta object literal for the '{@link cs.impl.StatisticImpl <em>Statistic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cs.impl.StatisticalDataImpl
-		 * @see cs.impl.CsPackageImpl#getStatisticalData()
+		 * @see cs.impl.StatisticImpl
+		 * @see cs.impl.CsPackageImpl#getStatistic()
 		 * @generated
 		 */
-		EClass STATISTICAL_DATA = eINSTANCE.getStatisticalData();
+		EClass STATISTIC = eINSTANCE.getStatistic();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATISTIC__NAME = eINSTANCE.getStatistic_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Metric</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATISTIC__METRIC = eINSTANCE.getStatistic_Metric();
 
 		/**
 		 * The meta object literal for the '{@link cs.impl.DistrictImpl <em>District</em>}' class.
@@ -948,12 +1143,12 @@ public interface CsPackage extends EPackage {
 		EAttribute DISTRICT__COORD_EY = eINSTANCE.getDistrict_CoordEy();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Stats</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISTRICT__DATA = eINSTANCE.getDistrict_Data();
+		EReference DISTRICT__STATS = eINSTANCE.getDistrict_Stats();
 
 		/**
 		 * The meta object literal for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
@@ -966,72 +1161,40 @@ public interface CsPackage extends EPackage {
 		EClass NUM_POST_LANG = eINSTANCE.getNumPostLang();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NUM_POST_LANG__NAME = eINSTANCE.getNumPostLang_Name();
+		EAttribute NUM_POST_LANG__LANGUAGE = eINSTANCE.getNumPostLang_Language();
 
 		/**
-		 * The meta object literal for the '<em><b>Postper Lang</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Lang Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NUM_POST_LANG__POSTPER_LANG = eINSTANCE.getNumPostLang_PostperLang();
+		EAttribute NUM_POST_LANG__LANG_NUMBER = eINSTANCE.getNumPostLang_LangNumber();
 
 		/**
-		 * The meta object literal for the '{@link cs.impl.NumPostDistrImpl <em>Num Post Distr</em>}' class.
+		 * The meta object literal for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPostDistrImpl
-		 * @see cs.impl.CsPackageImpl#getNumPostDistr()
+		 * @see cs.impl.NumPostImpl
+		 * @see cs.impl.CsPackageImpl#getNumPost()
 		 * @generated
 		 */
-		EClass NUM_POST_DISTR = eINSTANCE.getNumPostDistr();
+		EClass NUM_POST = eINSTANCE.getNumPost();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see cs.impl.NumPhotoImpl
+		 * @see cs.impl.CsPackageImpl#getNumPhoto()
 		 * @generated
 		 */
-		EAttribute NUM_POST_DISTR__NAME = eINSTANCE.getNumPostDistr_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Postper Distr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_POST_DISTR__POSTPER_DISTR = eINSTANCE.getNumPostDistr_PostperDistr();
-
-		/**
-		 * The meta object literal for the '{@link cs.impl.NumPhotoLangImpl <em>Num Photo Lang</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPhotoLangImpl
-		 * @see cs.impl.CsPackageImpl#getNumPhotoLang()
-		 * @generated
-		 */
-		EClass NUM_PHOTO_LANG = eINSTANCE.getNumPhotoLang();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_PHOTO_LANG__NAME = eINSTANCE.getNumPhotoLang_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Photoper Lang</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_PHOTO_LANG__PHOTOPER_LANG = eINSTANCE.getNumPhotoLang_PhotoperLang();
+		EClass NUM_PHOTO = eINSTANCE.getNumPhoto();
 
 		/**
 		 * The meta object literal for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
@@ -1044,20 +1207,12 @@ public interface CsPackage extends EPackage {
 		EClass NUM_POST_TIME_SLOT = eINSTANCE.getNumPostTimeSlot();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Time Slot</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NUM_POST_TIME_SLOT__NAME = eINSTANCE.getNumPostTimeSlot_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Postper Time Slot</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_POST_TIME_SLOT__POSTPER_TIME_SLOT = eINSTANCE.getNumPostTimeSlot_PostperTimeSlot();
+		EAttribute NUM_POST_TIME_SLOT__TIME_SLOT = eINSTANCE.getNumPostTimeSlot_TimeSlot();
 
 		/**
 		 * The meta object literal for the '{@link cs.impl.CitySensingImpl <em>City Sensing</em>}' class.
@@ -1086,6 +1241,16 @@ public interface CsPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CATEGORIES = eINSTANCE.getCategories();
+
+		/**
+		 * The meta object literal for the '{@link cs.Languages <em>Languages</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.Languages
+		 * @see cs.impl.CsPackageImpl#getLanguages()
+		 * @generated
+		 */
+		EEnum LANGUAGES = eINSTANCE.getLanguages();
 
 	}
 

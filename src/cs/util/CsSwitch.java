@@ -84,9 +84,9 @@ public class CsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CsPackage.STATISTICAL_DATA: {
-				StatisticalData statisticalData = (StatisticalData)theEObject;
-				T result = caseStatisticalData(statisticalData);
+			case CsPackage.STATISTIC: {
+				Statistic statistic = (Statistic)theEObject;
+				T result = caseStatistic(statistic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,37 +96,37 @@ public class CsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CsPackage.CITY_SENSING: {
+				CitySensing citySensing = (CitySensing)theEObject;
+				T result = caseCitySensing(citySensing);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CsPackage.NUM_POST_LANG: {
 				NumPostLang numPostLang = (NumPostLang)theEObject;
 				T result = caseNumPostLang(numPostLang);
-				if (result == null) result = caseStatisticalData(numPostLang);
+				if (result == null) result = caseStatistic(numPostLang);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CsPackage.NUM_POST_DISTR: {
-				NumPostDistr numPostDistr = (NumPostDistr)theEObject;
-				T result = caseNumPostDistr(numPostDistr);
-				if (result == null) result = caseStatisticalData(numPostDistr);
+			case CsPackage.NUM_POST: {
+				NumPost numPost = (NumPost)theEObject;
+				T result = caseNumPost(numPost);
+				if (result == null) result = caseStatistic(numPost);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CsPackage.NUM_PHOTO_LANG: {
-				NumPhotoLang numPhotoLang = (NumPhotoLang)theEObject;
-				T result = caseNumPhotoLang(numPhotoLang);
-				if (result == null) result = caseStatisticalData(numPhotoLang);
+			case CsPackage.NUM_PHOTO: {
+				NumPhoto numPhoto = (NumPhoto)theEObject;
+				T result = caseNumPhoto(numPhoto);
+				if (result == null) result = caseStatistic(numPhoto);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CsPackage.NUM_POST_TIME_SLOT: {
 				NumPostTimeSlot numPostTimeSlot = (NumPostTimeSlot)theEObject;
 				T result = caseNumPostTimeSlot(numPostTimeSlot);
-				if (result == null) result = caseStatisticalData(numPostTimeSlot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CsPackage.CITY_SENSING: {
-				CitySensing citySensing = (CitySensing)theEObject;
-				T result = caseCitySensing(citySensing);
+				if (result == null) result = caseStatistic(numPostTimeSlot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -180,17 +180,17 @@ public class CsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Statistical Data</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Statistic</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Statistical Data</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Statistic</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStatisticalData(StatisticalData object) {
+	public T caseStatistic(Statistic object) {
 		return null;
 	}
 
@@ -225,32 +225,32 @@ public class CsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Num Post Distr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Num Post</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Num Post Distr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Num Post</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNumPostDistr(NumPostDistr object) {
+	public T caseNumPost(NumPost object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Num Photo Lang</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Num Photo</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Num Photo Lang</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Num Photo</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNumPhotoLang(NumPhotoLang object) {
+	public T caseNumPhoto(NumPhoto object) {
 		return null;
 	}
 

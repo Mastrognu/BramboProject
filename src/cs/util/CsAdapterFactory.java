@@ -80,32 +80,32 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 				return createCategoryAdapter();
 			}
 			@Override
-			public Adapter caseStatisticalData(StatisticalData object) {
-				return createStatisticalDataAdapter();
+			public Adapter caseStatistic(Statistic object) {
+				return createStatisticAdapter();
 			}
 			@Override
 			public Adapter caseDistrict(District object) {
 				return createDistrictAdapter();
 			}
 			@Override
+			public Adapter caseCitySensing(CitySensing object) {
+				return createCitySensingAdapter();
+			}
+			@Override
 			public Adapter caseNumPostLang(NumPostLang object) {
 				return createNumPostLangAdapter();
 			}
 			@Override
-			public Adapter caseNumPostDistr(NumPostDistr object) {
-				return createNumPostDistrAdapter();
+			public Adapter caseNumPost(NumPost object) {
+				return createNumPostAdapter();
 			}
 			@Override
-			public Adapter caseNumPhotoLang(NumPhotoLang object) {
-				return createNumPhotoLangAdapter();
+			public Adapter caseNumPhoto(NumPhoto object) {
+				return createNumPhotoAdapter();
 			}
 			@Override
 			public Adapter caseNumPostTimeSlot(NumPostTimeSlot object) {
 				return createNumPostTimeSlotAdapter();
-			}
-			@Override
-			public Adapter caseCitySensing(CitySensing object) {
-				return createCitySensingAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -170,16 +170,16 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cs.StatisticalData <em>Statistical Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link cs.Statistic <em>Statistic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cs.StatisticalData
+	 * @see cs.Statistic
 	 * @generated
 	 */
-	public Adapter createStatisticalDataAdapter() {
+	public Adapter createStatisticAdapter() {
 		return null;
 	}
 
@@ -212,30 +212,30 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cs.NumPostDistr <em>Num Post Distr</em>}'.
+	 * Creates a new adapter for an object of class '{@link cs.NumPost <em>Num Post</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cs.NumPostDistr
+	 * @see cs.NumPost
 	 * @generated
 	 */
-	public Adapter createNumPostDistrAdapter() {
+	public Adapter createNumPostAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cs.NumPhotoLang <em>Num Photo Lang</em>}'.
+	 * Creates a new adapter for an object of class '{@link cs.NumPhoto <em>Num Photo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cs.NumPhotoLang
+	 * @see cs.NumPhoto
 	 * @generated
 	 */
-	public Adapter createNumPhotoLangAdapter() {
+	public Adapter createNumPhotoAdapter() {
 		return null;
 	}
 

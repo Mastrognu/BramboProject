@@ -3,8 +3,10 @@
 package cs.impl;
 
 import cs.CsPackage;
+import cs.Languages;
 import cs.NumPostLang;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -18,53 +20,43 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link cs.impl.NumPostLangImpl#getName <em>Name</em>}</li>
- *   <li>{@link cs.impl.NumPostLangImpl#getPostperLang <em>Postper Lang</em>}</li>
+ *   <li>{@link cs.impl.NumPostLangImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link cs.impl.NumPostLangImpl#getLangNumber <em>Lang Number</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang {
+public class NumPostLangImpl extends StatisticImpl implements NumPostLang {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final Languages LANGUAGE_EDEFAULT = Languages.ENGLISH;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected Languages language = LANGUAGE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPostperLang() <em>Postper Lang</em>}' attribute.
+	 * The cached value of the '{@link #getLangNumber() <em>Lang Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPostperLang()
+	 * @see #getLangNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long POSTPER_LANG_EDEFAULT = 0L;
-
-	/**
-	 * The cached value of the '{@link #getPostperLang() <em>Postper Lang</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostperLang()
-	 * @generated
-	 * @ordered
-	 */
-	protected long postperLang = POSTPER_LANG_EDEFAULT;
+	protected Map<Languages, Integer> langNumber;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,8 +82,8 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public Languages getLanguage() {
+		return language;
 	}
 
 	/**
@@ -99,11 +91,11 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setLanguage(Languages newLanguage) {
+		Languages oldLanguage = language;
+		language = newLanguage == null ? LANGUAGE_EDEFAULT : newLanguage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_LANG__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_LANG__LANGUAGE, oldLanguage, language));
 	}
 
 	/**
@@ -111,8 +103,8 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getPostperLang() {
-		return postperLang;
+	public Map<Languages, Integer> getLangNumber() {
+		return langNumber;
 	}
 
 	/**
@@ -120,11 +112,11 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPostperLang(long newPostperLang) {
-		long oldPostperLang = postperLang;
-		postperLang = newPostperLang;
+	public void setLangNumber(Map<Languages, Integer> newLangNumber) {
+		Map<Languages, Integer> oldLangNumber = langNumber;
+		langNumber = newLangNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_LANG__POSTPER_LANG, oldPostperLang, postperLang));
+			eNotify(new ENotificationImpl(this, Notification.SET, CsPackage.NUM_POST_LANG__LANG_NUMBER, oldLangNumber, langNumber));
 	}
 
 	/**
@@ -135,10 +127,10 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_LANG__NAME:
-				return getName();
-			case CsPackage.NUM_POST_LANG__POSTPER_LANG:
-				return getPostperLang();
+			case CsPackage.NUM_POST_LANG__LANGUAGE:
+				return getLanguage();
+			case CsPackage.NUM_POST_LANG__LANG_NUMBER:
+				return getLangNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,14 +140,15 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_LANG__NAME:
-				setName((String)newValue);
+			case CsPackage.NUM_POST_LANG__LANGUAGE:
+				setLanguage((Languages)newValue);
 				return;
-			case CsPackage.NUM_POST_LANG__POSTPER_LANG:
-				setPostperLang((Long)newValue);
+			case CsPackage.NUM_POST_LANG__LANG_NUMBER:
+				setLangNumber((Map<Languages, Integer>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +162,11 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_LANG__NAME:
-				setName(NAME_EDEFAULT);
+			case CsPackage.NUM_POST_LANG__LANGUAGE:
+				setLanguage(LANGUAGE_EDEFAULT);
 				return;
-			case CsPackage.NUM_POST_LANG__POSTPER_LANG:
-				setPostperLang(POSTPER_LANG_EDEFAULT);
+			case CsPackage.NUM_POST_LANG__LANG_NUMBER:
+				setLangNumber((Map<Languages, Integer>)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +180,10 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CsPackage.NUM_POST_LANG__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CsPackage.NUM_POST_LANG__POSTPER_LANG:
-				return postperLang != POSTPER_LANG_EDEFAULT;
+			case CsPackage.NUM_POST_LANG__LANGUAGE:
+				return language != LANGUAGE_EDEFAULT;
+			case CsPackage.NUM_POST_LANG__LANG_NUMBER:
+				return langNumber != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,10 +198,10 @@ public class NumPostLangImpl extends StatisticalDataImpl implements NumPostLang 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", postperLang: ");
-		result.append(postperLang);
+		result.append(" (language: ");
+		result.append(language);
+		result.append(", langNumber: ");
+		result.append(langNumber);
 		result.append(')');
 		return result.toString();
 	}

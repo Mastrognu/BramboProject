@@ -1,30 +1,42 @@
 /**
  */
-package smr.impl;
+package city.impl;
+
+import city.City;
+import city.CityPackage;
+import city.District;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import smr.Friend;
-import smr.SmrPackage;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Friend</b></em>'.
+ * An implementation of the model object '<em><b>City</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link smr.impl.FriendImpl#getName <em>Name</em>}</li>
+ *   <li>{@link city.impl.CityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link city.impl.CityImpl#getDistricts <em>Districts</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FriendImpl extends PersonImpl implements Friend {
+public class CityImpl extends MinimalEObjectImpl.Container implements City {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -46,11 +58,21 @@ public class FriendImpl extends PersonImpl implements Friend {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDistricts() <em>Districts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDistricts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<District> districts;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FriendImpl() {
+	protected CityImpl() {
 		super();
 	}
 
@@ -61,7 +83,7 @@ public class FriendImpl extends PersonImpl implements Friend {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SmrPackage.Literals.TEXT;
+		return CityPackage.Literals.CITY;
 	}
 
 	/**
@@ -82,7 +104,33 @@ public class FriendImpl extends PersonImpl implements Friend {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.FRIEND__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CityPackage.CITY__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<District> getDistricts() {
+		if (districts == null) {
+			districts = new EObjectContainmentEList<District>(District.class, this, CityPackage.CITY__DISTRICTS);
+		}
+		return districts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CityPackage.CITY__DISTRICTS:
+				return ((InternalEList<?>)getDistricts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -93,8 +141,10 @@ public class FriendImpl extends PersonImpl implements Friend {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SmrPackage.FRIEND__NAME:
+			case CityPackage.CITY__NAME:
 				return getName();
+			case CityPackage.CITY__DISTRICTS:
+				return getDistricts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,11 +154,16 @@ public class FriendImpl extends PersonImpl implements Friend {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SmrPackage.FRIEND__NAME:
+			case CityPackage.CITY__NAME:
 				setName((String)newValue);
+				return;
+			case CityPackage.CITY__DISTRICTS:
+				getDistricts().clear();
+				getDistricts().addAll((Collection<? extends District>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +177,11 @@ public class FriendImpl extends PersonImpl implements Friend {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SmrPackage.FRIEND__NAME:
+			case CityPackage.CITY__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case CityPackage.CITY__DISTRICTS:
+				getDistricts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +195,10 @@ public class FriendImpl extends PersonImpl implements Friend {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SmrPackage.FRIEND__NAME:
+			case CityPackage.CITY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CityPackage.CITY__DISTRICTS:
+				return districts != null && !districts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,4 +219,4 @@ public class FriendImpl extends PersonImpl implements Friend {
 		return result.toString();
 	}
 
-} //FriendImpl
+} //CityImpl

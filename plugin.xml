@@ -17,7 +17,16 @@
       <!-- @generated CitySensing -->
       <package
             uri="http://cs/1.0"
-            class="cs.CsPackage"/>
+            class="cs.CsPackage"
+            genModel="model/CitySensing.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated City -->
+      <package
+            uri="http://city/1.0"
+            class="city.CityPackage"
+            genModel="model/City.genmodel"/>
    </extension>
 
 </plugin>

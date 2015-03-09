@@ -34,7 +34,7 @@ public interface CitySensing extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cities</em>' containment reference list.
 	 * @see cs.CsPackage#getCitySensing_Cities()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<MonitoredCity> getCities();

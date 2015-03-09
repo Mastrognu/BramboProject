@@ -61,11 +61,11 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 			case CsPackage.PLACE: return createPlace();
 			case CsPackage.CATEGORY: return createCategory();
 			case CsPackage.DISTRICT: return createDistrict();
-			case CsPackage.NUM_POST_LANG: return createNumPostLang();
-			case CsPackage.NUM_POST_DISTR: return createNumPostDistr();
-			case CsPackage.NUM_PHOTO_LANG: return createNumPhotoLang();
-			case CsPackage.NUM_POST_TIME_SLOT: return createNumPostTimeSlot();
 			case CsPackage.CITY_SENSING: return createCitySensing();
+			case CsPackage.NUM_POST_LANG: return createNumPostLang();
+			case CsPackage.NUM_POST: return createNumPost();
+			case CsPackage.NUM_PHOTO: return createNumPhoto();
+			case CsPackage.NUM_POST_TIME_SLOT: return createNumPostTimeSlot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +81,8 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 		switch (eDataType.getClassifierID()) {
 			case CsPackage.CATEGORIES:
 				return createCategoriesFromString(eDataType, initialValue);
+			case CsPackage.LANGUAGES:
+				return createLanguagesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -96,6 +98,8 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 		switch (eDataType.getClassifierID()) {
 			case CsPackage.CATEGORIES:
 				return convertCategoriesToString(eDataType, instanceValue);
+			case CsPackage.LANGUAGES:
+				return convertLanguagesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -156,9 +160,9 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumPostDistr createNumPostDistr() {
-		NumPostDistrImpl numPostDistr = new NumPostDistrImpl();
-		return numPostDistr;
+	public NumPost createNumPost() {
+		NumPostImpl numPost = new NumPostImpl();
+		return numPost;
 	}
 
 	/**
@@ -166,9 +170,9 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumPhotoLang createNumPhotoLang() {
-		NumPhotoLangImpl numPhotoLang = new NumPhotoLangImpl();
-		return numPhotoLang;
+	public NumPhoto createNumPhoto() {
+		NumPhotoImpl numPhoto = new NumPhotoImpl();
+		return numPhoto;
 	}
 
 	/**
@@ -208,6 +212,26 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	 * @generated
 	 */
 	public String convertCategoriesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Languages createLanguagesFromString(EDataType eDataType, String initialValue) {
+		Languages result = Languages.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLanguagesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

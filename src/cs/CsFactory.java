@@ -67,22 +67,22 @@ public interface CsFactory extends EFactory {
 	NumPostLang createNumPostLang();
 
 	/**
-	 * Returns a new object of class '<em>Num Post Distr</em>'.
+	 * Returns a new object of class '<em>Num Post</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Num Post Distr</em>'.
+	 * @return a new object of class '<em>Num Post</em>'.
 	 * @generated
 	 */
-	NumPostDistr createNumPostDistr();
+	NumPost createNumPost();
 
 	/**
-	 * Returns a new object of class '<em>Num Photo Lang</em>'.
+	 * Returns a new object of class '<em>Num Photo</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Num Photo Lang</em>'.
+	 * @return a new object of class '<em>Num Photo</em>'.
 	 * @generated
 	 */
-	NumPhotoLang createNumPhotoLang();
+	NumPhoto createNumPhoto();
 
 	/**
 	 * Returns a new object of class '<em>Num Post Time Slot</em>'.
