@@ -2,6 +2,8 @@
 -- @path SocialResource=/BramboProject2k15/model/SocialResource.ecore
 -- @path City=/BramboProject2k15/model/City.ecore
 
+--- CAMBIARE MM PER NUMPOSTLANG E METTERE COME CONTENIMENTO LA METRICA. 
+
 module GenerateCitySensing;
 create OUT: CitySensing from IN: SocialResource, IN2: City;
 
@@ -86,7 +88,7 @@ helper context City!District def: countPostsMorning(mr : SocialResource!SocialMe
 ---...
 helper context SocialResource!Languages def: countPostsLanguage(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
 	--- sempre che post abbia language
-	Map{(self, p -> select(p | p.language = self).size)};
+	Map{(self, p -> select(p | p.language = self).size())};
 
 --- Questo è campato per aria per via della sintassi sulle enum..
 helper context City!District def: countPostsPerLangDist(mr : SocialResource!SocialMediaResource) : Map(SocialResource!Languages, Integer) =
@@ -94,11 +96,9 @@ helper context City!District def: countPostsPerLangDist(mr : SocialResource!Soci
 		mr.posts -> select(p | p.hasCoordinates())
 	in let dp : OrderedSet(SocialResource!Post) = 
 		lp -> select(e | e.isInDistrict(self))
-	in let lang : OrderedSet(SocialResource!Languages) =
-		lang.union(SocialResource!Languages.literals) 
 	in
-		lang -> iterate(e; map: Map(SocialResource!Languages, Integer) = Map{} |
-			map.union(e.countPostsLanguage(dp))
+		City!Languages.eLiterals -> iterate(e; map: Map(SocialResource!Languages, Integer) = Map{} |
+			map.union(Map{(e, dp -> select(p | p.language = e).size())})
 		);
 		
 		
@@ -131,7 +131,7 @@ rule District2MonitoredDistrict {
 			coordEx <- s.coordEx,
 			coordEy <- s.coordEy,
 			places <- s.places,
-			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p)---, thisModule.Post2NumPostLangDist(s, p)
+			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p), thisModule.Post2NumPostLangDist(s, p)
 				--- thisModule.Post2MorningPostDist()
 			}
 		)
@@ -242,8 +242,7 @@ lazy rule Post2NumPostLangDist {
 	to
 		t: CitySensing!NumPostLang (
 			name <- '#Posts per language',
-			langNumber <- s.countPostsPerLangDist(p).longValue(),
-			metric <- s.countPostsMorning(p).longValue()
+			langNumber <- Map{('Spanish', 1)}---s.countPostsPerLangDist(p)
 		)
 			
 }
