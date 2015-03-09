@@ -24,7 +24,7 @@ helper context SocialResource!Post def: isInPlace(d : City!Place) : Boolean =
 	endif;
 
 helper context SocialResource!Post def: hasCoordinates(): Boolean =
-	if self.place.coordinates -> size() > 0
+	if not self.place.coordinates.oclIsUndefined()
 	then
 		true
 	else
@@ -39,13 +39,17 @@ helper context SocialResource!Post def: hasLocation(): Boolean =
 		false
 	endif;
 				
-helper context City!District def: countPosts(mr : SocialResource!SocialMediaResource) : Integer =
+helper context City!District def: countPostsDistrict(mr : SocialResource!SocialMediaResource) : Real =
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasCoordinates())
 	in
-		lp -> select(e | e.isInDistrict(self)).size();
+		if lp -> select(e | e.isInDistrict(self)).isEmpty() then
+			0
+		else
+			lp -> select(e | e.isInDistrict(self)).size()
+		endif;
 		
-helper context City!Place def: countPosts(mr : SocialResource!SocialMediaResource) : Integer =
+helper context City!Place def: countPostsPlace(mr : SocialResource!SocialMediaResource) : Real =
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasLocation())
 	in
@@ -60,19 +64,19 @@ helper context SocialResource!Post def: hasPicture(): Boolean =
 	endif;
 
 --- Actually, it's posts with at least 1 picture, not total of pictures
-helper context City!District def: countPictures(mr : SocialResource!SocialMediaResource) : Integer =
+helper context City!District def: countPictures(mr : SocialResource!SocialMediaResource) : Real =
 	let pp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasPicture() and p.hasCoordinates())
 	in
 		pp -> select(e | e.isInDistrict(self)).size();
 
-helper context City!Place def: countPictures(mr : SocialResource!SocialMediaResource) : Integer =
+helper context City!Place def: countPictures(mr : SocialResource!SocialMediaResource) : Real =
 	let pp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasPicture() and p.hasLocation())
 	in
 		pp -> select(e | e.isInPlace(self)).size();
 
-helper context City!District def: countPostsMorning(mr : SocialResource!SocialMediaResource) : Integer =
+helper context City!District def: countPostsMorning(mr : SocialResource!SocialMediaResource) : Real =
 	let lp : OrderedSet(SocialResource!Post) = 
 		mr.posts -> select(p | p.hasCoordinates())
 	in
@@ -80,7 +84,7 @@ helper context City!District def: countPostsMorning(mr : SocialResource!SocialMe
 			).size();
 
 ---...
-helper context SocialResource!Languages def: countPosts(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
+helper context SocialResource!Languages def: countPostsLanguage(p : OrderedSet(SocialResource!Post)) : Map (SocialResource!Languages, Integer) = 
 	--- sempre che post abbia language
 	Map{(self, p -> select(p | p.language = self).size)};
 
@@ -94,7 +98,7 @@ helper context City!District def: countPostsPerLangDist(mr : SocialResource!Soci
 		lang.union(SocialResource!Languages.literals) 
 	in
 		lang -> iterate(e; map: Map(SocialResource!Languages, Integer) = Map{} |
-			map.union(e.countPosts(dp))
+			map.union(e.countPostsLanguage(dp))
 		);
 		
 		
@@ -127,9 +131,9 @@ rule District2MonitoredDistrict {
 			coordEx <- s.coordEx,
 			coordEy <- s.coordEy,
 			places <- s.places,
-			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p), thisModule.Post2NumPostLangDist(s, p)
+			stats <- Sequence{thisModule.Post2NumPostsDist(s, p), thisModule.Post2NumPhotoDist(s, p)---, thisModule.Post2NumPostLangDist(s, p)
 				--- thisModule.Post2MorningPostDist()
-				}
+			}
 		)
 	
 }
@@ -143,10 +147,10 @@ rule Place2MonitoredPlace {
 	to
 		t: CitySensing!Place (
 			name <- s.name,
-			categories <- s.categories,
-			stats <- Sequence{thisModule.Post2NumPostsPlace(s, p), thisModule.Post2NumPhotoPlace(s, p), thisModule.Post2NumPostLangPlace(s, p)
+			categories <- s.categories
+	---		stats <- Sequence{thisModule.Post2NumPostsPlace(s, p), thisModule.Post2NumPhotoPlace(s, p), thisModule.Post2NumPostLangPlace(s, p)
 				--- thisModule.Post2MorningPostDist()
-				}
+			---	}
 		)
 	
 }
@@ -171,7 +175,7 @@ lazy rule Post2NumPostsDist {
 	to
 		t: CitySensing!NumPost (
 			name <- '#Posts',
-			metric <- s.countPosts(p)
+			metric <- s.countPostsDistrict(p).longValue()
 		)
 	
 }
@@ -184,7 +188,7 @@ lazy rule Post2NumPostsPlace {
 	to
 		t: CitySensing!NumPost (
 			name <- '#Posts',
-			metric <- s.countPosts(p)
+			metric <- s.countPostsPlace(p).longValue()
 		)
 	
 }
@@ -197,7 +201,7 @@ lazy rule Post2NumPhotoDist {
 	to
 		t: CitySensing!NumPhoto (
 			name <- '#Pictures',
-			metric <- s.countPictures(p)
+			metric <- s.countPictures(p).longValue()
 		)
 	
 }
@@ -210,7 +214,7 @@ lazy rule Post2NumPhotoPlace {
 	to
 		t: CitySensing!NumPhoto (
 			name <- '#Pictures',
-			metric <- s.countPictures(p)
+			metric <- s.countPictures(p).longValue()
 		)
 	
 }
@@ -225,7 +229,7 @@ lazy rule Post2MorningPostDist {
 		t: CitySensing!NumPostTimeSlot (
 			name <- '#Posts per time slot',
 			timeSlot <- 'Morning',
-			metric <- s.countPostsMorning(p)
+			metric <- s.countPostsMorning(p).longValue()
 		)
 			
 }
@@ -238,8 +242,8 @@ lazy rule Post2NumPostLangDist {
 	to
 		t: CitySensing!NumPostLang (
 			name <- '#Posts per language',
-			langNumber <- s.countPostsPerLangDist(p),
-			metric <- s.countPostsMorning(p)
+			langNumber <- s.countPostsPerLangDist(p).longValue(),
+			metric <- s.countPostsMorning(p).longValue()
 		)
 			
 }
