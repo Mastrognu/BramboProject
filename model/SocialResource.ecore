@@ -67,8 +67,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentCity" eType="#//Place"/>
+        eType="#//Languages" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentCity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category">
     <eAnnotations source="gmf.node">
