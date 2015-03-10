@@ -419,6 +419,8 @@ public class CityPackageImpl extends EPackageImpl implements CityPackage {
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
 
 		initEEnum(languagesEEnum, Languages.class, "Languages");
+		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
+		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
 
 		// Create resource
 		createResource(eNS_URI);

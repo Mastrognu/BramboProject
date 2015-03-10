@@ -18,7 +18,54 @@ import org.eclipse.emf.common.util.Enumerator;
  * @generated
  */
 public enum Languages implements Enumerator {
+	/**
+	 * The '<em><b>English</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ENGLISH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	ENGLISH(0, "English", "English"), /**
+	 * The '<em><b>Spanish</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SPANISH_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SPANISH(1, "Spanish", "Spanish")
 	;
+
+	/**
+	 * The '<em><b>English</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>English</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #ENGLISH
+	 * @model name="English"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ENGLISH_VALUE = 0;
+
+/**
+	 * The '<em><b>Spanish</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Spanish</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SPANISH
+	 * @model name="Spanish"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SPANISH_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Languages</b></em>' enumerators.
@@ -28,6 +75,8 @@ public enum Languages implements Enumerator {
 	 */
 	private static final Languages[] VALUES_ARRAY =
 		new Languages[] {
+			ENGLISH,
+			SPANISH,
 		};
 
 	/**
@@ -78,6 +127,8 @@ public enum Languages implements Enumerator {
 	 */
 	public static Languages get(int value) {
 		switch (value) {
+			case ENGLISH_VALUE: return ENGLISH;
+			case SPANISH_VALUE: return SPANISH;
 		}
 		return null;
 	}
