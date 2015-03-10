@@ -348,7 +348,7 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getNumPostLang()
 	 * @generated
 	 */
-	int NUM_POST_LANG = 6;
+	int NUM_POST_LANG = 10;
 
 	/**
 	 * The meta object id for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
@@ -418,58 +418,50 @@ public interface CsPackage extends EPackage {
 	int CITY_SENSING_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link cs.impl.MapPostLangImpl <em>Map Post Lang</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see cs.impl.MapPostLangImpl
+	 * @see cs.impl.CsPackageImpl#getMapPostLang()
 	 * @generated
-	 * @ordered
 	 */
-	int NUM_POST_LANG__NAME = STATISTIC__NAME;
+	int MAP_POST_LANG = 6;
 
 	/**
-	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUM_POST_LANG__METRIC = STATISTIC__METRIC;
+	int MAP_POST_LANG__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUM_POST_LANG__LANGUAGE = STATISTIC_FEATURE_COUNT + 0;
+	int MAP_POST_LANG__VALUE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Lang Number</b></em>' attribute.
+	 * The number of structural features of the '<em>Map Post Lang</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUM_POST_LANG__LANG_NUMBER = STATISTIC_FEATURE_COUNT + 1;
+	int MAP_POST_LANG_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Num Post Lang</em>' class.
+	 * The number of operations of the '<em>Map Post Lang</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUM_POST_LANG_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Num Post Lang</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUM_POST_LANG_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+	int MAP_POST_LANG_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -589,6 +581,51 @@ public interface CsPackage extends EPackage {
 	int NUM_POST_TIME_SLOT_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__NAME = STATISTIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Metric</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__METRIC = STATISTIC__METRIC;
+
+	/**
+	 * The feature id for the '<em><b>Lang Number</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG__LANG_NUMBER = STATISTIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Num Post Lang</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG_FEATURE_COUNT = STATISTIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Num Post Lang</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUM_POST_LANG_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link cs.Categories <em>Categories</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,7 +633,7 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getCategories()
 	 * @generated
 	 */
-	int CATEGORIES = 10;
+	int CATEGORIES = 11;
 
 
 	/**
@@ -607,7 +644,7 @@ public interface CsPackage extends EPackage {
 	 * @see cs.impl.CsPackageImpl#getLanguages()
 	 * @generated
 	 */
-	int LANGUAGES = 11;
+	int LANGUAGES = 12;
 
 
 	/**
@@ -847,26 +884,15 @@ public interface CsPackage extends EPackage {
 	EClass getNumPostLang();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getLanguage <em>Language</em>}'.
+	 * Returns the meta object for the map '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see cs.NumPostLang#getLanguage()
-	 * @see #getNumPostLang()
-	 * @generated
-	 */
-	EAttribute getNumPostLang_Language();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lang Number</em>'.
+	 * @return the meta object for the map '<em>Lang Number</em>'.
 	 * @see cs.NumPostLang#getLangNumber()
 	 * @see #getNumPostLang()
 	 * @generated
 	 */
-	EAttribute getNumPostLang_LangNumber();
+	EReference getNumPostLang_LangNumber();
 
 	/**
 	 * Returns the meta object for class '{@link cs.NumPost <em>Num Post</em>}'.
@@ -929,6 +955,41 @@ public interface CsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCitySensing_Cities();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Map Post Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Map Post Lang</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="cs.Languages" keyRequired="true"
+	 *        valueDataType="org.eclipse.emf.ecore.EIntegerObject" valueRequired="true"
+	 *        annotation="gmf.node label='name'"
+	 * @generated
+	 */
+	EClass getMapPostLang();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getMapPostLang()
+	 * @generated
+	 */
+	EAttribute getMapPostLang_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getMapPostLang()
+	 * @generated
+	 */
+	EAttribute getMapPostLang_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link cs.Categories <em>Categories</em>}'.
@@ -1161,20 +1222,12 @@ public interface CsPackage extends EPackage {
 		EClass NUM_POST_LANG = eINSTANCE.getNumPostLang();
 
 		/**
-		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Lang Number</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NUM_POST_LANG__LANGUAGE = eINSTANCE.getNumPostLang_Language();
-
-		/**
-		 * The meta object literal for the '<em><b>Lang Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_POST_LANG__LANG_NUMBER = eINSTANCE.getNumPostLang_LangNumber();
+		EReference NUM_POST_LANG__LANG_NUMBER = eINSTANCE.getNumPostLang_LangNumber();
 
 		/**
 		 * The meta object literal for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
@@ -1231,6 +1284,32 @@ public interface CsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CITY_SENSING__CITIES = eINSTANCE.getCitySensing_Cities();
+
+		/**
+		 * The meta object literal for the '{@link cs.impl.MapPostLangImpl <em>Map Post Lang</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.impl.MapPostLangImpl
+		 * @see cs.impl.CsPackageImpl#getMapPostLang()
+		 * @generated
+		 */
+		EClass MAP_POST_LANG = eINSTANCE.getMapPostLang();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP_POST_LANG__KEY = eINSTANCE.getMapPostLang_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAP_POST_LANG__VALUE = eINSTANCE.getMapPostLang_Value();
 
 		/**
 		 * The meta object literal for the '{@link cs.Categories <em>Categories</em>}' enum.

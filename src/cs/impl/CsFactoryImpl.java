@@ -4,6 +4,7 @@ package cs.impl;
 
 import cs.*;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -62,10 +63,11 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 			case CsPackage.CATEGORY: return createCategory();
 			case CsPackage.DISTRICT: return createDistrict();
 			case CsPackage.CITY_SENSING: return createCitySensing();
-			case CsPackage.NUM_POST_LANG: return createNumPostLang();
+			case CsPackage.MAP_POST_LANG: return (EObject)createMapPostLang();
 			case CsPackage.NUM_POST: return createNumPost();
 			case CsPackage.NUM_PHOTO: return createNumPhoto();
 			case CsPackage.NUM_POST_TIME_SLOT: return createNumPostTimeSlot();
+			case CsPackage.NUM_POST_LANG: return createNumPostLang();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -193,6 +195,16 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	public CitySensing createCitySensing() {
 		CitySensingImpl citySensing = new CitySensingImpl();
 		return citySensing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<Languages, Integer> createMapPostLang() {
+		MapPostLangImpl mapPostLang = new MapPostLangImpl();
+		return mapPostLang;
 	}
 
 	/**

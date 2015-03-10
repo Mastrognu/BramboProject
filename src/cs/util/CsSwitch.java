@@ -4,6 +4,7 @@ package cs.util;
 
 import cs.*;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -102,10 +103,9 @@ public class CsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CsPackage.NUM_POST_LANG: {
-				NumPostLang numPostLang = (NumPostLang)theEObject;
-				T result = caseNumPostLang(numPostLang);
-				if (result == null) result = caseStatistic(numPostLang);
+			case CsPackage.MAP_POST_LANG: {
+				@SuppressWarnings("unchecked") Map.Entry<Languages, Integer> mapPostLang = (Map.Entry<Languages, Integer>)theEObject;
+				T result = caseMapPostLang(mapPostLang);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +127,13 @@ public class CsSwitch<T> extends Switch<T> {
 				NumPostTimeSlot numPostTimeSlot = (NumPostTimeSlot)theEObject;
 				T result = caseNumPostTimeSlot(numPostTimeSlot);
 				if (result == null) result = caseStatistic(numPostTimeSlot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CsPackage.NUM_POST_LANG: {
+				NumPostLang numPostLang = (NumPostLang)theEObject;
+				T result = caseNumPostLang(numPostLang);
+				if (result == null) result = caseStatistic(numPostLang);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,6 +288,21 @@ public class CsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCitySensing(CitySensing object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Map Post Lang</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Map Post Lang</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMapPostLang(Map.Entry<Languages, Integer> object) {
 		return null;
 	}
 

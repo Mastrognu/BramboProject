@@ -40,14 +40,17 @@
     <genClasses ecoreClass="CitySensing.ecore#//CitySensing">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//CitySensing/cities"/>
     </genClasses>
-    <genClasses ecoreClass="CitySensing.ecore#//NumPostLang">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostLang/language"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostLang/langNumber"/>
+    <genClasses ecoreClass="CitySensing.ecore#//MapPostLang">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//MapPostLang/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//MapPostLang/value"/>
     </genClasses>
     <genClasses ecoreClass="CitySensing.ecore#//NumPost"/>
     <genClasses ecoreClass="CitySensing.ecore#//NumPhoto"/>
     <genClasses ecoreClass="CitySensing.ecore#//NumPostTimeSlot">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CitySensing.ecore#//NumPostTimeSlot/timeSlot"/>
+    </genClasses>
+    <genClasses ecoreClass="CitySensing.ecore#//NumPostLang">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CitySensing.ecore#//NumPostLang/langNumber"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

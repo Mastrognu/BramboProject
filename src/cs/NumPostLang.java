@@ -2,7 +2,7 @@
  */
 package cs;
 
-import java.util.Map;
+import org.eclipse.emf.common.util.EMap;
 
 
 /**
@@ -13,69 +13,30 @@ import java.util.Map;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link cs.NumPostLang#getLanguage <em>Language</em>}</li>
  *   <li>{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}</li>
  * </ul>
  * </p>
  *
  * @see cs.CsPackage#getNumPostLang()
- * @model annotation="gmf.node label='name'"
+ * @model
  * @generated
  */
 public interface NumPostLang extends Statistic {
 	/**
-	 * Returns the value of the '<em><b>Language</b></em>' attribute.
-	 * The literals are from the enumeration {@link cs.Languages}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Language</em>' attribute.
-	 * @see cs.Languages
-	 * @see #setLanguage(Languages)
-	 * @see cs.CsPackage#getNumPostLang_Language()
-	 * @model
-	 * @generated
-	 */
-	Languages getLanguage();
-
-	/**
-	 * Sets the value of the '{@link cs.NumPostLang#getLanguage <em>Language</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Language</em>' attribute.
-	 * @see cs.Languages
-	 * @see #getLanguage()
-	 * @generated
-	 */
-	void setLanguage(Languages value);
-
-	/**
-	 * Returns the value of the '<em><b>Lang Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lang Number</b></em>' map.
+	 * The key is of type {@link cs.Languages},
+	 * and the value is of type {@link java.lang.Integer},
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lang Number</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lang Number</em>' attribute.
-	 * @see #setLangNumber(Map)
+	 * @return the value of the '<em>Lang Number</em>' map.
 	 * @see cs.CsPackage#getNumPostLang_LangNumber()
-	 * @model required="true" transient="true"
+	 * @model mapType="cs.MapPostLang<cs.Languages, org.eclipse.emf.ecore.EIntegerObject>"
 	 * @generated
 	 */
-	Map<Languages, Integer> getLangNumber();
-
-	/**
-	 * Sets the value of the '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lang Number</em>' attribute.
-	 * @see #getLangNumber()
-	 * @generated
-	 */
-	void setLangNumber(Map<Languages, Integer> value);
+	EMap<Languages, Integer> getLangNumber();
 
 } // NumPostLang

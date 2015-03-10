@@ -16,10 +16,10 @@ import cs.NumPostLang;
 import cs.NumPostTimeSlot;
 import cs.Place;
 import cs.Statistic;
+import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -100,6 +100,13 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * @generated
 	 */
 	private EClass citySensingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mapPostLangEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,17 +386,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNumPostLang_Language() {
-		return (EAttribute)numPostLangEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumPostLang_LangNumber() {
-		return (EAttribute)numPostLangEClass.getEStructuralFeatures().get(1);
+	public EReference getNumPostLang_LangNumber() {
+		return (EReference)numPostLangEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -444,6 +442,33 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 */
 	public EReference getCitySensing_Cities() {
 		return (EReference)citySensingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMapPostLang() {
+		return mapPostLangEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapPostLang_Key() {
+		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapPostLang_Value() {
+		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -521,9 +546,9 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		citySensingEClass = createEClass(CITY_SENSING);
 		createEReference(citySensingEClass, CITY_SENSING__CITIES);
 
-		numPostLangEClass = createEClass(NUM_POST_LANG);
-		createEAttribute(numPostLangEClass, NUM_POST_LANG__LANGUAGE);
-		createEAttribute(numPostLangEClass, NUM_POST_LANG__LANG_NUMBER);
+		mapPostLangEClass = createEClass(MAP_POST_LANG);
+		createEAttribute(mapPostLangEClass, MAP_POST_LANG__KEY);
+		createEAttribute(mapPostLangEClass, MAP_POST_LANG__VALUE);
 
 		numPostEClass = createEClass(NUM_POST);
 
@@ -531,6 +556,9 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 
 		numPostTimeSlotEClass = createEClass(NUM_POST_TIME_SLOT);
 		createEAttribute(numPostTimeSlotEClass, NUM_POST_TIME_SLOT__TIME_SLOT);
+
+		numPostLangEClass = createEClass(NUM_POST_LANG);
+		createEReference(numPostLangEClass, NUM_POST_LANG__LANG_NUMBER);
 
 		// Create enums
 		categoriesEEnum = createEEnum(CATEGORIES);
@@ -565,10 +593,10 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		numPostLangEClass.getESuperTypes().add(this.getStatistic());
 		numPostEClass.getESuperTypes().add(this.getStatistic());
 		numPhotoEClass.getESuperTypes().add(this.getStatistic());
 		numPostTimeSlotEClass.getESuperTypes().add(this.getStatistic());
+		numPostLangEClass.getESuperTypes().add(this.getStatistic());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(monitoredCityEClass, MonitoredCity.class, "MonitoredCity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -600,14 +628,9 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEClass(citySensingEClass, CitySensing.class, "CitySensing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCitySensing_Cities(), this.getMonitoredCity(), null, "cities", null, 1, -1, CitySensing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(numPostLangEClass, NumPostLang.class, "NumPostLang", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumPostLang_Language(), this.getLanguages(), "language", null, 0, 1, NumPostLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(this.getLanguages());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEIntegerObject());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getNumPostLang_LangNumber(), g1, "langNumber", null, 1, 1, NumPostLang.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mapPostLangEClass, Map.Entry.class, "MapPostLang", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMapPostLang_Key(), this.getLanguages(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMapPostLang_Value(), ecorePackage.getEIntegerObject(), "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(numPostEClass, NumPost.class, "NumPost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -615,6 +638,9 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 
 		initEClass(numPostTimeSlotEClass, NumPostTimeSlot.class, "NumPostTimeSlot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNumPostTimeSlot_TimeSlot(), ecorePackage.getEString(), "timeSlot", null, 1, 1, NumPostTimeSlot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numPostLangEClass, NumPostLang.class, "NumPostLang", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNumPostLang_LangNumber(), this.getMapPostLang(), null, "langNumber", null, 0, -1, NumPostLang.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
@@ -685,7 +711,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 			 "label", "name"
 		   });	
 		addAnnotation
-		  (numPostLangEClass, 
+		  (mapPostLangEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name"

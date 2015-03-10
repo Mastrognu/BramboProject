@@ -4,6 +4,7 @@ package cs.util;
 
 import cs.*;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -92,8 +93,8 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 				return createCitySensingAdapter();
 			}
 			@Override
-			public Adapter caseNumPostLang(NumPostLang object) {
-				return createNumPostLangAdapter();
+			public Adapter caseMapPostLang(Map.Entry<Languages, Integer> object) {
+				return createMapPostLangAdapter();
 			}
 			@Override
 			public Adapter caseNumPost(NumPost object) {
@@ -106,6 +107,10 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNumPostTimeSlot(NumPostTimeSlot object) {
 				return createNumPostTimeSlotAdapter();
+			}
+			@Override
+			public Adapter caseNumPostLang(NumPostLang object) {
+				return createNumPostLangAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -264,6 +269,20 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCitySensingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Map Post Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createMapPostLangAdapter() {
 		return null;
 	}
 
