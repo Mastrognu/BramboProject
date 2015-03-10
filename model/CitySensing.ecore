@@ -97,7 +97,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
-    <eLiterals name="English" literal="English"/>
+    <eLiterals name="English" value="2" literal="English"/>
     <eLiterals name="Spanish" value="1" literal="Spanish"/>
   </eClassifiers>
 </ecore:EPackage>

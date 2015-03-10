@@ -120,7 +120,7 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
-    <eLiterals name="English" literal=""/>
+    <eLiterals name="English" value="2" literal=""/>
     <eLiterals name="Spanish" value="1" literal="Spanish"/>
   </eClassifiers>
 </ecore:EPackage>
