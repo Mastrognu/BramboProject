@@ -57,6 +57,19 @@ helper context City!Place def: countPostsPlace(mr : SocialResource!SocialMediaRe
 	in
 		lp -> select(e | e.isInPlace(self)).size();
 
+helper context City!District def: countTagsDistrict(smr : SocialResource!SocialMediaResource) : Real =
+	let lp : OrderedSet(SocialResource!Post) = smr.posts -> select(p | not p.hasLocation())
+	in
+		Integer c = 0;
+		for (i in lp.size())
+			for (j in lp.at(i))
+				if not lp -> select(e | e.text.tags[j] == self.name).isEmpty then
+					c++;
+		
+		if c == 0 then 0
+		else lp -> c
+		endif;
+
 helper context SocialResource!Post def: hasPicture(): Boolean =
 	if self.pictures -> size() > 0
 	then

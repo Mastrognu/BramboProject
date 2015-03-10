@@ -26,7 +26,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENGLISH(0, "English", "English"), /**
+	ENGLISH(2, "English", "English"), /**
 	 * The '<em><b>Spanish</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,7 +50,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ENGLISH_VALUE = 0;
+	public static final int ENGLISH_VALUE = 2;
 
 /**
 	 * The '<em><b>Spanish</b></em>' literal value.

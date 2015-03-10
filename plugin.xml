@@ -25,8 +25,7 @@
       <!-- @generated City -->
       <package
             uri="http://city/1.0"
-            class="city.CityPackage"
-            genModel="model/City.genmodel"/>
+            class="city.CityPackage"/>
    </extension>
 
 </plugin>
