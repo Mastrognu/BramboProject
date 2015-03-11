@@ -61,7 +61,7 @@ helper context City!District def: countTagsDistrict(smr : SocialResource!SocialM
 	let lp : OrderedSet(SocialResource!Post) =
 		smr.posts -> select(p | not p.hasLocation() and p.text.tags.notEmpty())
 	in
-		lp -> select(w | w.text.tags.count(self.name)).size();		
+		lp -> select(w | w.text.tags.count(self.name) > 0).size();
 
 helper context SocialResource!Post def: hasPicture(): Boolean =
 	if self.pictures -> size() > 0
