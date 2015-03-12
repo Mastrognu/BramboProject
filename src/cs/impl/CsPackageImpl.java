@@ -16,12 +16,15 @@ import cs.NumPostLang;
 import cs.NumPostTimeSlot;
 import cs.Place;
 import cs.Statistic;
+
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -71,7 +74,14 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass numPostLangEClass = null;
+	private EClass citySensingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mapPostLangEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,14 +109,7 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass citySensingEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mapPostLangEClass = null;
+	private EClass numPostLangEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,8 +380,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNumPostLang() {
-		return numPostLangEClass;
+	public EClass getCitySensing() {
+		return citySensingEClass;
 	}
 
 	/**
@@ -386,8 +389,35 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNumPostLang_LangNumber() {
-		return (EReference)numPostLangEClass.getEStructuralFeatures().get(0);
+	public EReference getCitySensing_Cities() {
+		return (EReference)citySensingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMapPostLang() {
+		return mapPostLangEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapPostLang_Key() {
+		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapPostLang_Value() {
+		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -431,8 +461,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCitySensing() {
-		return citySensingEClass;
+	public EClass getNumPostLang() {
+		return numPostLangEClass;
 	}
 
 	/**
@@ -440,35 +470,8 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCitySensing_Cities() {
-		return (EReference)citySensingEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMapPostLang() {
-		return mapPostLangEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMapPostLang_Key() {
-		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMapPostLang_Value() {
-		return (EAttribute)mapPostLangEClass.getEStructuralFeatures().get(1);
+	public EReference getNumPostLang_LangNumber() {
+		return (EReference)numPostLangEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -646,8 +649,9 @@ public class CsPackageImpl extends EPackageImpl implements CsPackage {
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
 
 		initEEnum(languagesEEnum, Languages.class, "Languages");
-		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
 		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
+		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
+		addEEnumLiteral(languagesEEnum, Languages.LASSA_STA);
 
 		// Create resource
 		createResource(eNS_URI);

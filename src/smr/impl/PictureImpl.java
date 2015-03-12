@@ -2,14 +2,21 @@
  */
 package smr.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import smr.Picture;
 import smr.Place;
@@ -31,7 +38,7 @@ import smr.Tag;
  *
  * @generated
  */
-public class PictureImpl extends EObjectImpl implements Picture {
+public class PictureImpl extends MinimalEObjectImpl.Container implements Picture {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,14 +60,14 @@ public class PictureImpl extends EObjectImpl implements Picture {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference.
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTags()
 	 * @generated
 	 * @ordered
 	 */
-	protected Tag tags;
+	protected EList<Tag> tags;
 
 	/**
 	 * The cached value of the '{@link #getPlace() <em>Place</em>}' reference.
@@ -117,42 +124,11 @@ public class PictureImpl extends EObjectImpl implements Picture {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Tag getTags() {
+	public EList<Tag> getTags() {
+		if (tags == null) {
+			tags = new EObjectContainmentEList<Tag>(Tag.class, this, SmrPackage.PICTURE__TAGS);
+		}
 		return tags;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTags(Tag newTags, NotificationChain msgs) {
-		Tag oldTags = tags;
-		tags = newTags;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmrPackage.PICTURE__TAGS, oldTags, newTags);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTags(Tag newTags) {
-		if (newTags != tags) {
-			NotificationChain msgs = null;
-			if (tags != null)
-				msgs = ((InternalEObject)tags).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmrPackage.PICTURE__TAGS, null, msgs);
-			if (newTags != null)
-				msgs = ((InternalEObject)newTags).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmrPackage.PICTURE__TAGS, null, msgs);
-			msgs = basicSetTags(newTags, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.PICTURE__TAGS, newTags, newTags));
 	}
 
 	/**
@@ -202,7 +178,7 @@ public class PictureImpl extends EObjectImpl implements Picture {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SmrPackage.PICTURE__TAGS:
-				return basicSetTags(null, msgs);
+				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -231,6 +207,7 @@ public class PictureImpl extends EObjectImpl implements Picture {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -238,7 +215,8 @@ public class PictureImpl extends EObjectImpl implements Picture {
 				setName((String)newValue);
 				return;
 			case SmrPackage.PICTURE__TAGS:
-				setTags((Tag)newValue);
+				getTags().clear();
+				getTags().addAll((Collection<? extends Tag>)newValue);
 				return;
 			case SmrPackage.PICTURE__PLACE:
 				setPlace((Place)newValue);
@@ -259,7 +237,7 @@ public class PictureImpl extends EObjectImpl implements Picture {
 				setName(NAME_EDEFAULT);
 				return;
 			case SmrPackage.PICTURE__TAGS:
-				setTags((Tag)null);
+				getTags().clear();
 				return;
 			case SmrPackage.PICTURE__PLACE:
 				setPlace((Place)null);
@@ -279,7 +257,7 @@ public class PictureImpl extends EObjectImpl implements Picture {
 			case SmrPackage.PICTURE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SmrPackage.PICTURE__TAGS:
-				return tags != null;
+				return tags != null && !tags.isEmpty();
 			case SmrPackage.PICTURE__PLACE:
 				return place != null;
 		}

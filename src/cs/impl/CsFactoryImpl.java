@@ -5,6 +5,7 @@ package cs.impl;
 import cs.*;
 
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -152,9 +153,19 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumPostLang createNumPostLang() {
-		NumPostLangImpl numPostLang = new NumPostLangImpl();
-		return numPostLang;
+	public CitySensing createCitySensing() {
+		CitySensingImpl citySensing = new CitySensingImpl();
+		return citySensing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map.Entry<Languages, Integer> createMapPostLang() {
+		MapPostLangImpl mapPostLang = new MapPostLangImpl();
+		return mapPostLang;
 	}
 
 	/**
@@ -192,19 +203,9 @@ public class CsFactoryImpl extends EFactoryImpl implements CsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CitySensing createCitySensing() {
-		CitySensingImpl citySensing = new CitySensingImpl();
-		return citySensing;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Languages, Integer> createMapPostLang() {
-		MapPostLangImpl mapPostLang = new MapPostLangImpl();
-		return mapPostLang;
+	public NumPostLang createNumPostLang() {
+		NumPostLangImpl numPostLang = new NumPostLangImpl();
+		return numPostLang;
 	}
 
 	/**

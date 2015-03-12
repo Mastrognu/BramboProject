@@ -14,10 +14,10 @@ import smr.Author;
 import smr.Categories;
 import smr.Category;
 import smr.Coordinates;
-import smr.Friend;
 import smr.Hashtag;
+import smr.Languages;
 import smr.Location;
-import smr.Person;
+import smr.Mention;
 import smr.Picture;
 import smr.Place;
 import smr.Post;
@@ -67,13 +67,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass personEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass authorEClass = null;
 
 	/**
@@ -82,13 +75,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	private EClass categoryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass friendEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +116,21 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass mentionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum categoriesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum languagesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -207,7 +207,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPost_Name() {
+	public EAttribute getPost_Id() {
 		return (EAttribute)postEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -216,7 +216,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPost_Id() {
+	public EAttribute getPost_Sourcesn() {
 		return (EAttribute)postEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -225,17 +225,8 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPost_Sourcesn() {
-		return (EAttribute)postEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPost_Place() {
-		return (EReference)postEClass.getEStructuralFeatures().get(3);
+		return (EReference)postEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -244,7 +235,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EReference getPost_Text() {
-		return (EReference)postEClass.getEStructuralFeatures().get(4);
+		return (EReference)postEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -253,7 +244,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EReference getPost_Pictures() {
-		return (EReference)postEClass.getEStructuralFeatures().get(5);
+		return (EReference)postEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -262,16 +253,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EReference getPost_Categories() {
-		return (EReference)postEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPost_Persons() {
-		return (EReference)postEClass.getEStructuralFeatures().get(7);
+		return (EReference)postEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -280,6 +262,24 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EAttribute getPost_Time() {
+		return (EAttribute)postEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPost_Author() {
+		return (EReference)postEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPost_Language() {
 		return (EAttribute)postEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -297,7 +297,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlace_Name() {
+	public EAttribute getPlace_City() {
 		return (EAttribute)placeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -306,8 +306,17 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPlace_Address() {
+		return (EAttribute)placeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPlace_Location() {
-		return (EReference)placeEClass.getEStructuralFeatures().get(1);
+		return (EReference)placeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -316,7 +325,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * @generated
 	 */
 	public EReference getPlace_Coordinates() {
-		return (EReference)placeEClass.getEStructuralFeatures().get(2);
+		return (EReference)placeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -351,17 +360,8 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getText_Hashtag() {
+	public EReference getText_Tags() {
 		return (EReference)textEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getText_Tag() {
-		return (EReference)textEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -405,15 +405,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPerson() {
-		return personEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAuthor() {
 		return authorEClass;
 	}
@@ -441,8 +432,8 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAuthor_CurrentCity() {
-		return (EReference)authorEClass.getEStructuralFeatures().get(2);
+	public EAttribute getAuthor_CurrentCity() {
+		return (EAttribute)authorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -470,24 +461,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 */
 	public EAttribute getCategory_Type() {
 		return (EAttribute)categoryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFriend() {
-		return friendEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFriend_Name() {
-		return (EAttribute)friendEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -558,15 +531,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHashtag_Name() {
-		return (EAttribute)hashtagEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTag() {
 		return tagEClass;
 	}
@@ -576,7 +540,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTag_Name() {
+	public EAttribute getTag_Text() {
 		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -612,8 +576,26 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMention() {
+		return mentionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCategories() {
 		return categoriesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLanguages() {
+		return languagesEEnum;
 	}
 
 	/**
@@ -645,45 +627,40 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 
 		// Create classes and their features
 		postEClass = createEClass(POST);
-		createEAttribute(postEClass, POST__NAME);
 		createEAttribute(postEClass, POST__ID);
 		createEAttribute(postEClass, POST__SOURCESN);
 		createEReference(postEClass, POST__PLACE);
 		createEReference(postEClass, POST__TEXT);
 		createEReference(postEClass, POST__PICTURES);
 		createEReference(postEClass, POST__CATEGORIES);
-		createEReference(postEClass, POST__PERSONS);
 		createEAttribute(postEClass, POST__TIME);
+		createEReference(postEClass, POST__AUTHOR);
+		createEAttribute(postEClass, POST__LANGUAGE);
 
 		placeEClass = createEClass(PLACE);
-		createEAttribute(placeEClass, PLACE__NAME);
+		createEAttribute(placeEClass, PLACE__CITY);
+		createEAttribute(placeEClass, PLACE__ADDRESS);
 		createEReference(placeEClass, PLACE__LOCATION);
 		createEReference(placeEClass, PLACE__COORDINATES);
 
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__NAME);
 		createEAttribute(textEClass, TEXT__TEXT);
-		createEReference(textEClass, TEXT__HASHTAG);
-		createEReference(textEClass, TEXT__TAG);
+		createEReference(textEClass, TEXT__TAGS);
 
 		pictureEClass = createEClass(PICTURE);
 		createEAttribute(pictureEClass, PICTURE__NAME);
 		createEReference(pictureEClass, PICTURE__TAGS);
 		createEReference(pictureEClass, PICTURE__PLACE);
 
-		personEClass = createEClass(PERSON);
-
 		authorEClass = createEClass(AUTHOR);
 		createEAttribute(authorEClass, AUTHOR__NAME);
 		createEAttribute(authorEClass, AUTHOR__LANGUAGE);
-		createEReference(authorEClass, AUTHOR__CURRENT_CITY);
+		createEAttribute(authorEClass, AUTHOR__CURRENT_CITY);
 
 		categoryEClass = createEClass(CATEGORY);
 		createEAttribute(categoryEClass, CATEGORY__NAME);
 		createEAttribute(categoryEClass, CATEGORY__TYPE);
-
-		friendEClass = createEClass(FRIEND);
-		createEAttribute(friendEClass, FRIEND__NAME);
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__NAME);
@@ -694,17 +671,19 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		createEAttribute(coordinatesEClass, COORDINATES__COORDY);
 
 		hashtagEClass = createEClass(HASHTAG);
-		createEAttribute(hashtagEClass, HASHTAG__NAME);
 
 		tagEClass = createEClass(TAG);
-		createEAttribute(tagEClass, TAG__NAME);
+		createEAttribute(tagEClass, TAG__TEXT);
 
 		socialMediaResourceEClass = createEClass(SOCIAL_MEDIA_RESOURCE);
 		createEAttribute(socialMediaResourceEClass, SOCIAL_MEDIA_RESOURCE__NAME);
 		createEReference(socialMediaResourceEClass, SOCIAL_MEDIA_RESOURCE__POSTS);
 
+		mentionEClass = createEClass(MENTION);
+
 		// Create enums
 		categoriesEEnum = createEEnum(CATEGORIES);
+		languagesEEnum = createEEnum(LANGUAGES);
 	}
 
 	/**
@@ -735,73 +714,74 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		authorEClass.getESuperTypes().add(this.getPerson());
-		friendEClass.getESuperTypes().add(this.getPerson());
+		hashtagEClass.getESuperTypes().add(this.getTag());
+		mentionEClass.getESuperTypes().add(this.getTag());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(postEClass, Post.class, "Post", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPost_Name(), ecorePackage.getEString(), "name", null, 0, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPost_Id(), ecorePackage.getELong(), "id", null, 1, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPost_Id(), ecorePackage.getELong(), "id", null, 1, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPost_Sourcesn(), ecorePackage.getEString(), "sourcesn", null, 1, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPost_Place(), this.getPlace(), null, "place", null, 0, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPost_Text(), this.getText(), null, "text", null, 0, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPost_Pictures(), this.getPicture(), null, "pictures", null, 0, -1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPost_Categories(), this.getCategory(), null, "categories", null, 1, -1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPost_Persons(), this.getPerson(), null, "persons", null, 1, -1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPost_Time(), ecorePackage.getEDate(), "time", null, 0, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPost_Author(), this.getAuthor(), null, "author", null, 1, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPost_Language(), this.getLanguages(), "language", null, 0, 1, Post.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(placeEClass, Place.class, "Place", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlace_Name(), ecorePackage.getEString(), "name", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlace_City(), ecorePackage.getEString(), "city", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlace_Address(), ecorePackage.getEString(), "address", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPlace_Location(), this.getLocation(), null, "location", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPlace_Coordinates(), this.getCoordinates(), null, "coordinates", null, 0, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Name(), ecorePackage.getEString(), "name", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getText_Text(), ecorePackage.getEString(), "text", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getText_Hashtag(), this.getHashtag(), null, "hashtag", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getText_Tag(), this.getTag(), null, "tag", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getText_Tags(), this.getTag(), null, "tags", null, 0, -1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pictureEClass, Picture.class, "Picture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPicture_Name(), ecorePackage.getEString(), "name", null, 0, 1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPicture_Tags(), this.getTag(), null, "tags", null, 0, 1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPicture_Tags(), this.getTag(), null, "tags", null, 0, -1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPicture_Place(), this.getPlace(), null, "place", null, 0, 1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(personEClass, Person.class, "Person", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAuthor_Language(), ecorePackage.getEString(), "language", null, 1, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAuthor_CurrentCity(), this.getPlace(), null, "currentCity", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthor_Language(), this.getLanguages(), "language", null, 1, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAuthor_CurrentCity(), ecorePackage.getEString(), "currentCity", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCategory_Type(), this.getCategories(), "type", null, 1, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(friendEClass, Friend.class, "Friend", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFriend_Name(), ecorePackage.getEString(), "name", null, 0, 1, Friend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLocation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinatesEClass, Coordinates.class, "Coordinates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCoordinates_Name(), ecorePackage.getEString(), "name", null, 0, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoordinates_Coordx(), ecorePackage.getELong(), "coordx", null, 1, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoordinates_Coordy(), ecorePackage.getELong(), "coordy", null, 1, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoordinates_Coordx(), ecorePackage.getEFloat(), "coordx", null, 1, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoordinates_Coordy(), ecorePackage.getEFloat(), "coordy", null, 1, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hashtagEClass, Hashtag.class, "Hashtag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHashtag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Hashtag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_Text(), ecorePackage.getEString(), "text", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(socialMediaResourceEClass, SocialMediaResource.class, "SocialMediaResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSocialMediaResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, SocialMediaResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSocialMediaResource_Posts(), this.getPost(), null, "posts", null, 0, -1, SocialMediaResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(mentionEClass, Mention.class, "Mention", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(categoriesEEnum, Categories.class, "Categories");
 		addEEnumLiteral(categoriesEEnum, Categories.FUN);
 		addEEnumLiteral(categoriesEEnum, Categories.FOOD);
+
+		initEEnum(languagesEEnum, Languages.class, "Languages");
+		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
+		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
+		addEEnumLiteral(languagesEEnum, Languages.LASSA_STA);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -850,7 +830,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		  (placeEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name"
+			 "label", "city"
 		   });	
 		addAnnotation
 		  (textEClass, 
@@ -877,12 +857,6 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 			 "label", "type"
 		   });	
 		addAnnotation
-		  (friendEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name"
-		   });	
-		addAnnotation
 		  (locationEClass, 
 		   source, 
 		   new String[] {
@@ -902,6 +876,12 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		   });	
 		addAnnotation
 		  (tagEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name"
+		   });	
+		addAnnotation
+		  (mentionEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name"
@@ -932,17 +912,7 @@ public class SmrPackageImpl extends EPackageImpl implements SmrPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getPost_Persons(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getText_Hashtag(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getText_Tag(), 
+		  (getText_Tags(), 
 		   source, 
 		   new String[] {
 		   });	

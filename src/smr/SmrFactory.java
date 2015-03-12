@@ -76,15 +76,6 @@ public interface SmrFactory extends EFactory {
 	Category createCategory();
 
 	/**
-	 * Returns a new object of class '<em>Friend</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Friend</em>'.
-	 * @generated
-	 */
-	Friend createFriend();
-
-	/**
 	 * Returns a new object of class '<em>Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +119,15 @@ public interface SmrFactory extends EFactory {
 	 * @generated
 	 */
 	SocialMediaResource createSocialMediaResource();
+
+	/**
+	 * Returns a new object of class '<em>Mention</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mention</em>'.
+	 * @generated
+	 */
+	Mention createMention();
 
 	/**
 	 * Returns the package supported by this factory.

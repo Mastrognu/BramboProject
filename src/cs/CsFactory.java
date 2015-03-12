@@ -58,13 +58,13 @@ public interface CsFactory extends EFactory {
 	District createDistrict();
 
 	/**
-	 * Returns a new object of class '<em>Num Post Lang</em>'.
+	 * Returns a new object of class '<em>City Sensing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Num Post Lang</em>'.
+	 * @return a new object of class '<em>City Sensing</em>'.
 	 * @generated
 	 */
-	NumPostLang createNumPostLang();
+	CitySensing createCitySensing();
 
 	/**
 	 * Returns a new object of class '<em>Num Post</em>'.
@@ -94,13 +94,13 @@ public interface CsFactory extends EFactory {
 	NumPostTimeSlot createNumPostTimeSlot();
 
 	/**
-	 * Returns a new object of class '<em>City Sensing</em>'.
+	 * Returns a new object of class '<em>Num Post Lang</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>City Sensing</em>'.
+	 * @return a new object of class '<em>Num Post Lang</em>'.
 	 * @generated
 	 */
-	CitySensing createCitySensing();
+	NumPostLang createNumPostLang();
 
 	/**
 	 * Returns the package supported by this factory.

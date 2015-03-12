@@ -5,6 +5,7 @@ package cs.util;
 import cs.*;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -203,16 +204,30 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cs.NumPostLang <em>Num Post Lang</em>}'.
+	 * Creates a new adapter for an object of class '{@link cs.CitySensing <em>City Sensing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cs.NumPostLang
+	 * @see cs.CitySensing
 	 * @generated
 	 */
-	public Adapter createNumPostLangAdapter() {
+	public Adapter createCitySensingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Map Post Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createMapPostLangAdapter() {
 		return null;
 	}
 
@@ -259,30 +274,16 @@ public class CsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link cs.CitySensing <em>City Sensing</em>}'.
+	 * Creates a new adapter for an object of class '{@link cs.NumPostLang <em>Num Post Lang</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see cs.CitySensing
+	 * @see cs.NumPostLang
 	 * @generated
 	 */
-	public Adapter createCitySensingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Map Post Lang</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map.Entry
-	 * @generated
-	 */
-	public Adapter createMapPostLangAdapter() {
+	public Adapter createNumPostLangAdapter() {
 		return null;
 	}
 

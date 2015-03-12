@@ -84,20 +84,12 @@ public class SmrAdapterFactory extends AdapterFactoryImpl {
 				return createPictureAdapter();
 			}
 			@Override
-			public Adapter casePerson(Person object) {
-				return createPersonAdapter();
-			}
-			@Override
 			public Adapter caseAuthor(Author object) {
 				return createAuthorAdapter();
 			}
 			@Override
 			public Adapter caseCategory(Category object) {
 				return createCategoryAdapter();
-			}
-			@Override
-			public Adapter caseFriend(Friend object) {
-				return createFriendAdapter();
 			}
 			@Override
 			public Adapter caseLocation(Location object) {
@@ -118,6 +110,10 @@ public class SmrAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSocialMediaResource(SocialMediaResource object) {
 				return createSocialMediaResourceAdapter();
+			}
+			@Override
+			public Adapter caseMention(Mention object) {
+				return createMentionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -196,20 +192,6 @@ public class SmrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link smr.Person <em>Person</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smr.Person
-	 * @generated
-	 */
-	public Adapter createPersonAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link smr.Author <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,20 +216,6 @@ public class SmrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCategoryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smr.Friend <em>Friend</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smr.Friend
-	 * @generated
-	 */
-	public Adapter createFriendAdapter() {
 		return null;
 	}
 
@@ -318,6 +286,20 @@ public class SmrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSocialMediaResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smr.Mention <em>Mention</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smr.Mention
+	 * @generated
+	 */
+	public Adapter createMentionAdapter() {
 		return null;
 	}
 

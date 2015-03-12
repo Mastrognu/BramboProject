@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -341,46 +342,6 @@ public interface CsPackage extends EPackage {
 	int DISTRICT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPostLangImpl
-	 * @see cs.impl.CsPackageImpl#getNumPostLang()
-	 * @generated
-	 */
-	int NUM_POST_LANG = 10;
-
-	/**
-	 * The meta object id for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPostImpl
-	 * @see cs.impl.CsPackageImpl#getNumPost()
-	 * @generated
-	 */
-	int NUM_POST = 7;
-
-	/**
-	 * The meta object id for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPhotoImpl
-	 * @see cs.impl.CsPackageImpl#getNumPhoto()
-	 * @generated
-	 */
-	int NUM_PHOTO = 8;
-
-	/**
-	 * The meta object id for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cs.impl.NumPostTimeSlotImpl
-	 * @see cs.impl.CsPackageImpl#getNumPostTimeSlot()
-	 * @generated
-	 */
-	int NUM_POST_TIME_SLOT = 9;
-
-	/**
 	 * The meta object id for the '{@link cs.impl.CitySensingImpl <em>City Sensing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,6 +425,16 @@ public interface CsPackage extends EPackage {
 	int MAP_POST_LANG_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.impl.NumPostImpl
+	 * @see cs.impl.CsPackageImpl#getNumPost()
+	 * @generated
+	 */
+	int NUM_POST = 7;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,6 +471,16 @@ public interface CsPackage extends EPackage {
 	int NUM_POST_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.impl.NumPhotoImpl
+	 * @see cs.impl.CsPackageImpl#getNumPhoto()
+	 * @generated
+	 */
+	int NUM_PHOTO = 8;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -534,6 +515,16 @@ public interface CsPackage extends EPackage {
 	 * @ordered
 	 */
 	int NUM_PHOTO_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.impl.NumPostTimeSlotImpl
+	 * @see cs.impl.CsPackageImpl#getNumPostTimeSlot()
+	 * @generated
+	 */
+	int NUM_POST_TIME_SLOT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -579,6 +570,16 @@ public interface CsPackage extends EPackage {
 	 * @ordered
 	 */
 	int NUM_POST_TIME_SLOT_OPERATION_COUNT = STATISTIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cs.impl.NumPostLangImpl
+	 * @see cs.impl.CsPackageImpl#getNumPostLang()
+	 * @generated
+	 */
+	int NUM_POST_LANG = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -634,7 +635,6 @@ public interface CsPackage extends EPackage {
 	 * @generated
 	 */
 	int CATEGORIES = 11;
-
 
 	/**
 	 * The meta object id for the '{@link cs.Languages <em>Languages</em>}' enum.
@@ -874,68 +874,6 @@ public interface CsPackage extends EPackage {
 	EReference getDistrict_Stats();
 
 	/**
-	 * Returns the meta object for class '{@link cs.NumPostLang <em>Num Post Lang</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Post Lang</em>'.
-	 * @see cs.NumPostLang
-	 * @generated
-	 */
-	EClass getNumPostLang();
-
-	/**
-	 * Returns the meta object for the map '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the map '<em>Lang Number</em>'.
-	 * @see cs.NumPostLang#getLangNumber()
-	 * @see #getNumPostLang()
-	 * @generated
-	 */
-	EReference getNumPostLang_LangNumber();
-
-	/**
-	 * Returns the meta object for class '{@link cs.NumPost <em>Num Post</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Post</em>'.
-	 * @see cs.NumPost
-	 * @generated
-	 */
-	EClass getNumPost();
-
-	/**
-	 * Returns the meta object for class '{@link cs.NumPhoto <em>Num Photo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Photo</em>'.
-	 * @see cs.NumPhoto
-	 * @generated
-	 */
-	EClass getNumPhoto();
-
-	/**
-	 * Returns the meta object for class '{@link cs.NumPostTimeSlot <em>Num Post Time Slot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Num Post Time Slot</em>'.
-	 * @see cs.NumPostTimeSlot
-	 * @generated
-	 */
-	EClass getNumPostTimeSlot();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cs.NumPostTimeSlot#getTimeSlot <em>Time Slot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Slot</em>'.
-	 * @see cs.NumPostTimeSlot#getTimeSlot()
-	 * @see #getNumPostTimeSlot()
-	 * @generated
-	 */
-	EAttribute getNumPostTimeSlot_TimeSlot();
-
-	/**
 	 * Returns the meta object for class '{@link cs.CitySensing <em>City Sensing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -992,6 +930,68 @@ public interface CsPackage extends EPackage {
 	EAttribute getMapPostLang_Value();
 
 	/**
+	 * Returns the meta object for class '{@link cs.NumPost <em>Num Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Num Post</em>'.
+	 * @see cs.NumPost
+	 * @generated
+	 */
+	EClass getNumPost();
+
+	/**
+	 * Returns the meta object for class '{@link cs.NumPhoto <em>Num Photo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Num Photo</em>'.
+	 * @see cs.NumPhoto
+	 * @generated
+	 */
+	EClass getNumPhoto();
+
+	/**
+	 * Returns the meta object for class '{@link cs.NumPostTimeSlot <em>Num Post Time Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Num Post Time Slot</em>'.
+	 * @see cs.NumPostTimeSlot
+	 * @generated
+	 */
+	EClass getNumPostTimeSlot();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cs.NumPostTimeSlot#getTimeSlot <em>Time Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Slot</em>'.
+	 * @see cs.NumPostTimeSlot#getTimeSlot()
+	 * @see #getNumPostTimeSlot()
+	 * @generated
+	 */
+	EAttribute getNumPostTimeSlot_TimeSlot();
+
+	/**
+	 * Returns the meta object for class '{@link cs.NumPostLang <em>Num Post Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Num Post Lang</em>'.
+	 * @see cs.NumPostLang
+	 * @generated
+	 */
+	EClass getNumPostLang();
+
+	/**
+	 * Returns the meta object for the map '{@link cs.NumPostLang#getLangNumber <em>Lang Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the map '<em>Lang Number</em>'.
+	 * @see cs.NumPostLang#getLangNumber()
+	 * @see #getNumPostLang()
+	 * @generated
+	 */
+	EReference getNumPostLang_LangNumber();
+
+	/**
 	 * Returns the meta object for enum '{@link cs.Categories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,6 +1026,7 @@ public interface CsPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -1212,62 +1213,6 @@ public interface CsPackage extends EPackage {
 		EReference DISTRICT__STATS = eINSTANCE.getDistrict_Stats();
 
 		/**
-		 * The meta object literal for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPostLangImpl
-		 * @see cs.impl.CsPackageImpl#getNumPostLang()
-		 * @generated
-		 */
-		EClass NUM_POST_LANG = eINSTANCE.getNumPostLang();
-
-		/**
-		 * The meta object literal for the '<em><b>Lang Number</b></em>' map feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NUM_POST_LANG__LANG_NUMBER = eINSTANCE.getNumPostLang_LangNumber();
-
-		/**
-		 * The meta object literal for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPostImpl
-		 * @see cs.impl.CsPackageImpl#getNumPost()
-		 * @generated
-		 */
-		EClass NUM_POST = eINSTANCE.getNumPost();
-
-		/**
-		 * The meta object literal for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPhotoImpl
-		 * @see cs.impl.CsPackageImpl#getNumPhoto()
-		 * @generated
-		 */
-		EClass NUM_PHOTO = eINSTANCE.getNumPhoto();
-
-		/**
-		 * The meta object literal for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cs.impl.NumPostTimeSlotImpl
-		 * @see cs.impl.CsPackageImpl#getNumPostTimeSlot()
-		 * @generated
-		 */
-		EClass NUM_POST_TIME_SLOT = eINSTANCE.getNumPostTimeSlot();
-
-		/**
-		 * The meta object literal for the '<em><b>Time Slot</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUM_POST_TIME_SLOT__TIME_SLOT = eINSTANCE.getNumPostTimeSlot_TimeSlot();
-
-		/**
 		 * The meta object literal for the '{@link cs.impl.CitySensingImpl <em>City Sensing</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1310,6 +1255,62 @@ public interface CsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAP_POST_LANG__VALUE = eINSTANCE.getMapPostLang_Value();
+
+		/**
+		 * The meta object literal for the '{@link cs.impl.NumPostImpl <em>Num Post</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.impl.NumPostImpl
+		 * @see cs.impl.CsPackageImpl#getNumPost()
+		 * @generated
+		 */
+		EClass NUM_POST = eINSTANCE.getNumPost();
+
+		/**
+		 * The meta object literal for the '{@link cs.impl.NumPhotoImpl <em>Num Photo</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.impl.NumPhotoImpl
+		 * @see cs.impl.CsPackageImpl#getNumPhoto()
+		 * @generated
+		 */
+		EClass NUM_PHOTO = eINSTANCE.getNumPhoto();
+
+		/**
+		 * The meta object literal for the '{@link cs.impl.NumPostTimeSlotImpl <em>Num Post Time Slot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.impl.NumPostTimeSlotImpl
+		 * @see cs.impl.CsPackageImpl#getNumPostTimeSlot()
+		 * @generated
+		 */
+		EClass NUM_POST_TIME_SLOT = eINSTANCE.getNumPostTimeSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Slot</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUM_POST_TIME_SLOT__TIME_SLOT = eINSTANCE.getNumPostTimeSlot_TimeSlot();
+
+		/**
+		 * The meta object literal for the '{@link cs.impl.NumPostLangImpl <em>Num Post Lang</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cs.impl.NumPostLangImpl
+		 * @see cs.impl.CsPackageImpl#getNumPostLang()
+		 * @generated
+		 */
+		EClass NUM_POST_LANG = eINSTANCE.getNumPostLang();
+
+		/**
+		 * The meta object literal for the '<em><b>Lang Number</b></em>' map feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NUM_POST_LANG__LANG_NUMBER = eINSTANCE.getNumPostLang_LangNumber();
 
 		/**
 		 * The meta object literal for the '{@link cs.Categories <em>Categories</em>}' enum.

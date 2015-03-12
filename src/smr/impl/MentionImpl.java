@@ -4,27 +4,25 @@ package smr.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import smr.Person;
+import smr.Mention;
 import smr.SmrPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Person</b></em>'.
+ * An implementation of the model object '<em><b>Mention</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class PersonImpl extends EObjectImpl implements Person {
+public class MentionImpl extends TagImpl implements Mention {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PersonImpl() {
+	protected MentionImpl() {
 		super();
 	}
 
@@ -35,7 +33,7 @@ public abstract class PersonImpl extends EObjectImpl implements Person {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SmrPackage.Literals.PERSON;
+		return SmrPackage.Literals.MENTION;
 	}
 
-} //PersonImpl
+} //MentionImpl

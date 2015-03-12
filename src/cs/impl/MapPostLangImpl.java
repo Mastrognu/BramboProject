@@ -39,7 +39,7 @@ public class MapPostLangImpl extends MinimalEObjectImpl.Container implements Bas
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Languages KEY_EDEFAULT = Languages.ENGLISH;
+	protected static final Languages KEY_EDEFAULT = Languages.SPANISH;
 
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.

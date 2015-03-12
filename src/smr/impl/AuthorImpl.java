@@ -5,12 +5,12 @@ package smr.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import smr.Author;
-import smr.Place;
+import smr.Languages;
 import smr.SmrPackage;
 
 /**
@@ -28,7 +28,7 @@ import smr.SmrPackage;
  *
  * @generated
  */
-public class AuthorImpl extends PersonImpl implements Author {
+public class AuthorImpl extends MinimalEObjectImpl.Container implements Author {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,7 +57,7 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LANGUAGE_EDEFAULT = null;
+	protected static final Languages LANGUAGE_EDEFAULT = Languages.SPANISH;
 
 	/**
 	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
@@ -67,17 +67,36 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * @generated
 	 * @ordered
 	 */
-	protected String language = LANGUAGE_EDEFAULT;
+	protected Languages language = LANGUAGE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCurrentCity() <em>Current City</em>}' reference.
+	 * This is true if the Language attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean languageESet;
+
+	/**
+	 * The default value of the '{@link #getCurrentCity() <em>Current City</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCurrentCity()
 	 * @generated
 	 * @ordered
 	 */
-	protected Place currentCity;
+	protected static final String CURRENT_CITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCurrentCity() <em>Current City</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentCity()
+	 * @generated
+	 * @ordered
+	 */
+	protected String currentCity = CURRENT_CITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +143,7 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLanguage() {
+	public Languages getLanguage() {
 		return language;
 	}
 
@@ -133,11 +152,13 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLanguage(String newLanguage) {
-		String oldLanguage = language;
-		language = newLanguage;
+	public void setLanguage(Languages newLanguage) {
+		Languages oldLanguage = language;
+		language = newLanguage == null ? LANGUAGE_EDEFAULT : newLanguage;
+		boolean oldLanguageESet = languageESet;
+		languageESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.AUTHOR__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.AUTHOR__LANGUAGE, oldLanguage, language, !oldLanguageESet));
 	}
 
 	/**
@@ -145,15 +166,30 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Place getCurrentCity() {
-		if (currentCity != null && currentCity.eIsProxy()) {
-			InternalEObject oldCurrentCity = (InternalEObject)currentCity;
-			currentCity = (Place)eResolveProxy(oldCurrentCity);
-			if (currentCity != oldCurrentCity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmrPackage.AUTHOR__CURRENT_CITY, oldCurrentCity, currentCity));
-			}
-		}
+	public void unsetLanguage() {
+		Languages oldLanguage = language;
+		boolean oldLanguageESet = languageESet;
+		language = LANGUAGE_EDEFAULT;
+		languageESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SmrPackage.AUTHOR__LANGUAGE, oldLanguage, LANGUAGE_EDEFAULT, oldLanguageESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetLanguage() {
+		return languageESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCurrentCity() {
 		return currentCity;
 	}
 
@@ -162,17 +198,8 @@ public class AuthorImpl extends PersonImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Place basicGetCurrentCity() {
-		return currentCity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCurrentCity(Place newCurrentCity) {
-		Place oldCurrentCity = currentCity;
+	public void setCurrentCity(String newCurrentCity) {
+		String oldCurrentCity = currentCity;
 		currentCity = newCurrentCity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.AUTHOR__CURRENT_CITY, oldCurrentCity, currentCity));
@@ -191,8 +218,7 @@ public class AuthorImpl extends PersonImpl implements Author {
 			case SmrPackage.AUTHOR__LANGUAGE:
 				return getLanguage();
 			case SmrPackage.AUTHOR__CURRENT_CITY:
-				if (resolve) return getCurrentCity();
-				return basicGetCurrentCity();
+				return getCurrentCity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,10 +235,10 @@ public class AuthorImpl extends PersonImpl implements Author {
 				setName((String)newValue);
 				return;
 			case SmrPackage.AUTHOR__LANGUAGE:
-				setLanguage((String)newValue);
+				setLanguage((Languages)newValue);
 				return;
 			case SmrPackage.AUTHOR__CURRENT_CITY:
-				setCurrentCity((Place)newValue);
+				setCurrentCity((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,10 +256,10 @@ public class AuthorImpl extends PersonImpl implements Author {
 				setName(NAME_EDEFAULT);
 				return;
 			case SmrPackage.AUTHOR__LANGUAGE:
-				setLanguage(LANGUAGE_EDEFAULT);
+				unsetLanguage();
 				return;
 			case SmrPackage.AUTHOR__CURRENT_CITY:
-				setCurrentCity((Place)null);
+				setCurrentCity(CURRENT_CITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -250,9 +276,9 @@ public class AuthorImpl extends PersonImpl implements Author {
 			case SmrPackage.AUTHOR__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SmrPackage.AUTHOR__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+				return isSetLanguage();
 			case SmrPackage.AUTHOR__CURRENT_CITY:
-				return currentCity != null;
+				return CURRENT_CITY_EDEFAULT == null ? currentCity != null : !CURRENT_CITY_EDEFAULT.equals(currentCity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,7 +296,9 @@ public class AuthorImpl extends PersonImpl implements Author {
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", language: ");
-		result.append(language);
+		if (languageESet) result.append(language); else result.append("<unset>");
+		result.append(", currentCity: ");
+		result.append(currentCity);
 		result.append(')');
 		return result.toString();
 	}

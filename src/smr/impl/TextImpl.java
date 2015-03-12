@@ -13,12 +13,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import smr.Hashtag;
 import smr.SmrPackage;
 import smr.Tag;
 import smr.Text;
@@ -32,14 +31,13 @@ import smr.Text;
  * <ul>
  *   <li>{@link smr.impl.TextImpl#getName <em>Name</em>}</li>
  *   <li>{@link smr.impl.TextImpl#getText <em>Text</em>}</li>
- *   <li>{@link smr.impl.TextImpl#getHashtag <em>Hashtag</em>}</li>
- *   <li>{@link smr.impl.TextImpl#getTag <em>Tag</em>}</li>
+ *   <li>{@link smr.impl.TextImpl#getTags <em>Tags</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TextImpl extends EObjectImpl implements Text {
+public class TextImpl extends MinimalEObjectImpl.Container implements Text {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,24 +79,14 @@ public class TextImpl extends EObjectImpl implements Text {
 	protected String text = TEXT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHashtag() <em>Hashtag</em>}' containment reference list.
+	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHashtag()
+	 * @see #getTags()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Hashtag> hashtag;
-
-	/**
-	 * The cached value of the '{@link #getTag() <em>Tag</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTag()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Tag> tag;
+	protected EList<Tag> tags;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,23 +154,11 @@ public class TextImpl extends EObjectImpl implements Text {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Hashtag> getHashtag() {
-		if (hashtag == null) {
-			hashtag = new EObjectContainmentEList<Hashtag>(Hashtag.class, this, SmrPackage.TEXT__HASHTAG);
+	public EList<Tag> getTags() {
+		if (tags == null) {
+			tags = new EObjectContainmentEList<Tag>(Tag.class, this, SmrPackage.TEXT__TAGS);
 		}
-		return hashtag;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Tag> getTag() {
-		if (tag == null) {
-			tag = new EObjectContainmentEList<Tag>(Tag.class, this, SmrPackage.TEXT__TAG);
-		}
-		return tag;
+		return tags;
 	}
 
 	/**
@@ -193,10 +169,8 @@ public class TextImpl extends EObjectImpl implements Text {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SmrPackage.TEXT__HASHTAG:
-				return ((InternalEList<?>)getHashtag()).basicRemove(otherEnd, msgs);
-			case SmrPackage.TEXT__TAG:
-				return ((InternalEList<?>)getTag()).basicRemove(otherEnd, msgs);
+			case SmrPackage.TEXT__TAGS:
+				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -213,10 +187,8 @@ public class TextImpl extends EObjectImpl implements Text {
 				return getName();
 			case SmrPackage.TEXT__TEXT:
 				return getText();
-			case SmrPackage.TEXT__HASHTAG:
-				return getHashtag();
-			case SmrPackage.TEXT__TAG:
-				return getTag();
+			case SmrPackage.TEXT__TAGS:
+				return getTags();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,13 +208,9 @@ public class TextImpl extends EObjectImpl implements Text {
 			case SmrPackage.TEXT__TEXT:
 				setText((String)newValue);
 				return;
-			case SmrPackage.TEXT__HASHTAG:
-				getHashtag().clear();
-				getHashtag().addAll((Collection<? extends Hashtag>)newValue);
-				return;
-			case SmrPackage.TEXT__TAG:
-				getTag().clear();
-				getTag().addAll((Collection<? extends Tag>)newValue);
+			case SmrPackage.TEXT__TAGS:
+				getTags().clear();
+				getTags().addAll((Collection<? extends Tag>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -262,11 +230,8 @@ public class TextImpl extends EObjectImpl implements Text {
 			case SmrPackage.TEXT__TEXT:
 				setText(TEXT_EDEFAULT);
 				return;
-			case SmrPackage.TEXT__HASHTAG:
-				getHashtag().clear();
-				return;
-			case SmrPackage.TEXT__TAG:
-				getTag().clear();
+			case SmrPackage.TEXT__TAGS:
+				getTags().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -284,10 +249,8 @@ public class TextImpl extends EObjectImpl implements Text {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SmrPackage.TEXT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-			case SmrPackage.TEXT__HASHTAG:
-				return hashtag != null && !hashtag.isEmpty();
-			case SmrPackage.TEXT__TAG:
-				return tag != null && !tag.isEmpty();
+			case SmrPackage.TEXT__TAGS:
+				return tags != null && !tags.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

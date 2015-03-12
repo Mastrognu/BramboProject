@@ -58,12 +58,12 @@ public interface Coordinates extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Coordx</em>' attribute.
-	 * @see #setCoordx(long)
+	 * @see #setCoordx(float)
 	 * @see smr.SmrPackage#getCoordinates_Coordx()
 	 * @model required="true"
 	 * @generated
 	 */
-	long getCoordx();
+	float getCoordx();
 
 	/**
 	 * Sets the value of the '{@link smr.Coordinates#getCoordx <em>Coordx</em>}' attribute.
@@ -73,7 +73,7 @@ public interface Coordinates extends EObject {
 	 * @see #getCoordx()
 	 * @generated
 	 */
-	void setCoordx(long value);
+	void setCoordx(float value);
 
 	/**
 	 * Returns the value of the '<em><b>Coordy</b></em>' attribute.
@@ -84,12 +84,12 @@ public interface Coordinates extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Coordy</em>' attribute.
-	 * @see #setCoordy(long)
+	 * @see #setCoordy(float)
 	 * @see smr.SmrPackage#getCoordinates_Coordy()
 	 * @model required="true"
 	 * @generated
 	 */
-	long getCoordy();
+	float getCoordy();
 
 	/**
 	 * Sets the value of the '{@link smr.Coordinates#getCoordy <em>Coordy</em>}' attribute.
@@ -99,6 +99,6 @@ public interface Coordinates extends EObject {
 	 * @see #getCoordy()
 	 * @generated
 	 */
-	void setCoordy(long value);
+	void setCoordy(float value);
 
 } // Coordinates

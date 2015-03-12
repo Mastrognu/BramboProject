@@ -2,6 +2,7 @@
  */
 package smr;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package smr;
  * @model annotation="gmf.node label='name'"
  * @generated
  */
-public interface Author extends Person {
+public interface Author extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,6 +51,7 @@ public interface Author extends Person {
 
 	/**
 	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * The literals are from the enumeration {@link smr.Languages}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
@@ -57,47 +59,76 @@ public interface Author extends Person {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Language</em>' attribute.
-	 * @see #setLanguage(String)
+	 * @see smr.Languages
+	 * @see #isSetLanguage()
+	 * @see #unsetLanguage()
+	 * @see #setLanguage(Languages)
 	 * @see smr.SmrPackage#getAuthor_Language()
-	 * @model required="true"
+	 * @model unsettable="true" required="true"
 	 * @generated
 	 */
-	String getLanguage();
+	Languages getLanguage();
 
 	/**
 	 * Sets the value of the '{@link smr.Author#getLanguage <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Language</em>' attribute.
+	 * @see smr.Languages
+	 * @see #isSetLanguage()
+	 * @see #unsetLanguage()
 	 * @see #getLanguage()
 	 * @generated
 	 */
-	void setLanguage(String value);
+	void setLanguage(Languages value);
 
 	/**
-	 * Returns the value of the '<em><b>Current City</b></em>' reference.
+	 * Unsets the value of the '{@link smr.Author#getLanguage <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetLanguage()
+	 * @see #getLanguage()
+	 * @see #setLanguage(Languages)
+	 * @generated
+	 */
+	void unsetLanguage();
+
+	/**
+	 * Returns whether the value of the '{@link smr.Author#getLanguage <em>Language</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Language</em>' attribute is set.
+	 * @see #unsetLanguage()
+	 * @see #getLanguage()
+	 * @see #setLanguage(Languages)
+	 * @generated
+	 */
+	boolean isSetLanguage();
+
+	/**
+	 * Returns the value of the '<em><b>Current City</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Current City</em>' reference isn't clear,
+	 * If the meaning of the '<em>Current City</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Current City</em>' reference.
-	 * @see #setCurrentCity(Place)
+	 * @return the value of the '<em>Current City</em>' attribute.
+	 * @see #setCurrentCity(String)
 	 * @see smr.SmrPackage#getAuthor_CurrentCity()
 	 * @model
 	 * @generated
 	 */
-	Place getCurrentCity();
+	String getCurrentCity();
 
 	/**
-	 * Sets the value of the '{@link smr.Author#getCurrentCity <em>Current City</em>}' reference.
+	 * Sets the value of the '{@link smr.Author#getCurrentCity <em>Current City</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Current City</em>' reference.
+	 * @param value the new value of the '<em>Current City</em>' attribute.
 	 * @see #getCurrentCity()
 	 * @generated
 	 */
-	void setCurrentCity(Place value);
+	void setCurrentCity(String value);
 
 } // Author

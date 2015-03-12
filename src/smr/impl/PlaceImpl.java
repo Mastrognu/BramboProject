@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import smr.Coordinates;
 import smr.Location;
@@ -23,7 +23,8 @@ import smr.SmrPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link smr.impl.PlaceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link smr.impl.PlaceImpl#getCity <em>City</em>}</li>
+ *   <li>{@link smr.impl.PlaceImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link smr.impl.PlaceImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link smr.impl.PlaceImpl#getCoordinates <em>Coordinates</em>}</li>
  * </ul>
@@ -31,26 +32,46 @@ import smr.SmrPackage;
  *
  * @generated
  */
-public class PlaceImpl extends EObjectImpl implements Place {
+public class PlaceImpl extends MinimalEObjectImpl.Container implements Place {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getCity() <em>City</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String CITY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getCity() <em>City</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getCity()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String city = CITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String address = ADDRESS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' containment reference.
@@ -96,8 +117,8 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getCity() {
+		return city;
 	}
 
 	/**
@@ -105,11 +126,32 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setCity(String newCity) {
+		String oldCity = city;
+		city = newCity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.PLACE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.PLACE__CITY, oldCity, city));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAddress(String newAddress) {
+		String oldAddress = address;
+		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.PLACE__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -222,8 +264,10 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SmrPackage.PLACE__NAME:
-				return getName();
+			case SmrPackage.PLACE__CITY:
+				return getCity();
+			case SmrPackage.PLACE__ADDRESS:
+				return getAddress();
 			case SmrPackage.PLACE__LOCATION:
 				return getLocation();
 			case SmrPackage.PLACE__COORDINATES:
@@ -240,8 +284,11 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SmrPackage.PLACE__NAME:
-				setName((String)newValue);
+			case SmrPackage.PLACE__CITY:
+				setCity((String)newValue);
+				return;
+			case SmrPackage.PLACE__ADDRESS:
+				setAddress((String)newValue);
 				return;
 			case SmrPackage.PLACE__LOCATION:
 				setLocation((Location)newValue);
@@ -261,8 +308,11 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SmrPackage.PLACE__NAME:
-				setName(NAME_EDEFAULT);
+			case SmrPackage.PLACE__CITY:
+				setCity(CITY_EDEFAULT);
+				return;
+			case SmrPackage.PLACE__ADDRESS:
+				setAddress(ADDRESS_EDEFAULT);
 				return;
 			case SmrPackage.PLACE__LOCATION:
 				setLocation((Location)null);
@@ -282,8 +332,10 @@ public class PlaceImpl extends EObjectImpl implements Place {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SmrPackage.PLACE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SmrPackage.PLACE__CITY:
+				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
+			case SmrPackage.PLACE__ADDRESS:
+				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case SmrPackage.PLACE__LOCATION:
 				return location != null;
 			case SmrPackage.PLACE__COORDINATES:
@@ -302,8 +354,10 @@ public class PlaceImpl extends EObjectImpl implements Place {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (city: ");
+		result.append(city);
+		result.append(", address: ");
+		result.append(address);
 		result.append(')');
 		return result.toString();
 	}

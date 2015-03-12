@@ -16,15 +16,15 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link smr.Post#getName <em>Name</em>}</li>
  *   <li>{@link smr.Post#getId <em>Id</em>}</li>
  *   <li>{@link smr.Post#getSourcesn <em>Sourcesn</em>}</li>
  *   <li>{@link smr.Post#getPlace <em>Place</em>}</li>
  *   <li>{@link smr.Post#getText <em>Text</em>}</li>
  *   <li>{@link smr.Post#getPictures <em>Pictures</em>}</li>
  *   <li>{@link smr.Post#getCategories <em>Categories</em>}</li>
- *   <li>{@link smr.Post#getPersons <em>Persons</em>}</li>
  *   <li>{@link smr.Post#getTime <em>Time</em>}</li>
+ *   <li>{@link smr.Post#getAuthor <em>Author</em>}</li>
+ *   <li>{@link smr.Post#getLanguage <em>Language</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,32 +33,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Post extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see smr.SmrPackage#getPost_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link smr.Post#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,7 +44,7 @@ public interface Post extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(long)
 	 * @see smr.SmrPackage#getPost_Id()
-	 * @model required="true"
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	long getId();
@@ -196,22 +170,6 @@ public interface Post extends EObject {
 	EList<Category> getCategories();
 
 	/**
-	 * Returns the value of the '<em><b>Persons</b></em>' containment reference list.
-	 * The list contents are of type {@link smr.Person}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Persons</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Persons</em>' containment reference list.
-	 * @see smr.SmrPackage#getPost_Persons()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Person> getPersons();
-
-	/**
 	 * Returns the value of the '<em><b>Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -236,5 +194,60 @@ public interface Post extends EObject {
 	 * @generated
 	 */
 	void setTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Author</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Author</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Author</em>' containment reference.
+	 * @see #setAuthor(Author)
+	 * @see smr.SmrPackage#getPost_Author()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Author getAuthor();
+
+	/**
+	 * Sets the value of the '{@link smr.Post#getAuthor <em>Author</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Author</em>' containment reference.
+	 * @see #getAuthor()
+	 * @generated
+	 */
+	void setAuthor(Author value);
+
+	/**
+	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * The literals are from the enumeration {@link smr.Languages}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Language</em>' attribute.
+	 * @see smr.Languages
+	 * @see #setLanguage(Languages)
+	 * @see smr.SmrPackage#getPost_Language()
+	 * @model
+	 * @generated
+	 */
+	Languages getLanguage();
+
+	/**
+	 * Sets the value of the '{@link smr.Post#getLanguage <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Language</em>' attribute.
+	 * @see smr.Languages
+	 * @see #getLanguage()
+	 * @generated
+	 */
+	void setLanguage(Languages value);
 
 } // Post

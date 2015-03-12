@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -67,22 +68,13 @@ public interface SmrPackage extends EPackage {
 	int POST = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POST__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POST__ID = 1;
+	int POST__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Sourcesn</b></em>' attribute.
@@ -91,7 +83,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__SOURCESN = 2;
+	int POST__SOURCESN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Place</b></em>' containment reference.
@@ -100,7 +92,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__PLACE = 3;
+	int POST__PLACE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -109,7 +101,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__TEXT = 4;
+	int POST__TEXT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Pictures</b></em>' containment reference list.
@@ -118,7 +110,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__PICTURES = 5;
+	int POST__PICTURES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Categories</b></em>' containment reference list.
@@ -127,16 +119,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__CATEGORIES = 6;
-
-	/**
-	 * The feature id for the '<em><b>Persons</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POST__PERSONS = 7;
+	int POST__CATEGORIES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -145,7 +128,25 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POST__TIME = 8;
+	int POST__TIME = 6;
+
+	/**
+	 * The feature id for the '<em><b>Author</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST__AUTHOR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST__LANGUAGE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Post</em>' class.
@@ -155,6 +156,15 @@ public interface SmrPackage extends EPackage {
 	 * @ordered
 	 */
 	int POST_FEATURE_COUNT = 9;
+
+	/**
+	 * The number of operations of the '<em>Post</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.PlaceImpl <em>Place</em>}' class.
@@ -167,13 +177,22 @@ public interface SmrPackage extends EPackage {
 	int PLACE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>City</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__NAME = 0;
+	int PLACE__CITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__ADDRESS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' containment reference.
@@ -182,7 +201,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__LOCATION = 1;
+	int PLACE__LOCATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Coordinates</b></em>' containment reference.
@@ -191,7 +210,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__COORDINATES = 2;
+	int PLACE__COORDINATES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Place</em>' class.
@@ -200,7 +219,16 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = 3;
+	int PLACE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Place</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.TextImpl <em>Text</em>}' class.
@@ -231,22 +259,13 @@ public interface SmrPackage extends EPackage {
 	int TEXT__TEXT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Hashtag</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__HASHTAG = 2;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT__TAG = 3;
+	int TEXT__TAGS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Text</em>' class.
@@ -255,7 +274,16 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FEATURE_COUNT = 4;
+	int TEXT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.PictureImpl <em>Picture</em>}' class.
@@ -277,7 +305,7 @@ public interface SmrPackage extends EPackage {
 	int PICTURE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Tags</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -304,23 +332,13 @@ public interface SmrPackage extends EPackage {
 	int PICTURE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link smr.impl.PersonImpl <em>Person</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smr.impl.PersonImpl
-	 * @see smr.impl.SmrPackageImpl#getPerson()
-	 * @generated
-	 */
-	int PERSON = 4;
-
-	/**
-	 * The number of structural features of the '<em>Person</em>' class.
+	 * The number of operations of the '<em>Picture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 0;
+	int PICTURE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.AuthorImpl <em>Author</em>}' class.
@@ -330,7 +348,7 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getAuthor()
 	 * @generated
 	 */
-	int AUTHOR = 5;
+	int AUTHOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -339,7 +357,7 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__NAME = PERSON_FEATURE_COUNT + 0;
+	int AUTHOR__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -348,16 +366,16 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__LANGUAGE = PERSON_FEATURE_COUNT + 1;
+	int AUTHOR__LANGUAGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Current City</b></em>' reference.
+	 * The feature id for the '<em><b>Current City</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__CURRENT_CITY = PERSON_FEATURE_COUNT + 2;
+	int AUTHOR__CURRENT_CITY = 2;
 
 	/**
 	 * The number of structural features of the '<em>Author</em>' class.
@@ -366,7 +384,16 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_FEATURE_COUNT = PERSON_FEATURE_COUNT + 3;
+	int AUTHOR_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Author</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.CategoryImpl <em>Category</em>}' class.
@@ -376,7 +403,7 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getCategory()
 	 * @generated
 	 */
-	int CATEGORY = 6;
+	int CATEGORY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -406,32 +433,13 @@ public interface SmrPackage extends EPackage {
 	int CATEGORY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link smr.impl.FriendImpl <em>Friend</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smr.impl.FriendImpl
-	 * @see smr.impl.SmrPackageImpl#getFriend()
-	 * @generated
-	 */
-	int FRIEND = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FRIEND__NAME = PERSON_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Friend</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FRIEND_FEATURE_COUNT = PERSON_FEATURE_COUNT + 1;
+	int CATEGORY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.LocationImpl <em>Location</em>}' class.
@@ -441,7 +449,7 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getLocation()
 	 * @generated
 	 */
-	int LOCATION = 8;
+	int LOCATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,6 +470,15 @@ public interface SmrPackage extends EPackage {
 	int LOCATION_FEATURE_COUNT = 1;
 
 	/**
+	 * The number of operations of the '<em>Location</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link smr.impl.CoordinatesImpl <em>Coordinates</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,7 +486,7 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getCoordinates()
 	 * @generated
 	 */
-	int COORDINATES = 9;
+	int COORDINATES = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -508,32 +525,13 @@ public interface SmrPackage extends EPackage {
 	int COORDINATES_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link smr.impl.HashtagImpl <em>Hashtag</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smr.impl.HashtagImpl
-	 * @see smr.impl.SmrPackageImpl#getHashtag()
-	 * @generated
-	 */
-	int HASHTAG = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Coordinates</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HASHTAG__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Hashtag</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HASHTAG_FEATURE_COUNT = 1;
+	int COORDINATES_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link smr.impl.TagImpl <em>Tag</em>}' class.
@@ -543,16 +541,16 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getTag()
 	 * @generated
 	 */
-	int TAG = 11;
+	int TAG = 9;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__NAME = 0;
+	int TAG__TEXT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
@@ -564,6 +562,52 @@ public interface SmrPackage extends EPackage {
 	int TAG_FEATURE_COUNT = 1;
 
 	/**
+	 * The number of operations of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link smr.impl.HashtagImpl <em>Hashtag</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smr.impl.HashtagImpl
+	 * @see smr.impl.SmrPackageImpl#getHashtag()
+	 * @generated
+	 */
+	int HASHTAG = 8;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HASHTAG__TEXT = TAG__TEXT;
+
+	/**
+	 * The number of structural features of the '<em>Hashtag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HASHTAG_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Hashtag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HASHTAG_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smr.impl.SocialMediaResourceImpl <em>Social Media Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,7 +615,7 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getSocialMediaResource()
 	 * @generated
 	 */
-	int SOCIAL_MEDIA_RESOURCE = 12;
+	int SOCIAL_MEDIA_RESOURCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -601,6 +645,52 @@ public interface SmrPackage extends EPackage {
 	int SOCIAL_MEDIA_RESOURCE_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Social Media Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOCIAL_MEDIA_RESOURCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link smr.impl.MentionImpl <em>Mention</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smr.impl.MentionImpl
+	 * @see smr.impl.SmrPackageImpl#getMention()
+	 * @generated
+	 */
+	int MENTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENTION__TEXT = TAG__TEXT;
+
+	/**
+	 * The number of structural features of the '<em>Mention</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENTION_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mention</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENTION_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smr.Categories <em>Categories</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -608,7 +698,17 @@ public interface SmrPackage extends EPackage {
 	 * @see smr.impl.SmrPackageImpl#getCategories()
 	 * @generated
 	 */
-	int CATEGORIES = 13;
+	int CATEGORIES = 12;
+
+	/**
+	 * The meta object id for the '{@link smr.Languages <em>Languages</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smr.Languages
+	 * @see smr.impl.SmrPackageImpl#getLanguages()
+	 * @generated
+	 */
+	int LANGUAGES = 13;
 
 
 	/**
@@ -620,17 +720,6 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPost();
-
-	/**
-	 * Returns the meta object for the attribute '{@link smr.Post#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see smr.Post#getName()
-	 * @see #getPost()
-	 * @generated
-	 */
-	EAttribute getPost_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link smr.Post#getId <em>Id</em>}'.
@@ -699,17 +788,6 @@ public interface SmrPackage extends EPackage {
 	EReference getPost_Categories();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link smr.Post#getPersons <em>Persons</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Persons</em>'.
-	 * @see smr.Post#getPersons()
-	 * @see #getPost()
-	 * @generated
-	 */
-	EReference getPost_Persons();
-
-	/**
 	 * Returns the meta object for the attribute '{@link smr.Post#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -719,6 +797,28 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPost_Time();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link smr.Post#getAuthor <em>Author</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Author</em>'.
+	 * @see smr.Post#getAuthor()
+	 * @see #getPost()
+	 * @generated
+	 */
+	EReference getPost_Author();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smr.Post#getLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see smr.Post#getLanguage()
+	 * @see #getPost()
+	 * @generated
+	 */
+	EAttribute getPost_Language();
 
 	/**
 	 * Returns the meta object for class '{@link smr.Place <em>Place</em>}'.
@@ -731,15 +831,26 @@ public interface SmrPackage extends EPackage {
 	EClass getPlace();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smr.Place#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link smr.Place#getCity <em>City</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see smr.Place#getName()
+	 * @return the meta object for the attribute '<em>City</em>'.
+	 * @see smr.Place#getCity()
 	 * @see #getPlace()
 	 * @generated
 	 */
-	EAttribute getPlace_Name();
+	EAttribute getPlace_City();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smr.Place#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see smr.Place#getAddress()
+	 * @see #getPlace()
+	 * @generated
+	 */
+	EAttribute getPlace_Address();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link smr.Place#getLocation <em>Location</em>}'.
@@ -796,26 +907,15 @@ public interface SmrPackage extends EPackage {
 	EAttribute getText_Text();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link smr.Text#getHashtag <em>Hashtag</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smr.Text#getTags <em>Tags</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hashtag</em>'.
-	 * @see smr.Text#getHashtag()
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
+	 * @see smr.Text#getTags()
 	 * @see #getText()
 	 * @generated
 	 */
-	EReference getText_Hashtag();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link smr.Text#getTag <em>Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tag</em>'.
-	 * @see smr.Text#getTag()
-	 * @see #getText()
-	 * @generated
-	 */
-	EReference getText_Tag();
+	EReference getText_Tags();
 
 	/**
 	 * Returns the meta object for class '{@link smr.Picture <em>Picture</em>}'.
@@ -839,10 +939,10 @@ public interface SmrPackage extends EPackage {
 	EAttribute getPicture_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link smr.Picture#getTags <em>Tags</em>}'.
+	 * Returns the meta object for the containment reference list '{@link smr.Picture#getTags <em>Tags</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Tags</em>'.
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
 	 * @see smr.Picture#getTags()
 	 * @see #getPicture()
 	 * @generated
@@ -859,16 +959,6 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPicture_Place();
-
-	/**
-	 * Returns the meta object for class '{@link smr.Person <em>Person</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Person</em>'.
-	 * @see smr.Person
-	 * @generated
-	 */
-	EClass getPerson();
 
 	/**
 	 * Returns the meta object for class '{@link smr.Author <em>Author</em>}'.
@@ -903,15 +993,15 @@ public interface SmrPackage extends EPackage {
 	EAttribute getAuthor_Language();
 
 	/**
-	 * Returns the meta object for the reference '{@link smr.Author#getCurrentCity <em>Current City</em>}'.
+	 * Returns the meta object for the attribute '{@link smr.Author#getCurrentCity <em>Current City</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Current City</em>'.
+	 * @return the meta object for the attribute '<em>Current City</em>'.
 	 * @see smr.Author#getCurrentCity()
 	 * @see #getAuthor()
 	 * @generated
 	 */
-	EReference getAuthor_CurrentCity();
+	EAttribute getAuthor_CurrentCity();
 
 	/**
 	 * Returns the meta object for class '{@link smr.Category <em>Category</em>}'.
@@ -944,27 +1034,6 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCategory_Type();
-
-	/**
-	 * Returns the meta object for class '{@link smr.Friend <em>Friend</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Friend</em>'.
-	 * @see smr.Friend
-	 * @generated
-	 */
-	EClass getFriend();
-
-	/**
-	 * Returns the meta object for the attribute '{@link smr.Friend#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see smr.Friend#getName()
-	 * @see #getFriend()
-	 * @generated
-	 */
-	EAttribute getFriend_Name();
 
 	/**
 	 * Returns the meta object for class '{@link smr.Location <em>Location</em>}'.
@@ -1041,17 +1110,6 @@ public interface SmrPackage extends EPackage {
 	EClass getHashtag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smr.Hashtag#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see smr.Hashtag#getName()
-	 * @see #getHashtag()
-	 * @generated
-	 */
-	EAttribute getHashtag_Name();
-
-	/**
 	 * Returns the meta object for class '{@link smr.Tag <em>Tag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1062,15 +1120,15 @@ public interface SmrPackage extends EPackage {
 	EClass getTag();
 
 	/**
-	 * Returns the meta object for the attribute '{@link smr.Tag#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link smr.Tag#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see smr.Tag#getName()
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see smr.Tag#getText()
 	 * @see #getTag()
 	 * @generated
 	 */
-	EAttribute getTag_Name();
+	EAttribute getTag_Text();
 
 	/**
 	 * Returns the meta object for class '{@link smr.SocialMediaResource <em>Social Media Resource</em>}'.
@@ -1105,6 +1163,16 @@ public interface SmrPackage extends EPackage {
 	EReference getSocialMediaResource_Posts();
 
 	/**
+	 * Returns the meta object for class '{@link smr.Mention <em>Mention</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mention</em>'.
+	 * @see smr.Mention
+	 * @generated
+	 */
+	EClass getMention();
+
+	/**
 	 * Returns the meta object for enum '{@link smr.Categories <em>Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1113,6 +1181,16 @@ public interface SmrPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getCategories();
+
+	/**
+	 * Returns the meta object for enum '{@link smr.Languages <em>Languages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Languages</em>'.
+	 * @see smr.Languages
+	 * @generated
+	 */
+	EEnum getLanguages();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1129,6 +1207,7 @@ public interface SmrPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -1145,14 +1224,6 @@ public interface SmrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass POST = eINSTANCE.getPost();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute POST__NAME = eINSTANCE.getPost_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -1203,20 +1274,28 @@ public interface SmrPackage extends EPackage {
 		EReference POST__CATEGORIES = eINSTANCE.getPost_Categories();
 
 		/**
-		 * The meta object literal for the '<em><b>Persons</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POST__PERSONS = eINSTANCE.getPost_Persons();
-
-		/**
 		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute POST__TIME = eINSTANCE.getPost_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Author</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POST__AUTHOR = eINSTANCE.getPost_Author();
+
+		/**
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POST__LANGUAGE = eINSTANCE.getPost_Language();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.PlaceImpl <em>Place</em>}' class.
@@ -1229,12 +1308,20 @@ public interface SmrPackage extends EPackage {
 		EClass PLACE = eINSTANCE.getPlace();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>City</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PLACE__NAME = eINSTANCE.getPlace_Name();
+		EAttribute PLACE__CITY = eINSTANCE.getPlace_City();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__ADDRESS = eINSTANCE.getPlace_Address();
 
 		/**
 		 * The meta object literal for the '<em><b>Location</b></em>' containment reference feature.
@@ -1279,20 +1366,12 @@ public interface SmrPackage extends EPackage {
 		EAttribute TEXT__TEXT = eINSTANCE.getText_Text();
 
 		/**
-		 * The meta object literal for the '<em><b>Hashtag</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT__HASHTAG = eINSTANCE.getText_Hashtag();
-
-		/**
-		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEXT__TAG = eINSTANCE.getText_Tag();
+		EReference TEXT__TAGS = eINSTANCE.getText_Tags();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.PictureImpl <em>Picture</em>}' class.
@@ -1313,7 +1392,7 @@ public interface SmrPackage extends EPackage {
 		EAttribute PICTURE__NAME = eINSTANCE.getPicture_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1327,16 +1406,6 @@ public interface SmrPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PICTURE__PLACE = eINSTANCE.getPicture_Place();
-
-		/**
-		 * The meta object literal for the '{@link smr.impl.PersonImpl <em>Person</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smr.impl.PersonImpl
-		 * @see smr.impl.SmrPackageImpl#getPerson()
-		 * @generated
-		 */
-		EClass PERSON = eINSTANCE.getPerson();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.AuthorImpl <em>Author</em>}' class.
@@ -1365,12 +1434,12 @@ public interface SmrPackage extends EPackage {
 		EAttribute AUTHOR__LANGUAGE = eINSTANCE.getAuthor_Language();
 
 		/**
-		 * The meta object literal for the '<em><b>Current City</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Current City</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference AUTHOR__CURRENT_CITY = eINSTANCE.getAuthor_CurrentCity();
+		EAttribute AUTHOR__CURRENT_CITY = eINSTANCE.getAuthor_CurrentCity();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.CategoryImpl <em>Category</em>}' class.
@@ -1397,24 +1466,6 @@ public interface SmrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CATEGORY__TYPE = eINSTANCE.getCategory_Type();
-
-		/**
-		 * The meta object literal for the '{@link smr.impl.FriendImpl <em>Friend</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smr.impl.FriendImpl
-		 * @see smr.impl.SmrPackageImpl#getFriend()
-		 * @generated
-		 */
-		EClass FRIEND = eINSTANCE.getFriend();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FRIEND__NAME = eINSTANCE.getFriend_Name();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.LocationImpl <em>Location</em>}' class.
@@ -1479,14 +1530,6 @@ public interface SmrPackage extends EPackage {
 		EClass HASHTAG = eINSTANCE.getHashtag();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HASHTAG__NAME = eINSTANCE.getHashtag_Name();
-
-		/**
 		 * The meta object literal for the '{@link smr.impl.TagImpl <em>Tag</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1497,12 +1540,12 @@ public interface SmrPackage extends EPackage {
 		EClass TAG = eINSTANCE.getTag();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TAG__NAME = eINSTANCE.getTag_Name();
+		EAttribute TAG__TEXT = eINSTANCE.getTag_Text();
 
 		/**
 		 * The meta object literal for the '{@link smr.impl.SocialMediaResourceImpl <em>Social Media Resource</em>}' class.
@@ -1531,6 +1574,16 @@ public interface SmrPackage extends EPackage {
 		EReference SOCIAL_MEDIA_RESOURCE__POSTS = eINSTANCE.getSocialMediaResource_Posts();
 
 		/**
+		 * The meta object literal for the '{@link smr.impl.MentionImpl <em>Mention</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smr.impl.MentionImpl
+		 * @see smr.impl.SmrPackageImpl#getMention()
+		 * @generated
+		 */
+		EClass MENTION = eINSTANCE.getMention();
+
+		/**
 		 * The meta object literal for the '{@link smr.Categories <em>Categories</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1539,6 +1592,16 @@ public interface SmrPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CATEGORIES = eINSTANCE.getCategories();
+
+		/**
+		 * The meta object literal for the '{@link smr.Languages <em>Languages</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smr.Languages
+		 * @see smr.impl.SmrPackageImpl#getLanguages()
+		 * @generated
+		 */
+		EEnum LANGUAGES = eINSTANCE.getLanguages();
 
 	}
 

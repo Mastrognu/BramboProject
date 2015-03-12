@@ -2,6 +2,8 @@
  */
 package smr;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -50,30 +52,20 @@ public interface Picture extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Tags</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link smr.Tag}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tags</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Tags</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tags</em>' containment reference.
-	 * @see #setTags(Tag)
+	 * @return the value of the '<em>Tags</em>' containment reference list.
 	 * @see smr.SmrPackage#getPicture_Tags()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Tag getTags();
-
-	/**
-	 * Sets the value of the '{@link smr.Picture#getTags <em>Tags</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tags</em>' containment reference.
-	 * @see #getTags()
-	 * @generated
-	 */
-	void setTags(Tag value);
+	EList<Tag> getTags();
 
 	/**
 	 * Returns the value of the '<em><b>Place</b></em>' reference.

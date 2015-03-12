@@ -19,16 +19,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Languages implements Enumerator {
 	/**
-	 * The '<em><b>English</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ENGLISH_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ENGLISH(0, "English", ""),
-
-	/**
 	 * The '<em><b>Spanish</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,22 +26,27 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPANISH(1, "Spanish", "Spanish");
+	SPANISH(1, "Spanish", "Spanish"),
 
 	/**
-	 * The '<em><b>English</b></em>' literal value.
+	 * The '<em><b>English</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>English</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ENGLISH
-	 * @model name="English" literal=""
+	 * @see #ENGLISH_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ENGLISH_VALUE = 0;
+	ENGLISH(2, "English", "English"),
+
+	/**
+	 * The '<em><b>Lassa Sta</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LASSA_STA_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LASSA_STA(3, "LassaSta", "LassaSta");
 
 	/**
 	 * The '<em><b>Spanish</b></em>' literal value.
@@ -69,6 +64,36 @@ public enum Languages implements Enumerator {
 	public static final int SPANISH_VALUE = 1;
 
 	/**
+	 * The '<em><b>English</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>English</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #ENGLISH
+	 * @model name="English"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ENGLISH_VALUE = 2;
+
+	/**
+	 * The '<em><b>Lassa Sta</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Lassa Sta</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #LASSA_STA
+	 * @model name="LassaSta"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LASSA_STA_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Languages</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,8 +101,9 @@ public enum Languages implements Enumerator {
 	 */
 	private static final Languages[] VALUES_ARRAY =
 		new Languages[] {
-			ENGLISH,
 			SPANISH,
+			ENGLISH,
+			LASSA_STA,
 		};
 
 	/**
@@ -128,8 +154,9 @@ public enum Languages implements Enumerator {
 	 */
 	public static Languages get(int value) {
 		switch (value) {
-			case ENGLISH_VALUE: return ENGLISH;
 			case SPANISH_VALUE: return SPANISH;
+			case ENGLISH_VALUE: return ENGLISH;
+			case LASSA_STA_VALUE: return LASSA_STA;
 		}
 		return null;
 	}

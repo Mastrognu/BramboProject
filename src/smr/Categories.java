@@ -26,7 +26,9 @@ public enum Categories implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FUN(0, "Fun", "Fun"), /**
+	FUN(0, "Fun", "Fun"),
+
+	/**
 	 * The '<em><b>Food</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,8 +36,7 @@ public enum Categories implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FOOD(1, "Food", "Food")
-	;
+	FOOD(1, "Food", "Food");
 
 	/**
 	 * The '<em><b>Fun</b></em>' literal value.
@@ -52,7 +53,7 @@ public enum Categories implements Enumerator {
 	 */
 	public static final int FUN_VALUE = 0;
 
-/**
+	/**
 	 * The '<em><b>Food</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>

@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link smr.Text#getName <em>Name</em>}</li>
  *   <li>{@link smr.Text#getText <em>Text</em>}</li>
- *   <li>{@link smr.Text#getHashtag <em>Hashtag</em>}</li>
- *   <li>{@link smr.Text#getTag <em>Tag</em>}</li>
+ *   <li>{@link smr.Text#getTags <em>Tags</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,35 +78,19 @@ public interface Text extends EObject {
 	void setText(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Hashtag</b></em>' containment reference list.
-	 * The list contents are of type {@link smr.Hashtag}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Hashtag</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hashtag</em>' containment reference list.
-	 * @see smr.SmrPackage#getText_Hashtag()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Hashtag> getHashtag();
-
-	/**
-	 * Returns the value of the '<em><b>Tag</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
 	 * The list contents are of type {@link smr.Tag}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tag</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Tags</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tag</em>' containment reference list.
-	 * @see smr.SmrPackage#getText_Tag()
+	 * @return the value of the '<em>Tags</em>' containment reference list.
+	 * @see smr.SmrPackage#getText_Tags()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Tag> getTag();
+	EList<Tag> getTags();
 
 } // Text

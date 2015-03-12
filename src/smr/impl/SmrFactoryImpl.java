@@ -63,12 +63,12 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 			case SmrPackage.PICTURE: return createPicture();
 			case SmrPackage.AUTHOR: return createAuthor();
 			case SmrPackage.CATEGORY: return createCategory();
-			case SmrPackage.FRIEND: return createFriend();
 			case SmrPackage.LOCATION: return createLocation();
 			case SmrPackage.COORDINATES: return createCoordinates();
 			case SmrPackage.HASHTAG: return createHashtag();
 			case SmrPackage.TAG: return createTag();
 			case SmrPackage.SOCIAL_MEDIA_RESOURCE: return createSocialMediaResource();
+			case SmrPackage.MENTION: return createMention();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,6 +84,8 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 		switch (eDataType.getClassifierID()) {
 			case SmrPackage.CATEGORIES:
 				return createCategoriesFromString(eDataType, initialValue);
+			case SmrPackage.LANGUAGES:
+				return createLanguagesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,6 +101,8 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 		switch (eDataType.getClassifierID()) {
 			case SmrPackage.CATEGORIES:
 				return convertCategoriesToString(eDataType, instanceValue);
+			case SmrPackage.LANGUAGES:
+				return convertLanguagesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -169,16 +173,6 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Friend createFriend() {
-		FriendImpl friend = new FriendImpl();
-		return friend;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Location createLocation() {
 		LocationImpl location = new LocationImpl();
 		return location;
@@ -229,6 +223,16 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Mention createMention() {
+		MentionImpl mention = new MentionImpl();
+		return mention;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Categories createCategoriesFromString(EDataType eDataType, String initialValue) {
 		Categories result = Categories.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -241,6 +245,26 @@ public class SmrFactoryImpl extends EFactoryImpl implements SmrFactory {
 	 * @generated
 	 */
 	public String convertCategoriesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Languages createLanguagesFromString(EDataType eDataType, String initialValue) {
+		Languages result = Languages.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLanguagesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import smr.Coordinates;
 import smr.SmrPackage;
@@ -27,7 +27,7 @@ import smr.SmrPackage;
  *
  * @generated
  */
-public class CoordinatesImpl extends EObjectImpl implements Coordinates {
+public class CoordinatesImpl extends MinimalEObjectImpl.Container implements Coordinates {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORDX_EDEFAULT = 0L;
+	protected static final float COORDX_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordx() <em>Coordx</em>}' attribute.
@@ -66,7 +66,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordx = COORDX_EDEFAULT;
+	protected float coordx = COORDX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoordy() <em>Coordy</em>}' attribute.
@@ -76,7 +76,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long COORDY_EDEFAULT = 0L;
+	protected static final float COORDY_EDEFAULT = 0.0F;
 
 	/**
 	 * The cached value of the '{@link #getCoordy() <em>Coordy</em>}' attribute.
@@ -86,7 +86,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * @generated
 	 * @ordered
 	 */
-	protected long coordy = COORDY_EDEFAULT;
+	protected float coordy = COORDY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +133,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordx() {
+	public float getCoordx() {
 		return coordx;
 	}
 
@@ -142,8 +142,8 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordx(long newCoordx) {
-		long oldCoordx = coordx;
+	public void setCoordx(float newCoordx) {
+		float oldCoordx = coordx;
 		coordx = newCoordx;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.COORDINATES__COORDX, oldCoordx, coordx));
@@ -154,7 +154,7 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getCoordy() {
+	public float getCoordy() {
 		return coordy;
 	}
 
@@ -163,8 +163,8 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordy(long newCoordy) {
-		long oldCoordy = coordy;
+	public void setCoordy(float newCoordy) {
+		float oldCoordy = coordy;
 		coordy = newCoordy;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.COORDINATES__COORDY, oldCoordy, coordy));
@@ -200,10 +200,10 @@ public class CoordinatesImpl extends EObjectImpl implements Coordinates {
 				setName((String)newValue);
 				return;
 			case SmrPackage.COORDINATES__COORDX:
-				setCoordx((Long)newValue);
+				setCoordx((Float)newValue);
 				return;
 			case SmrPackage.COORDINATES__COORDY:
-				setCoordy((Long)newValue);
+				setCoordy((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

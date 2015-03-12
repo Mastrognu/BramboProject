@@ -4,7 +4,6 @@ package cs;
 
 import org.eclipse.emf.common.util.EMap;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Num Post Lang</b></em>'.
@@ -28,7 +27,7 @@ public interface NumPostLang extends Statistic {
 	 * and the value is of type {@link java.lang.Integer},
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lang Number</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Lang Number</em>' map isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -90,29 +90,15 @@ public class SmrSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmrPackage.PERSON: {
-				Person person = (Person)theEObject;
-				T result = casePerson(person);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmrPackage.AUTHOR: {
 				Author author = (Author)theEObject;
 				T result = caseAuthor(author);
-				if (result == null) result = casePerson(author);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SmrPackage.CATEGORY: {
 				Category category = (Category)theEObject;
 				T result = caseCategory(category);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SmrPackage.FRIEND: {
-				Friend friend = (Friend)theEObject;
-				T result = caseFriend(friend);
-				if (result == null) result = casePerson(friend);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,6 +117,7 @@ public class SmrSwitch<T> extends Switch<T> {
 			case SmrPackage.HASHTAG: {
 				Hashtag hashtag = (Hashtag)theEObject;
 				T result = caseHashtag(hashtag);
+				if (result == null) result = caseTag(hashtag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,6 +130,13 @@ public class SmrSwitch<T> extends Switch<T> {
 			case SmrPackage.SOCIAL_MEDIA_RESOURCE: {
 				SocialMediaResource socialMediaResource = (SocialMediaResource)theEObject;
 				T result = caseSocialMediaResource(socialMediaResource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmrPackage.MENTION: {
+				Mention mention = (Mention)theEObject;
+				T result = caseMention(mention);
+				if (result == null) result = caseTag(mention);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,21 +205,6 @@ public class SmrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Person</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Person</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePerson(Person object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -252,21 +231,6 @@ public class SmrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCategory(Category object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Friend</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Friend</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFriend(Friend object) {
 		return null;
 	}
 
@@ -342,6 +306,21 @@ public class SmrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSocialMediaResource(SocialMediaResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mention</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mention</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMention(Mention object) {
 		return null;
 	}
 

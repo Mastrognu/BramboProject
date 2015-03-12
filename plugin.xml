@@ -10,7 +10,8 @@
       <!-- @generated SocialResource -->
       <package
             uri="http://smr/1.0"
-            class="smr.SmrPackage"/>
+            class="smr.SmrPackage"
+            genModel="model/SocialResource.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -25,7 +26,8 @@
       <!-- @generated City -->
       <package
             uri="http://city/1.0"
-            class="city.CityPackage"/>
+            class="city.CityPackage"
+            genModel="model/City.genmodel"/>
    </extension>
 
 </plugin>

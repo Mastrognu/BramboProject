@@ -14,13 +14,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import smr.Author;
 import smr.Category;
-import smr.Person;
+import smr.Languages;
 import smr.Picture;
 import smr.Place;
 import smr.Post;
@@ -34,41 +35,21 @@ import smr.Text;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link smr.impl.PostImpl#getName <em>Name</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getId <em>Id</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getSourcesn <em>Sourcesn</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getPlace <em>Place</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getText <em>Text</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getPictures <em>Pictures</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getCategories <em>Categories</em>}</li>
- *   <li>{@link smr.impl.PostImpl#getPersons <em>Persons</em>}</li>
  *   <li>{@link smr.impl.PostImpl#getTime <em>Time</em>}</li>
+ *   <li>{@link smr.impl.PostImpl#getAuthor <em>Author</em>}</li>
+ *   <li>{@link smr.impl.PostImpl#getLanguage <em>Language</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PostImpl extends EObjectImpl implements Post {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
+public class PostImpl extends MinimalEObjectImpl.Container implements Post {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -150,16 +131,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	protected EList<Category> categories;
 
 	/**
-	 * The cached value of the '{@link #getPersons() <em>Persons</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPersons()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Person> persons;
-
-	/**
 	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,6 +151,36 @@ public class PostImpl extends EObjectImpl implements Post {
 	protected Date time = TIME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAuthor()
+	 * @generated
+	 * @ordered
+	 */
+	protected Author author;
+
+	/**
+	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Languages LANGUAGE_EDEFAULT = Languages.SPANISH;
+
+	/**
+	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected Languages language = LANGUAGE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,27 +197,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	@Override
 	protected EClass eStaticClass() {
 		return SmrPackage.Literals.POST;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.POST__NAME, oldName, name));
 	}
 
 	/**
@@ -376,18 +356,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Person> getPersons() {
-		if (persons == null) {
-			persons = new EObjectContainmentEList<Person>(Person.class, this, SmrPackage.POST__PERSONS);
-		}
-		return persons;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Date getTime() {
 		return time;
 	}
@@ -409,6 +377,70 @@ public class PostImpl extends EObjectImpl implements Post {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Author getAuthor() {
+		return author;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAuthor(Author newAuthor, NotificationChain msgs) {
+		Author oldAuthor = author;
+		author = newAuthor;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmrPackage.POST__AUTHOR, oldAuthor, newAuthor);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAuthor(Author newAuthor) {
+		if (newAuthor != author) {
+			NotificationChain msgs = null;
+			if (author != null)
+				msgs = ((InternalEObject)author).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmrPackage.POST__AUTHOR, null, msgs);
+			if (newAuthor != null)
+				msgs = ((InternalEObject)newAuthor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmrPackage.POST__AUTHOR, null, msgs);
+			msgs = basicSetAuthor(newAuthor, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.POST__AUTHOR, newAuthor, newAuthor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Languages getLanguage() {
+		return language;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLanguage(Languages newLanguage) {
+		Languages oldLanguage = language;
+		language = newLanguage == null ? LANGUAGE_EDEFAULT : newLanguage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmrPackage.POST__LANGUAGE, oldLanguage, language));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -420,8 +452,8 @@ public class PostImpl extends EObjectImpl implements Post {
 				return ((InternalEList<?>)getPictures()).basicRemove(otherEnd, msgs);
 			case SmrPackage.POST__CATEGORIES:
 				return ((InternalEList<?>)getCategories()).basicRemove(otherEnd, msgs);
-			case SmrPackage.POST__PERSONS:
-				return ((InternalEList<?>)getPersons()).basicRemove(otherEnd, msgs);
+			case SmrPackage.POST__AUTHOR:
+				return basicSetAuthor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -434,8 +466,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SmrPackage.POST__NAME:
-				return getName();
 			case SmrPackage.POST__ID:
 				return getId();
 			case SmrPackage.POST__SOURCESN:
@@ -448,10 +478,12 @@ public class PostImpl extends EObjectImpl implements Post {
 				return getPictures();
 			case SmrPackage.POST__CATEGORIES:
 				return getCategories();
-			case SmrPackage.POST__PERSONS:
-				return getPersons();
 			case SmrPackage.POST__TIME:
 				return getTime();
+			case SmrPackage.POST__AUTHOR:
+				return getAuthor();
+			case SmrPackage.POST__LANGUAGE:
+				return getLanguage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -465,9 +497,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SmrPackage.POST__NAME:
-				setName((String)newValue);
-				return;
 			case SmrPackage.POST__ID:
 				setId((Long)newValue);
 				return;
@@ -488,12 +517,14 @@ public class PostImpl extends EObjectImpl implements Post {
 				getCategories().clear();
 				getCategories().addAll((Collection<? extends Category>)newValue);
 				return;
-			case SmrPackage.POST__PERSONS:
-				getPersons().clear();
-				getPersons().addAll((Collection<? extends Person>)newValue);
-				return;
 			case SmrPackage.POST__TIME:
 				setTime((Date)newValue);
+				return;
+			case SmrPackage.POST__AUTHOR:
+				setAuthor((Author)newValue);
+				return;
+			case SmrPackage.POST__LANGUAGE:
+				setLanguage((Languages)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -507,9 +538,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SmrPackage.POST__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case SmrPackage.POST__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -528,11 +556,14 @@ public class PostImpl extends EObjectImpl implements Post {
 			case SmrPackage.POST__CATEGORIES:
 				getCategories().clear();
 				return;
-			case SmrPackage.POST__PERSONS:
-				getPersons().clear();
-				return;
 			case SmrPackage.POST__TIME:
 				setTime(TIME_EDEFAULT);
+				return;
+			case SmrPackage.POST__AUTHOR:
+				setAuthor((Author)null);
+				return;
+			case SmrPackage.POST__LANGUAGE:
+				setLanguage(LANGUAGE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -546,8 +577,6 @@ public class PostImpl extends EObjectImpl implements Post {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SmrPackage.POST__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SmrPackage.POST__ID:
 				return id != ID_EDEFAULT;
 			case SmrPackage.POST__SOURCESN:
@@ -560,10 +589,12 @@ public class PostImpl extends EObjectImpl implements Post {
 				return pictures != null && !pictures.isEmpty();
 			case SmrPackage.POST__CATEGORIES:
 				return categories != null && !categories.isEmpty();
-			case SmrPackage.POST__PERSONS:
-				return persons != null && !persons.isEmpty();
 			case SmrPackage.POST__TIME:
 				return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
+			case SmrPackage.POST__AUTHOR:
+				return author != null;
+			case SmrPackage.POST__LANGUAGE:
+				return language != LANGUAGE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -578,14 +609,14 @@ public class PostImpl extends EObjectImpl implements Post {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", id: ");
+		result.append(" (id: ");
 		result.append(id);
 		result.append(", sourcesn: ");
 		result.append(sourcesn);
 		result.append(", time: ");
 		result.append(time);
+		result.append(", language: ");
+		result.append(language);
 		result.append(')');
 		return result.toString();
 	}
