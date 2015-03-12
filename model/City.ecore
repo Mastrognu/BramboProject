@@ -51,7 +51,8 @@
         upperBound="-1" eType="#//City" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
-    <eLiterals name="English" value="2" literal="English"/>
     <eLiterals name="Spanish" value="1" literal="Spanish"/>
+    <eLiterals name="English" value="2" literal="English"/>
+    <eLiterals name="LassaSta" value="3" literal="LassaSta"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -92,8 +92,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
-    <eLiterals name="English" value="2" literal="English"/>
     <eLiterals name="Spanish" value="1" literal="Spanish"/>
+    <eLiterals name="English" value="2" literal="English"/>
+    <eLiterals name="LassaSta" value="3" literal="LassaSta"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumPostLang" eSuperTypes="#//Statistic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="langNumber" upperBound="-1"
